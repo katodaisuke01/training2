@@ -1,0 +1,179 @@
+@charset "UTF-8";
+/*====================================================================
+  fullCalendar
+  ==================================================================== */
+  
+/*   ヘッダー================================================== */
+.p-calendar{
+  border: color(main) 1px solid;
+  border-radius:3px;
+  padding:20px 20px 0;
+  .fc-toolbar{
+    &.fc-header-toolbar{
+      border-bottom:color(main) 1px solid;
+      padding: 0 0 15px;
+      position:relative;
+    }
+    .fc-left {
+      float: inherit;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      h2{
+        font: 800 26px/1em futura-pt, 'Roboto', 'Noto Sans JP', sans-serif;
+        color: #000;
+      }
+    }
+  }
+  /* カレンダー================================================== */
+  .fc-view{
+    table{
+      // width: 100%;
+    }
+  }
+  .fc-view-container {
+    th, td{
+      border: none;
+    }
+  }
+  .fc-basic-view {
+    .fc-day-number{
+      font: 700 16px/1em futura-pt, 'Roboto', 'Noto Sans JP', sans-serif;
+      color: #000;
+      float:inherit !important;
+      @include responsive (note){
+        font-size:24px;
+      }
+      @include responsive (tablet){
+        font-size:16px;
+      }
+    }
+  }
+  .fc-content-skeleton {
+    thead {
+      tr {
+        td{
+          text-align: center;
+          padding:20px 0;
+          cursor: pointer;
+          &:hover{
+            background: #dffefc;
+          }
+        }
+      }
+    }
+  }
+  td{
+    position: relative;
+  }
+  .fc-basic-view .fc-body .fc-row{
+    min-height: 30px;
+  }
+  /* 玉のフォント */
+  .fc-view-container {
+    /* 日曜 */.fc-sun {
+      span{color: #B20017;}
+    }
+    /* 土曜 */.fc-sat {
+      span{color: color(main);}
+    }
+    /* 今日 */
+    .fc-today{
+      position: relative;
+      background: transparent !important;
+      border: none !important;
+      [class*="fc-"] span{
+        width: 100%;
+        text-align: center;
+      }
+      span{
+        background: transparent;
+      }
+      &.fc-day-top:before{
+        background:#f0f0f0;
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        content:'';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 53%;
+        transform: translate(-50%,-50%);
+        z-index: -1;
+        margin: 0 0 0 -2px;
+       }
+    }
+  }
+  
+  /* ボタン */
+  .fc-button-group{
+    margin: 0 -5px;
+  }
+  /* 今日ボタン */
+  .fc-right .fc-today-button{
+    color: #fff;
+    border: color(main) 1px solid;
+    background: color(main);
+    height: 25px;
+    font: 600 12px/1em futura-pt, 'Roboto', 'Noto Sans JP', sans-serif;
+    opacity: 1;
+    text-shadow:none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    &:hover{
+      background: #fff;
+      color: color(main);
+    }
+  }
+  .fc-toolbar .fc-right{
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  /* 月移動ボタン */
+  .fc-button-group .fc-button{
+    padding: 0;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    margin: 0 5px;
+    background: #fff;
+    border: #001840 1px solid;
+  }
+  
+  /* イベント */  
+  .fc-event{
+    background: transparent;
+    border: none;
+    &:after{
+      content:'';
+      display: block;
+      height: 6px;
+      width: 6px;
+      background:#71deec;
+      border-radius: 3px;
+      border: #fff 1px solid;
+      position: absolute;
+      top: 0;
+      left: 45%;
+      transform: translate(-50%,0);
+    }
+  }
+  .fc-event-container .fc-day-grid-event span{
+    font:400 13px/1em futura-pt, 'Roboto', 'Noto Sans JP', sans-serif;
+    height: inherit;
+    width: inherit;
+    border-radius: 0;
+    background: none;
+    color: #fff;
+  }
+  /* 選択 */
+  .fc-highlight{
+    background: #a4e8e3;
+    border-radius: 5px;
+    position: relative;
+  }
+} 

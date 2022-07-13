@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/* ! ==================================================
+
+- ベースレイアウト
+
+================================================== */
+.l-base {
+    display: flex;
+    flex: auto;
+    min-width: 0;
+    width: 100%;
+    padding: 30px 30px 30px 210px;
+    @include responsive (br){
+        flex-direction: column;
+        padding: 0;
+    }
+}
+.l{
+    display: flex;
+    margin: -10px;
+    .l-auto,.l-fix{
+        display: flex;
+        flex: 1 1 auto;
+        width: 100%;
+        padding: 10px;
+    }
+    .l-half{
+        flex: 0 0 50%;
+        width: 50%;
+        padding: 10px;
+    }
+    .l-fix{
+        @extend .l-fix;
+        &__50{ @extend .l-fix;flex: 0 0 50px;width:50px;
+        }
+        &__100{ @extend .l-fix;flex: 0 0 100px;width:100px;
+        }
+        &__150{ @extend .l-fix;flex: 0 0 150px;width:150px;
+        }
+        &__190{ @extend .l-fix;flex: 0 0 190px;width:190px;
+        }
+        &__200{ @extend .l-fix;flex: 0 0 200px;width:200px;
+        }
+        &__250{ @extend .l-fix;flex: 0 0 250px;width:250px;
+        }
+        &__300{ @extend .l-fix;flex: 0 0 300px;width:300px;
+        }
+        &__350{ @extend .l-fix;flex: 0 0 350px;width:350px;
+        }
+        &__400{ @extend .l-fix;flex: 0 0 400px;width:400px;
+        }
+        &__450{ @extend .l-fix;flex: 0 0 450px;width:450px;
+        }
+        &__500{ @extend .l-fix;flex: 0 0 500px;width:500px;
+        }
+        &__550{ @extend .l-fix;flex: 0 0 550px;width:550px;
+        }
+        &__600{ @extend .l-fix;flex: 0 0 600px;width:600px;
+        }
+    }
+}
+// flex
+.f{
+    display:flex;
+    &-wrap{@extend .f;flex-wrap:wrap !important;}
+    &-column{@extend .f;flex-direction:column !important;}
+    &-j_start{@extend .f;justify-content: flex-start !important;}
+    &-j_center{@extend .f;justify-content: center !important;}
+    &-j_end{@extend .f;justify-content: flex-end !important;}
+    &-a_start{@extend .f;align-items:flex-start !important;}
+    &-a_center{@extend .f;align-items:center !important;}
+    &-a_end{@extend .f;align-items:flex-end !important;}
+}

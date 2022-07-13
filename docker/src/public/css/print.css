@@ -1,0 +1,52 @@
+@page {
+  size: A4;
+}
+* {
+  overflow !important;
+  background-color: #FFF !important;
+  color: #333 !important;
+}
+body {
+  -webkit-print-color-adjust: exact;
+}
+/* 非表示項目 */
+header,
+footer,
+.p-index__head,
+aside,
+.c-button__min
+{
+  display: none !important;
+}
+
+.c-text__lv5{
+  z-index: 10;
+}
+
+.l-main, .p-document{
+  padding: 0 !important;
+}
+
+.c-box{
+  padding: 5px !important;
+}
+
+.l-container__768{
+  padding: 0 !important;
+  max-width: none;
+}
+
+.l-body__management .p-management .p-document__foot .p-list__split3 > li .c-image{
+  width: 95px !important;
+  max-height: none;
+}
+
+.l-body__management .p-management .p-document__foot .c-icon{
+  width: 70px !important;
+}
+
+/* ページの途中で要素が切れるのを防ぐ */
+ul{
+  break-inside: avoid;
+}
+

@@ -1,0 +1,5 @@
+/.idea
+/docker/db/mysql/volumes
+/docker/web/nginx/volumes
+.env
+SetupSoftware.zip

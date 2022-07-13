@@ -1,0 +1,61 @@
+@charset "UTF-8";
+%l-12{
+  display:flex;flex-wrap:wrap;width:100%;
+  @include responsive (tablet){
+    flex-direction: column-reverse;
+    margin:0;
+  }
+}
+.l-12{
+  @extend %l-12;
+  &--gap4{margin:-2px;
+    @include responsive (tablet){
+      margin:0;
+    }
+    >*{padding:2px;}
+  }
+  &--gap8{margin:-4px;
+    @include responsive (tablet){
+      margin:0;
+    }
+    >*{padding:4px;}
+  }
+  &--gap16{margin:-8px;
+    @include responsive (tablet){
+      margin:0;
+    }
+    >*{padding:8px;}
+  }
+  &--gap24{margin:-12px;
+    @include responsive (tablet){
+      margin:0;
+    }
+    >*{padding:12px;}
+  }
+  &--gap32{margin:-16px;
+    @include responsive (tablet){
+      margin:0;
+    }
+    >*{padding:16px;}
+  }
+  &--gap40{margin:-20px;
+    @include responsive (tablet){
+      margin:0;
+    }
+    >*{padding:20px;}
+  }
+  >div{width:auto;flex:1 1 auto;
+    $i: 1;
+    @while $i <= 12 {
+      &.l-#{$i} {
+        width: (8.3333% * $i);
+        flex:0 0 (8.3333% * $i);
+        @include responsive (tablet){
+          width:100%;
+          flex: auto;
+        }
+      }
+      $i: $i + 1;
+    }
+  }
+}

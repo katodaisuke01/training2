@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/* ! ==================================================
+- ボディ
+================================================== */
+.l-body {
+  flex: auto;
+  background-color: color(back);
+  background-image:repeating-linear-gradient(-60deg, #eeeeee, #e8e8e8 2px, transparent 0, transparent 7px);
+}
+

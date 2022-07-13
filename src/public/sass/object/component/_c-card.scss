@@ -1,0 +1,171 @@
+@charset "UTF-8";
+.c-card{
+  &[data-href]{
+    &:hover{
+      background-color:transparent;
+    }
+  }
+  &--content{
+    padding: 8px 8px 24px;
+    border-radius:20px;
+    background-color:color(card1);
+    color: #fff;
+    box-shadow: 0px 8px 16px rgba(255,147,0,.2);
+    transition: all 0.1s;
+    cursor: pointer;
+    position:relative;
+    >a{
+      position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+      height:100%; width:100%;
+      z-index:0;
+    }
+    .hover{
+      display:none;
+      height:50%; width:100%;
+      background-color: rgba(0,0,0,.5);
+      position:absolute;top:50%;left:0;
+      transform: translateY(-50%);
+      transition: all 0.2s ease;
+      display:block;
+      z-index: 1;
+      .c-buttonArea__center{
+        height: 100%;
+      }
+    }
+    &:hover{
+      transform: translateY(3px) scale(1) !important;
+      box-shadow: 0px 4px 6px rgba(157, 92, 0, 0.4);
+    }
+    .c-upper{
+      position:absolute;top:16px;left:50%;transform:translate(-50%,0);
+      width: 100%;
+      display:flex;
+      padding:0 14px;
+      .c-favorite{
+        background:#fff url(../image/icon/icon_star_gray.svg) no-repeat center;
+        background-size:cover !important;
+        border-radius:50%;
+        flex:0 0 40px;
+        width: 40px;
+        display:block;
+        position:relative;
+        cursor: pointer;
+        &:before{
+          content: '';
+          display:block;
+          padding-top: 100%;
+          width: 100%;
+        }
+        &:hover:after{
+          content: '気になる!';
+          display:block;
+          letter-spacing: 0;
+          text-align: center;
+          font-size: 11px;
+          font-weight: 600;
+          width:60px;
+          position:absolute;top:-16px;left:50%;transform:translate(-50%,0);
+          background-color: color(main);
+          color: #fff;
+        }
+        &.checked{
+          background: color(main) url(../image/icon/icon_star_white.svg) no-repeat center;
+        }
+      }
+      .c-tag{
+        flex: 1 1 auto;
+        width: auto;
+        ul{
+          display:flex; flex-wrap:wrap;
+          justify-content:flex-end;
+          margin:-2px;
+        >li{
+          padding: 2px;
+          .c-text__min{
+            padding: 2px;
+            color: color(main);
+            background-color: #fff;
+            border-radius: 3px;
+          }
+        }
+        }
+      }
+    }
+    .c-image{
+      background: none;
+      overflow: hidden;
+      &:before{
+        content: none;
+      }
+      border-radius: 16px;
+      img{
+        object-fit: cover;
+        width: 100%;
+        height: 210px;
+      }
+    }
+    .c-text{
+      margin-top: 8px;
+      h4{
+        color: #fff;
+        @include responsive (tablet){
+          font-size:14px;
+        }
+      }
+      p{
+        color: #fff;
+        @include responsive (tablet){
+          font-size:10px;
+        }
+      }
+      .c-lower{
+        border-top: 1px solid rgba(255, 255, 255, .5);
+        margin-top: 4px;
+        padding-top: 8px;
+        display:flex; flex-wrap:wrap;
+        align-items:center;
+        p{
+          +p{
+            margin-left: auto;
+          }
+        }
+      }
+    }
+    // カラバリ
+    &.red{background-color: color(card2);}
+    &.yellow{
+      background-color: color(card3);
+      .c-text{
+        h4,p{color: #000;}
+      }
+    }
+    &.green{background-color: color(card4);}
+    &.blue{background-color: color(card5);}
+    &.violet{background-color: color(card6);}
+    &.white{
+      background-color: color(card7);
+      .c-text{
+        h4,p{color: #000;}
+      }
+      .c-lower{
+        border-color:rgba(253, 156, 0, .5);
+      }
+    }
+  }
+  // 画像の高さ変動
+  &[data-input="1"]{
+    .c-image{img{height: 140px;}}
+  }
+  &[data-input="2"]{
+    .c-image{img{height: 180px;}}
+  }
+  &[data-input="3"]{
+    .c-image{img{height: 220px;}}
+  }
+  &[data-input="4"]{
+    .c-image{img{height: 260px;}}
+  }
+  &[data-input="5"]{
+    .c-image{img{height: 300px;}}
+  }
+}

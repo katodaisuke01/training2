@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+.l-auth{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    &:before{
+        background: url(../image/image/img_login.svg) no-repeat center;
+        background-size: cover;
+        width: 400px;
+        height: 320px;
+        opacity: .3;
+        content: '';
+        display: block;
+        position:absolute;
+        bottom:0;
+        left: 0;
+    }
+    &__login{
+        &:before{
+            content: none;
+        }
+    }
+    .p-login{
+        width: 100%;
+        max-width: 400px;
+        &__head{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .c-image{
+                background-image: url(../image/image/img_login.svg);
+                &:before{
+                    padding-top: 80%;
+                }
+            }
+            .logo{
+                margin: 10px 0 0;
+            }
+            .title{
+                margin: 5px 0 0;
+                color: #00C4E2;
+                font-size: 20px;
+            }
+        }
+        &__body{
+            margin: 20px 0 0;
+            .p-listForm{
+                >li{
+                    .c-radio{
+                        label{
+                            padding-left: 0;
+                            &:before{
+                                content: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

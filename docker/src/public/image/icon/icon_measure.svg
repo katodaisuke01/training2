@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+  <g id="グループ_14058" data-name="グループ 14058" transform="translate(-808.322 -491.323)">
+    <g id="コンポーネント_134" data-name="コンポーネント 134" transform="translate(808.323 491.323)">
+      <g id="fact_check_black_24dp" transform="translate(0 0)">
+        <g id="グループ_13883" data-name="グループ 13883" transform="translate(0 0)">
+          <rect id="長方形_14263" data-name="長方形 14263" width="70" height="70" transform="translate(-0.001 0)" fill="none"/>
+        </g>
+        <g id="グループ_13885" data-name="グループ 13885" transform="translate(7.423 7.424)">
+          <g id="グループ_13884" data-name="グループ 13884" transform="translate(0 0)">
+            <g id="グループ_13927" data-name="グループ 13927">
+              <g id="楕円形_274" data-name="楕円形 274" transform="translate(-0.423 -0.424)" fill="none" stroke="#00c4e2" stroke-width="6">
+                <circle cx="28" cy="28" r="28" stroke="none"/>
+                <circle cx="28" cy="28" r="25" fill="none"/>
+              </g>
+              <rect id="長方形_14293" data-name="長方形 14293" width="5" height="7" transform="translate(24.577 5.576)" fill="#00c4e2"/>
+              <rect id="長方形_14295" data-name="長方形 14295" width="5.116" height="7.034" transform="translate(13.2 9.816) rotate(-30)" fill="#00c4e2"/>
+              <rect id="長方形_14300" data-name="長方形 14300" width="5.116" height="7.034" transform="translate(38.094 15.908) rotate(-150)" fill="#00c4e2"/>
+              <rect id="長方形_14296" data-name="長方形 14296" width="5.116" height="7.034" transform="translate(6.454 19.699) rotate(-60)" fill="#00c4e2"/>
+              <rect id="長方形_14298" data-name="長方形 14298" width="5.116" height="7.034" transform="translate(42.265 23.216) rotate(-120)" fill="#00c4e2"/>
+              <rect id="長方形_14297" data-name="長方形 14297" width="5.116" height="7.034" transform="translate(5.527 32.52) rotate(-90)" fill="#00c4e2"/>
+              <rect id="長方形_14299" data-name="長方形 14299" width="5.116" height="7.034" transform="translate(42.25 32.52) rotate(-90)" fill="#00c4e2"/>
+              <path id="多角形_6" data-name="多角形 6" d="M3.5,0,7,21H0Z" transform="translate(23.576 16.576)" fill="#00c4e2"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

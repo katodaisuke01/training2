@@ -1,0 +1,615 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+- インプット
+-------------------------------------------------- */
+input:-webkit-autofill {
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+.c-input,%c-input {
+  display: flex; flex-wrap:wrap;
+  &__center {
+    @extend .c-input;
+    align-items: center;
+    >*+*{
+      margin-left: 8px;
+    }
+  }
+  &__end {
+    @extend .c-input;
+    align-items: flex-end;
+    >*+*{
+      margin-left: 8px;
+    }
+  }
+  
+  .c-input {
+    +* {
+      margin-left: 4px;
+    }
+  }
+  &__col{flex-direction: column;}
+  &__full{width: 100%;}
+  $c-input: #{&};
+  //共通要素
+  %common {
+    font-size: 16px;
+    height: 50px;
+    padding: 0 8px;
+    width: 100%;
+    border: 1px solid color(form);
+    border-radius: 3px;
+    background-color: #fff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    @include responsive(sp){
+      height: 40px;
+    }
+    // &[readonly]{border:none;}
+  }
+  // プレイスホルダー
+  ::-webkit-input-placeholder { color: map-get($colors,third);}
+  :-ms-input-placeholder { color: map-get($colors,third);}
+  ::-moz-placeholder { color: map-get($colors,third);}
+  // -- インプット search number file checkbox radio submit 
+  input {
+    @extend %common;
+  }
+  textarea {
+    @extend %common;
+    padding: 8px 8px;
+    resize: none;
+    min-height: 64px;
+    @include responsive(sp){
+      padding: 5px 8px;
+    }
+  }
+  //numberのスピンボタン非表示
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance:textfield;
+  }
+  &--full {
+    @extend #{$c-input};
+    width: 100%;
+    input,
+    textarea {
+      width: 100%;
+    }
+  }
+  // -- セレクト
+  &--select {
+    @extend #{$c-input};
+    position: relative;
+    &:before {
+      content: "";
+      width: 24px;
+      height: 24px;
+      background: url(../image/icon/icon_dropdown.svg);
+      background-size: contain !important;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+      position: absolute;
+      top: 50%;
+      right: 4px;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    select {
+      @extend %common;
+      padding-right: 24px;
+    }    
+  }
+  // -- チェックボックス・ラジオ共通項目
+  %commonInput {    
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  %commonBox {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(../img/admin/p-input/radio.svg);
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    position: absolute;
+    top: 50%;
+    left: -4px;
+    transform: translateY(-50%);
+  }
+  %commonLabel {
+    color: color(form);
+    font-size: 14px;
+    line-height: 1em;
+    display: flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 12px 0 20px;
+    position: relative; 
+  }
+  // -- 日付入力
+  &--date{
+    position:relative;
+    width: 150px;
+    &:before{
+      content: '';
+      display: block;
+      background: url(../image/icon/icon_calendar.svg) no-repeat center;
+      background-size: cover;
+      position:absolute;
+      right: 10px;
+      top: 50%;
+      margin: 0;
+      height:24px;width:24px;
+      transform: translateY(-50%);
+    }
+  }
+  // -- チェックボックス
+  &--checkbox {
+    @extend #{$c-input};
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    &--column {
+      flex-direction: column;
+    }
+    input[type="checkbox"] {
+      @extend %commonInput;
+      &:checked + label {
+        color: color(form--high);
+        &:before {
+          background: url(../img/admin/p-input/checkbox--checked.svg);
+        }
+      }
+    }
+    label {
+      @extend %commonLabel;
+      &:before {
+        @extend %commonBox;
+        background: url(../img/admin/p-input/checkbox.svg);
+      }
+    }
+  }
+  // -- ラジオ
+  &--radio {
+    @extend #{$c-input};
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    input[type="radio"] {
+      @extend %commonInput;
+      &:checked + label {
+        color: map-get($colors,form--high);
+        &:before {
+          background: url(../img/admin/p-input/radio--checked.svg);
+        }
+      }
+    }
+    label {
+      @extend %commonLabel;
+      &:before {
+        @extend %commonBox;
+        background: url(../img/admin/p-input/radio.svg);
+      }
+    }
+  }
+  &--pw{
+    position:relative;
+    .c-icon__eye{
+      background-size: cover !important;
+      background: url(../image/icon/icon_eye_close.svg) no-repeat center;
+      width: 24px;
+      position:absolute;
+      top: 50%;
+      right: 4px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      &:before{
+        content: '';
+        display: block;
+        padding-top: 100%;
+        width: 100%;
+      }
+      &.visible{
+        background: url(../image/icon/icon_eye_open.svg) no-repeat center;
+      }
+    }
+  }
+  &[class*="_400"]{width: 400px !important;}
+  &[class*="_350"]{width: 350px !important;}
+  &[class*="_300"]{width: 300px !important;}
+  &[class*="_250"]{width: 250px !important;}
+  &[class*="_200"]{width: 200px !important;}
+  &[class*="_150"]{width: 150px !important;}
+  &[class*="_100"]{width: 100px !important;}
+  &[class*="_75"]{width: 75px !important;}
+  &[class*="_50"]{width: 50px !important;}
+}
+
+.required {
+  display: inline;
+  position:relative;
+  margin-bottom: 0.8em;
+  &:after {
+    content: "必須";
+    border: 1px solid color(form);
+    border-radius: 3px;
+    color: color(form);
+    display: block;
+    line-height: 1em;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    padding: 2px 2px 1px;
+    height: auto;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    right: -35px;
+    transform: translateY(-50%);
+  }
+}
+.optional {
+  display: inline;
+  position:relative;
+  margin-bottom: 0.8em;
+  &:after {
+    content: "任意";
+    color: color(aaa);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    padding: 2px 2px 1px;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    right: -35px;
+    transform: translateY(-50%);
+  }
+}
+
+/* デフォルトリセットなど */
+input,select,button,textarea{ -webkit-appearance: none; -moz-appearance: none; appearance: none;}
+button { outline: none;}
+select::-ms-expand { display: none;}
+input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px #fafafa inset;}
+input[type="checkbox"],input[type="radio"],input[type="file"]{display: none;}
+
+
+/* イメージ、ファイル系 */
+.c-input__image{
+  input[type="file"]+label{
+    background-image: url(../image/icon/icon_noimage_white.svg);
+    background-color: #e3edf1;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+    display: block;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 1px solid color(form);
+    &.c-user{
+      background-image: url(../image/icon/icon_nobody_white.svg);
+    }
+    &:before{
+      content: '';
+      display: block;
+      padding-top: 75%;
+      width: 100%;
+    }
+    &:hover{
+      opacity: .7;
+    }
+  }
+  &.c-user{
+    input[type="file"]+label{
+      background-image: url(../image/icon/icon_nobody_white.svg);
+      &:before{
+        content: '';
+        display: block;
+        padding-top: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+.c-input__file{
+  input[type="file"]+label{
+    background: #e3edf1 url(../image/icon/icon_noimage_white.svg) no-repeat center;
+    background-size: cover;
+    display: block;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid color(form);
+    cursor: pointer;
+    &:before{
+      content: '';
+      display: block;
+      padding-top: 70%;
+      width: 100%;
+    }
+    &:hover{
+      opacity: .7;
+    }
+  }
+}
+
+
+/* 住所などインプット要素を横に並べる場合 */
+.c-input + .c-input {
+  margin: 0 0 0 5px;
+  width: auto;
+}/* 住所などインプット要素を縦に並べる場合 */
+.c-input[class*="_col"] .c-input + .c-input {
+  margin: 5px 0 0;
+}
+.c-input:after{
+  margin: 15px 0 0 5px;
+  font: 500 13px/1.5em futura-pt, 'Roboto', 'Noto Sans JP', sans-serif;
+}
+
+ input:disabled{
+   border-color: transparent;
+   background: #f7f7f7;
+ }
+ input:disabled  + label{
+  opacity: .3;
+}
+/* 横並び */
+.c-input.row{
+  margin: -2px;
+}
+.c-input.row > .c-input{
+  padding: 2px;
+}
+.c-input.row > .c-input + .c-input{
+  margin: 0;
+}
+/* 縦並び */
+.c-input.col{
+  flex-direction: column;
+}
+
+/* セレクトボックス */
+select {  width: 100%;  padding-right: 20px;}
+.c-select {
+  width: 100%;
+  position: relative;
+}
+.c-select:after {
+  content: "";
+  background: url(../img/ico/ico_arrow_dropdown.svg) no-repeat center;
+  background-size: cover;
+  height: 5px;
+  width: 7px;
+  font: normal 15px/1em 'fontawesome';
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  pointer-events:none;
+  margin: 0;
+}
+
+// wickedpickerのcss
+body .wickedpicker__title{display:none;}
+.c-time{
+	transition: all 0.2s ease;
+  width: 100px;
+  position:relative;
+  .c-text__unit{
+    display: none;
+    position:absolute;
+    top: -28px;
+    left: 0;
+    word-break: keep-all;
+    margin:0;
+    background-color: #fff;
+    color: color(accent);
+    border: color(main) 1px solid;
+    border-radius: 3px;
+    padding: 4px;
+  }
+	&:hover{
+		background-color: #EAFAFF;
+    .c-text__unit{
+      display: block;
+      z-index:1;
+    }
+	}
+	&:after{
+    margin:0;
+    content: '';
+		position:absolute;top:50%;right:4px;transform:translate(0,-50%);
+		background: url(../image/icon/icon_time.svg) no-repeat center;
+		background-size: cover;
+		display: block;
+		height:20px; width:20px;
+	}
+  input{
+    height: 33px;
+    cursor: pointer;
+    &:hover{
+      background-color: #EAFAFF;
+    }
+  }
+  span[data-clear-picker]{
+    cursor: pointer;
+    position:absolute;
+    font-size:20px;
+    top:-10px;
+    right:4px;
+    color: #888;
+  }
+}
+
+/* チェックボックス/ラジオボタン */
+.c-checkbox, .c-radio {
+  width: 100%;
+  display: -webkit-flex; display: flex;
+  -webkit-flex-wrap: wrap; flex-wrap: wrap;
+  -webkit-align-items: center; align-items: center;
+  position: relative;
+  input + label {
+    color: #000;
+    position: relative;
+    padding: 0 0 0 26px;
+    height: 32px;
+    display: -webkit-flex; display: flex;
+    -webkit-align-items: center; align-items: center;
+    font-size: 13px;
+    line-height: 1;
+    cursor: pointer;
+    &:before{
+      content: "";
+      width: 28px;
+      height: 28px;
+      display: block;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      position: absolute;
+      top: 50%;
+      left: 2px;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+  }
+}
+.c-checkbox{
+  label{
+    &:after{
+      content: "";
+      width: 18px;
+      height: 11px;
+      position: absolute;
+      display: none;
+      top: 8px;
+      left: 7px;
+      border-left: solid 4px map-get($colors, accent);
+      border-bottom: solid 4px map-get($colors, accent);
+      transform: rotate(-45deg);
+    }
+  }
+}
+.c-radio{
+  input{
+    + label{
+      &:before{
+        border-radius: 50%;
+        height:20px;
+        width:20px;
+      }
+    }
+  }
+}
+
+/* ラベルがない場合 */
+.c-checkbox .label-none {
+  padding: 0 0 0 16px; /* boxの幅分 */margin:0 auto;
+}
+
+
+/* ラジオボタンのデザイン */
+.c-radio {
+  input{
+    +label{
+      &:after{
+        content: "";
+        width: 10px;
+        height: 10px;
+        left:7px;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        background: #0a9dff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-transform:scale(.5) translateY(-50%);
+        transform:scale(.5) translateY(-50%);
+        -webkit-transform-origin: 50% 0%;
+        transform-origin: 50% 0%;
+        display: none;
+      }
+    }
+  }
+}
+/* 選択時の指定 */
+input[type=checkbox]:checked + label::after,
+input[type=radio]:checked + label::after { display: block;}
+/* 横並び時用 */
+input[type="checkbox"] + label,
+input[type="radio"] + label{
+  margin-right: 16px;
+}
+.c-checkbox.single input[type="checkbox"] + label{
+  padding: 9px;
+  margin: auto;
+  display: block;
+}
+/* プレイスホルダー */
+input::-webkit-input-placeholder { color: #c7deeb;line-height: normal;}
+input:-ms-input-placeholder { color: #c7deeb;line-height: normal;}
+input::-moz-placeholder { color: #c7deeb;line-height: normal;}
+textarea::-webkit-input-placeholder { color: #c7deeb;line-height: normal;}
+
+// スイッチ式ラジオボタン
+
+.switch{
+  display: flex;
+  &.c-radio{
+    input[type="radio"] + label{
+      margin: 0;
+      font-size:14px;
+      font-weight:500;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.5em;
+      padding: 0;
+      border:1px solid #000;
+      width: 50%;
+      border-radius: 3px 0 0 3px;
+      &:before, &:after{
+        display: none;
+      }
+      + input + label{
+        border-radius: 0 3px 3px 0;
+      }
+    }
+    input[type=radio]:checked + label{
+      background-color: #000;
+      color: #fff;
+      &:before{
+        content: none;
+      }
+      &:after{
+        display: none;
+      }
+    }
+  }
+}
+// エラーメッセージ
+.c-text__error,.error{
+  padding: 3px 10px;
+  background-color: #fff;
+  border:#D92B89 1px solid;
+  color: #D92B89 !important;
+  font-size: 12px;
+  margin-top: 5px;
+  display: inline-block;
+}

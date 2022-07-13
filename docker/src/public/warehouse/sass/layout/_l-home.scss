@@ -1,0 +1,14 @@
+@charset "UTF-8";
+.l-admin{
+    a.c-alert{
+        margin-left: 0;
+        display: block;
+        background-color: #fff;
+        &:hover{
+            background-color: #f1e4eb;
+        }
+        p{
+            text-align: left;
+        }
+    }
+}

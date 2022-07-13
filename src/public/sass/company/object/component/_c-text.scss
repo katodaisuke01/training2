@@ -1,0 +1,19 @@
+@charset "UTF-8";
+// ニューモーフィズム 打ち消し
+.c-text{
+  &__display{
+    position:absolute;
+    top:0;
+    left:0;
+    font-size: 160px;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: rgba($color: #000000, $alpha: .08);
+    @include responsive (tablet){
+      font-size: 110px;
+    }
+    @include responsive (spWide){
+      font-size: 90px;
+    }
+  }
+}

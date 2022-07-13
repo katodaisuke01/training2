@@ -1,0 +1,184 @@
+@charset "UTF-8";
+.p-index{
+    width: 100%;
+    &__head{
+        margin-bottom: 16px;
+        display: flex; flex-wrap:wrap;
+        align-items: center;
+        p{
+            line-height: 1;
+            &.c-title{
+                display: flex;
+                flex-wrap:wrap;
+                align-items: center;
+            }
+        }
+    }
+    &__body{
+        .p-list{
+            &__split2{
+                margin: -8px;
+                @include responsive (tablet){
+                    flex-direction: column;
+                }
+                >li{
+                    padding: 8px;
+                    &[data-href]{
+                        &:hover{
+                            >.c-box{
+                                box-shadow: 0px 3px 6px rgba(0, 127, 28, .3);
+                                transform: translateY(4px);
+                            }
+                        }
+                    }
+                    @include responsive (tablet){
+                        width: 100%;
+                        flex: 1 1 auto;
+                    }
+                    .c-image__wide{
+                        margin-top: 4px;
+                    }
+                }
+            }
+            &__wrap{
+                margin:-4px -8px;
+                >li{
+                    padding: 4px 8px;
+                }
+            }
+        }
+    }
+}
+
+.l-home{
+    .p-index{
+        &__head{
+            margin-bottom: 32px;
+        }
+        &__body{
+            .p-list{
+                margin:-16px 0;
+                >li{
+                    padding: 16px 0;
+                    &[data-href]{
+                        &:hover{
+                            >.c-box{
+                                box-shadow: 0px 3px 6px rgba(0, 127, 28, .3);
+                                transform: translateY(4px);
+                            }
+                        }
+                    }
+                    .c-box{
+                        width: 100%;
+                        border-radius: 8px;
+                        .c-box{
+                            width: inherit;
+                            margin-top: -36px;
+                            padding: 8px;
+                            .c-image__wide{
+                                width: 200px;
+                            }
+                        }
+                        &__body{
+                            display: flex;
+                            align-items: center;
+                            @include responsive (spWide){
+                                flex-direction: column;
+                            }
+                            .c-text__lv1{
+                                line-height: 1;
+                            }
+                            .c-text{
+                                width: 100%;
+                                margin-left: 24px;
+                                display: flex; flex-wrap:wrap;
+                                @include responsive (spWide){
+                                    margin: 16px 0 0;
+                                }
+                                .title {
+                                    display: flex;
+                                    align-items: center;
+                                    letter-spacing: .1em;
+                                    @include responsive (pcWide){
+                                        font-size: 40px;
+                                    }
+                                    @include responsive (pc){
+                                        font-size: 32px;
+                                        letter-spacing: 0;
+                                    }
+                                    @include responsive (sp){
+                                        font-size: 28px;
+                                        letter-spacing: 0;
+                                    }
+                                    &:before{
+                                        content: '';
+                                        display: block;
+                                        background-size: cover !important;
+                                        height:48px;
+                                        width:48px;
+                                        border-radius: 50%;
+                                        margin-right: 8px;
+                                        @include responsive (sp){
+                                            height:32px;
+                                            width:32px;
+                                        }
+                                    }
+                                }
+                                .c-right{
+                                    .c-text__unit{
+                                        margin-right: 8px;
+                                    }
+                                    .c-text__lv1{
+                                        .c-text__lv4{
+                                            margin-left: 8px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &.pickup{
+                        .c-image__wide{
+                            background-image: url(../image/image/img_pickup.png);
+                        }
+                        .title {
+                            &:before{
+                                background: color(main) url(../image/icon/top/ico_box_white.svg) no-repeat center;
+                            }
+                        }
+                    }
+                    &.item{
+                        .c-image__wide{
+                            background-image: url(../image/image/img_list_checking.png);
+                        }
+                        .title {
+                            &:before{
+                                background: color(main) url(../image/icon/top/ico_item_white.svg) no-repeat center;
+                            }
+                        }
+                    }
+                    &.order{
+                        .c-image__wide{
+                            background-image: url(../image/image/img_buy.svg);
+                        }
+                        .title {
+                            &:before{
+                                background: color(main) url(../image/icon/top/ico_list_white.svg) no-repeat center;
+                            }
+                        }
+                    }
+                    &.checkin{
+                        .c-image__wide{
+                            background-image:url(../image/image/img_checkin.png);
+                        }
+                        .title {
+                            &:before{
+                                background: color(main) url(../image/icon/top/ico_checkin_white.svg) no-repeat center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

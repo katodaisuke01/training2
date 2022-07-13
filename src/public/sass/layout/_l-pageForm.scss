@@ -1,0 +1,237 @@
+@charset "UTF-8";
+// フォームページ
+.l-form{
+  .l-frame{
+    max-width:700px;
+    .p-frame{
+      &__head{
+        margin-bottom: 40px;
+      }
+      &__body{
+        .p-form{
+          &__foot{
+            margin-top: 40px;
+          }
+        }
+      }
+      &__foot{
+        margin-top: 40px;
+      }
+    }
+    .p-list__row{
+      >li{
+        padding:0 0 32px;
+        +li{
+        margin-top:0;
+        padding: 32px 0;
+        }
+        .head{
+          min-width: 160px;
+          margin:0;
+        }
+        .body{
+          flex: 1 1 auto;
+        }
+        @include responsive (tablet){
+          padding:0 0 16px;
+          flex-direction: column;
+          align-items: flex-start;
+          +li{
+            padding: 16px 0;
+          }
+          .head{
+            margin:0 0 8px;
+          }
+        }
+      }
+    }
+    .p-info{
+      margin-bottom:24px;
+      .l{
+        margin:0;
+        >div{
+          padding:8px;
+          align-items:center;
+        }
+      }
+      &__head{
+        display:flex; flex-wrap:wrap;
+        align-items:center;
+        justify-content:center;
+        margin-bottom:16px;
+        .c-circle {
+          height:160px; width:160px;
+          border-radius:50%;
+          display:flex;
+          flex-direction:column;
+          align-items:center;
+          .c-image__circle,.c-image__square{
+            width:80px;
+            margin: 16px auto 4px;
+          }
+          .c-image__square{
+            background-size:contain;
+          }
+        }
+        .c-icon--cross{
+          margin:0 8px;
+        }
+      }
+      .message{
+        white-space:pre-line;        
+      }
+      &__body{
+        .p-list__tag{
+          display:flex; flex-wrap:wrap;
+          align-items:center;
+          margin:-2px;
+          >li{
+            padding:2px;
+          }
+        }
+      }
+      .c-border--top{
+        border-top:color(accent) 1px solid;
+        margin-top:24px;
+      }
+      &__foot{
+        margin-top:24px;
+        .p-list{
+          margin:0;
+          >li{
+            padding:8px 16px;
+            &.user{.c-box__body{background-color:#fff;}}
+            &.company{.c-box__body{background-color:#ffe4cf;}}
+            .c-box{
+              &__head{
+                margin-bottom:8px;
+              }
+              &__body{
+                padding:16px;
+                border-radius:8px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .p-list{
+    &__job--pic{
+      >li{
+        width: 33.333%;
+        .c-input--file{
+          input{
+            +label{
+              position:relative;
+              &:after{
+                content: '画像1';
+                background-color: #fff;
+                font-size: 11px;
+                padding: 1px 4px;
+                border-radius:3px;
+                position:absolute;top:4px;left:4px;
+              }
+            }
+            &#top_2{
+              +label{
+                &:after{
+                  content: '画像2';
+                }
+              }
+            }
+            &#top_3{
+              +label{
+                &:after{
+                  content: '画像3';
+                }
+              }
+            }
+            &#top_4{
+              +label{
+                &:after{
+                  content: '画像4';
+                }
+              }
+            }
+            &#top_5{
+              +label{
+                &:after{
+                  content: '画像5';
+                }
+              }
+            }
+          }
+        }
+        .c-button{
+          &__square{
+            height:100%; width:100%;
+            border: 1px solid color(main);
+            color: color(main);
+            background-color: #fff;
+            display:flex;
+            flex-direction: column;
+            border-radius:4px;
+            align-items:center;
+            justify-content:center;
+            transition: all 0.2s ease;
+            text-align: center;
+            &:hover{
+              background-color: color(main);
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.p-form{
+  &__head{
+    margin-bottom:24px;
+  }
+  &__body{
+    .p-list__history{
+      counter-reset: number 0;
+      >li{
+        .p-list__wrap{
+          padding: 0 0 0 44px;
+          position: relative;
+          &:before{
+            counter-increment: number 1;
+            content: counter(number) " ";
+            font-size: 32px;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            border: #EF6500 1px solid;
+            color: #EF6500;
+            text-align: center;
+            font-style: italic;
+            font-family: 'sabon',serif;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 6px 0 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+        border-bottom:1px solid color(accent);
+        margin-bottom:24px;
+        padding-bottom:24px;
+        +li.history{
+          &:nth-of-type(2){border-top:none}
+          .c-icon--minus{
+            margin:24px auto 0;
+          }
+        }
+      }
+    }
+  }
+  &__foot{
+    margin-top:24px;
+  }
+}

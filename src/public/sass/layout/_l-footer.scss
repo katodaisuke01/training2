@@ -1,0 +1,17 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+- フッターレイアウト
+-------------------------------------------------- */
+.l-footer {
+  width:100%;
+  .p-footer{
+    padding:4px 8px;
+    &__body{
+      .c-copyright{
+        font-size: 11px;
+        text-align: right;
+        color: #888;
+      }
+    }
+  }
+}

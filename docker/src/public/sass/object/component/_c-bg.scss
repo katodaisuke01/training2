@@ -1,0 +1,16 @@
+@charset "UTF-8";
+//アンダーライン付きタイトルエリア
+.l-bg{
+  &__gray{
+    padding:8px;
+    background-color: color(bgGray);
+  }
+  &__deep{
+    padding:8px;
+    background-color: color(bgDeep);
+  }
+  &__light{
+    padding:8px;
+    background-color: color(bgLight);
+  }
+}

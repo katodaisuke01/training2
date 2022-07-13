@@ -1,0 +1,49 @@
+@charset "UTF-8";
+.l-frame{
+  padding:0 24px;
+  margin: 40px 0 0 0;
+  @include responsive (tablet){
+    margin:24px 0 0 0;
+    padding:0 16px;
+  }
+  .p-frame{
+    &__head{
+      align-items: center;
+      margin-bottom: 32px;
+      @include responsive (tablet){
+        margin-bottom: 24;
+      }
+      .l{
+        margin:0 0 24px;
+        @include responsive (tablet){
+          margin-bottom: 0;
+        }
+        &.p-profile__user{
+          >div{
+            padding:0;
+            @include responsive (tablet){
+              padding-bottom: 8px;
+            }
+            &.l-auto{
+              margin-left:-4px;
+              @include responsive (tablet){
+                margin:0;
+              }
+              .c-box{
+                border-radius:0 8px 8px 0;
+                @include responsive (tablet){
+                  border-radius:8px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .c-image__vertical{
+      @include responsive (tablet){
+        width: 200px;
+      }
+    }
+  }
+}

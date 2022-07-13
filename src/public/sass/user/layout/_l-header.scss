@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/* ! ==================================================
+- ヘッダー
+================================================== */
+.l-home{
+	.l-header {
+		height: 350px;
+		@include responsive (note){
+			height:auto;
+			.c-logoArea{
+				margin-top: 16px;
+			}
+		}
+	}
+}

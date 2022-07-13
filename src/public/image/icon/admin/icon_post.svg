@@ -1,0 +1,14 @@
+<svg id="icon_post_white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="グループ_4180" data-name="グループ 4180">
+    <rect id="長方形_14832" data-name="長方形 14832" width="24" height="24" fill="none"/>
+  </g>
+  <g id="グループ_4182" data-name="グループ 4182">
+    <g id="グループ_4181" data-name="グループ 4181">
+      <path id="パス_1708" data-name="パス 1708" d="M17,19.22H5V7h7V5H5A2.006,2.006,0,0,0,3,7V19a2.006,2.006,0,0,0,2,2H17a2.006,2.006,0,0,0,2-2V12H17Z" fill="#ff6c22"/>
+      <path id="パス_1709" data-name="パス 1709" d="M19,2H17V5H14c.01.01,0,2,0,2h3V9.99c.01.01,2,0,2,0V7h3V5H19Z" fill="#ff6c22"/>
+      <rect id="長方形_14833" data-name="長方形 14833" width="8" height="2" transform="translate(7 9)" fill="#ff6c22"/>
+      <path id="パス_1710" data-name="パス 1710" d="M7,12v2h8V12H7Z" fill="#ff6c22"/>
+      <rect id="長方形_14834" data-name="長方形 14834" width="8" height="2" transform="translate(7 15)" fill="#ff6c22"/>
+    </g>
+  </g>
+</svg>

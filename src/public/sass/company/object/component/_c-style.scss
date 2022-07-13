@@ -1,0 +1,19 @@
+@charset "UTF-8";
+// ニューモーフィズム 打ち消し
+.c-bulge{
+  background-color:#fff;
+  box-shadow: none;
+  padding: 20px;
+  border-radius: 16px;
+  flex: auto;
+}
+.c-concave{
+  background-color:#fff;
+  box-shadow: none;
+  padding:20px;
+  flex: auto;
+  border-radius: 16px;
+  @include responsive (spWide){
+    padding: 12px;
+  }
+}

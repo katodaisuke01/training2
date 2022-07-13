@@ -1,0 +1,227 @@
+@charset "UTF-8";
+/* ! ==================================================
+
+- ボタン
+
+================================================== */
+.title{
+    color: color(title);
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1em;
+    letter-spacing: .03em;
+    text-align: left;
+}
+.c-text,
+%c-text {
+  &__lv1 {
+    color: color(title);
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 1.45833em;
+    letter-spacing: 0;
+  }
+  &__lv2 {
+    color: color(title);
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.5em;
+    letter-spacing: .04em;
+  }
+  &__lv3 {
+    color: color(title);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.45833em;
+    letter-spacing: .03em;
+  }
+  &__lv4 {
+    color: color(title);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.5em;
+    letter-spacing: .04em;
+  }
+  &__lv5 {
+    $lv5: #{&};
+    color: color(title);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5em;
+    letter-spacing: .04em;
+    &--base {
+      @extend #{$lv5};
+      color: color(base);
+      font-weight: 400;
+    }
+  }
+  &__lv6 {
+    color: color(title);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1.45455em;
+    letter-spacing: .04em;  
+  }
+  &__lv7 {
+    color: color(title);
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.45455em;
+    letter-spacing: .04em;  
+  }
+  &__sub {
+    color: color(base);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5em;
+    letter-spacing: .04em;
+  }
+  &__note {
+    color: color(title);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.45455em;
+    letter-spacing: 0;
+    display: inline-block;
+  }
+  &__unit {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1em;
+    margin: 0 2px;
+    letter-spacing: 0;
+    display: inline-block;
+    color: #555;
+  }
+  &__min{
+    font-size: 11px;
+    letter-spacing: 0;
+    display: inline-block;
+    color: #555;
+  }
+  &__label--head{
+    color: #9e9fa9;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1em;
+  }
+  // 注意書き
+  &__caution{
+    color:#EB7091;
+    margin:0 4px;
+  }
+  &__main {
+    color: color(main);
+  }
+  &__accent {
+    color: color(accent);
+  }
+  &__user {
+    color: color(user);
+  }
+  &__deep {
+    color: color(deep);
+  }
+  &__gray {
+    color: color(aaa);
+  }
+  &__red {
+    color: color(alert);
+  }
+  &__green {
+    color: color(ok);
+  }
+  &__alert {
+    color: #FF5C8E;
+  }
+  &__weight--700 {
+    font-weight: 700;
+  }
+  &__weight--900 {
+    font-weight: 900;
+  }
+  &__letter--none {
+    letter-spacing: 0;
+  }
+  &--right {
+    text-align: right;
+  }
+  &--center {
+    text-align: center;
+  }
+  &--ellipsis {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+.c-number__insurance{
+  margin-top: -4px;
+  display: block;
+}
+// アラート分
+.c-alert{
+  margin-left: 12px;
+  padding: 2px 4px 0;
+  border: #D92B89 1px solid;
+  p{
+    color:#D92B89;
+    font-size: 15px;
+    text-align: center;
+  }
+}
+
+// 擬似要素
+[data-before]{
+  &:before{
+    content: attr(data-before) '';
+    font-size: 0.6em;
+    font-weight: 500;
+  }
+}
+[data-after]{
+  &:after{
+    content: attr(data-after) '';
+    font-size: 0.6em;
+    font-weight: 500;
+  }
+}
+.label,p{
+  &.stage1{
+    &:before{
+      content: '';
+      display: inline-block;
+      height:10px;width:10px;
+      border-radius: 50%;
+      border: #fff 2px solid;
+      background-color: #DB0016;
+      box-shadow: 0px 3px 6px rgba(0, 196, 226, .3);
+      margin-right: 4px;
+    }
+  }
+  &.stage2{
+    &:before{
+      content: '';
+      display: inline-block;
+      height:10px;width:10px;
+      border-radius: 50%;
+      border: #fff 2px solid;
+      background-color: #00B025;
+      box-shadow: 0px 3px 6px rgba(0, 196, 226, .3);
+      margin-right: 4px;
+    }
+  }
+  &.stage3{
+    &:before{
+      content: '';
+      display: inline-block;
+      height:10px;width:10px;
+      border-radius: 50%;
+      border: #fff 2px solid;
+      background-color: #888;
+      box-shadow: 0px 3px 6px rgba(0, 196, 226, .3);
+      margin-right: 4px;
+    }
+  }
+}

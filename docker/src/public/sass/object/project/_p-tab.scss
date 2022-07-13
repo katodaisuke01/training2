@@ -1,0 +1,51 @@
+@charset "UTF-8";
+// jsなしのタブ切り替え表現
+
+// <div class="p-tab">
+// <input id="TAB-01" type="radio" name="TAB" checked="checked" />
+// <label class="p-tab__label" for="TAB-01">タブ1</label>
+// <div class="p-tab__content">
+//    コンテンツ 1
+// </div>
+// <input id="TAB-02" type="radio" name="TAB" />
+// <label class="p-tab__label" for="TAB-02">タブ2</label>
+// <div class="p-tab__content">
+//    コンテンツ 2
+// </div>
+// </div>
+.p-tab {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  &__label {
+    color: color(main);
+    font-weight:600;
+    border-bottom: transparent 3px solid;
+    margin:0 !important;
+    margin-right: 5px;
+    padding: 3px 12px;
+    order:-1;
+    border-radius: 3px 3px 0 0;
+    cursor: pointer;
+    &:hover{
+      color: color(main);
+    }
+  }
+  &__content {
+    border-top: color(main) 1px solid;
+    width: 100%;
+    display: none;
+  }
+  input {
+    // display: none;
+    +.p-tab__content {
+      margin: 0;
+    }
+     &:checked+.p-tab__label {
+      border-bottom: color(main) 3px solid;
+      +.p-tab__content {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,240 @@
+@charset "UTF-8";
+/* ! ==================================================
+- ヘッダー
+================================================== */
+.l-header {
+	width: 100%;
+	background:url(../image/bg/bg_view.jpg) no-repeat center;
+	background-size:cover;
+	padding:8px 24px;
+	@include responsive (tablet){
+		padding:8px 16px;
+	}
+	@include responsive (sp){
+		padding:8px;
+	}
+	.c-logoArea{
+		display:flex; 
+		flex-direction:column;
+		align-items:center;
+		justify-content:center;
+		margin-top:32px;
+		@include responsive (tablet){
+			margin-top:16px;
+		}
+		.c-tagline{
+			max-width:800px;
+			width:100%;display:block;
+		}
+		.c-logo{
+			max-width:240px;
+			width:100%;display:block;
+			@include responsive (tablet){
+				max-width:160px;
+			}
+		}
+	}
+	.c-buttonArea__end{
+		.c-button__min{
+			display:block;
+			font-size:16px;
+			text-align:center;
+			height:auto;
+			@include responsive (tablet){
+				background-color: rgba(0,0,0,.5);
+			}
+			span{
+				font-size:10px;
+				font-weight:500;
+			}
+		}
+	}
+	.c-header__navi{
+		position: relative;
+		display:flex; flex-wrap:wrap;
+		align-items:center;
+		.c-logo{
+			display:flex;
+			align-items:center;
+			img{
+				transition: all 0.2s ease;
+				height:50px;
+			}
+			.c-text__min{
+				color:#fff;
+				margin-left:8px;
+			}
+		}
+	}
+	h1{
+		font-size:0;
+		opacity: 0;
+	}
+	.c-text__lv2{
+		letter-spacing: .1em;
+		color: #fff;
+		margin-top: 16px;
+	}
+	.c-icon{
+		&--message{
+			background-image: url(../image/icon/icon_message_white.svg);
+		}
+		&--bell{
+			background-image: url(../image/icon/icon_bell_white.svg);
+		}
+		&--star{
+			background-image: url(../image/icon/icon_star_white_line.svg);
+		}
+	}
+	.c-input{
+		&--search{
+			input{
+				padding:0 32px 0 12px;
+				width: 200px;
+				font-size: 13px;
+				border:1px solid #fff;
+				background-color: rgba(255,255,255,.5);
+				height: 30px;
+				border-radius:15px;
+			}
+			&:after{
+				background: url(../image/icon/icon_search_white.svg) no-repeat center;
+				background-size:cover;
+				height:24px; width:24px;
+				position:absolute;top:50%;right:8px;transform:translate(0,-50%);
+				display:block;
+				content: '';
+			}
+		}
+	}
+	nav{
+		ul{
+			margin:0;
+			align-items:center;
+			li{
+				padding:0 8px;
+				&.c-watch{
+					position:relative;
+					&:after{
+						content: '';
+						display:block;
+						height:12px; width:12px;
+						border-radius:50%;
+						background-color: color(main);
+						position:absolute;
+						top:0;
+						left:4px;
+						@include responsive (spWide){
+							content: '未読あり';
+							display:block;
+							height:inherit; width:inherit;
+							border-radius:4px;
+							color: color(main);
+							background-color: #fff;
+							padding:0 4px;
+							position:absolute;
+							font-size:11px;
+							top:50%;
+							left: inherit;
+							right: -40px;
+							transform:translateY(-50%)
+						}
+					}
+				}
+			}
+		}
+  }
+}
+// 通常のハンバーガーメニュー
+.nav_toggle{
+	height:40px; 
+	width:40px;
+	border-radius: 4px;
+	display: none;
+	border: #000 1px solid;
+	background-color:rgba(255,255,255,.2);
+	position:relative;
+	transition: all 0.2s ease;
+	z-index: 100;
+	cursor: pointer;
+	span{
+		height:1px; width:30px;
+		background-color: #000;
+		display: block;
+		position:absolute;
+		top:15px;
+		left:50%;
+		transition: all 0.2s ease;
+		transform:translate(-50%,0);
+		+span{
+			top:22px;
+		}
+		&.close{
+			top:50%;
+			transform:translate(-50%,-50%) rotate(45deg);
+			+span{
+				transform:translate(-50%,-50%) rotate(-45deg);
+			}
+		}
+	}
+	@include responsive (spWide){
+		display: block;
+			z-index: 99;
+		&:hover{
+			background-color: #eee;
+			span{
+				width: 20px;
+			}
+		}
+	}
+}
+.l-header {
+	.c-header__navi{
+		.c-right{
+			nav{
+				a{
+					.c-text__lv5{
+						display:none;
+						color: #fff;
+						margin-left: 8px;
+					}
+				}
+				@include responsive (spWide){
+					display: none;
+					position:fixed;top:0;left:0;
+					height:100%; width:100%;
+					background-color: #ef6400db;
+					z-index: 99;
+					transition: all 0.2s ease;
+					.p-list__wrap{
+						flex-direction: column;
+						align-items: flex-start;
+						justify-content:center;
+						height: 100%;
+						width: 250px;
+						margin: 0 auto;
+						>li{
+							padding: 16px;
+							a{
+								.c-text__lv5{
+									display:block;
+								}
+							}
+						}
+					}
+				}
+				@media screen and (min-width:768px) {
+					display: block !important;
+				}
+			}
+		}
+	}
+}
+.l-home{
+	.l-header {
+		height: 350px;
+		@include responsive (tablet){
+			height:auto;
+		}
+	}
+}

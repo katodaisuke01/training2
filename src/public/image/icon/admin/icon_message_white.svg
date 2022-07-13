@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24.001" height="24" viewBox="0 0 24.001 24">
+  <g id="notifications_black_24dp" transform="translate(-1)">
+    <path id="パス_9" data-name="パス 9" d="M0,0H24V24H0Z" transform="translate(1)" fill="none"/>
+    <path id="中マド_1" data-name="中マド 1" d="M12.4,11.2H5.6A5.6,5.6,0,1,1,5.6,0h6.8a5.6,5.6,0,1,1,0,11.2ZM5.772,1.724a3.877,3.877,0,0,0,0,7.753h6.458a3.877,3.877,0,0,0,0-7.753Z" transform="translate(7 8.013)" fill="#fff"/>
+    <path id="中マド_5" data-name="中マド 5" d="M6.372,11.2H5.6A5.6,5.6,0,1,1,5.6,0h6.8A5.607,5.607,0,0,1,18,5.6a5.079,5.079,0,0,1-.507,2.074c-.294.019-.62.029-1,.029-.462,0-.942-.014-1.35-.027.1,0,.183-.007.239-.009l.086,0A3.288,3.288,0,0,0,16.105,5.6a3.881,3.881,0,0,0-3.877-3.876H5.772a3.877,3.877,0,1,0,0,7.753H7.522l.006-.005A16.922,16.922,0,0,1,9.287,8.143a1.927,1.927,0,0,1,.5-.115c-.03.016-.06.033-.1.055L6.372,11.2ZM9.8,8.027v0a6.515,6.515,0,0,1,2.863-.416c.626,0,1.29.024,1.932.047h.025l.53.018C15.106,7.678,11.276,7.812,9.8,8.027Z" transform="translate(1 0.412)" fill="#fff"/>
+    <path id="パス_34" data-name="パス 34" d="M12,17v2.99L9.013,17Z" transform="translate(6.492 2.013)" fill="#fff"/>
+    <path id="パス_285" data-name="パス 285" d="M9.013,17v2.99L12,17Z" transform="translate(-4.713 -5.883)" fill="#fff"/>
+    <circle id="楕円形_2" data-name="楕円形 2" cx="1" cy="1" r="1" transform="translate(11 12.613)" fill="#fff"/>
+    <circle id="楕円形_3" data-name="楕円形 3" cx="1" cy="1" r="1" transform="translate(15 12.613)" fill="#fff"/>
+    <circle id="楕円形_4" data-name="楕円形 4" cx="1" cy="1" r="1" transform="translate(19 12.613)" fill="#fff"/>
+  </g>
+</svg>

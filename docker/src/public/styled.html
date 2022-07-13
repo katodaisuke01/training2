@@ -1,0 +1,293 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+        @font-face {
+            font-family: ipag;
+            font-style: normal;
+            font-weight: normal;
+            src: url('/var/www/html/storage/fonts/ipag.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: ipag;
+            font-style: bold;
+            font-weight: bold;
+            src: url('/var/www/html/storage/fonts/ipag.ttf') format('truetype');
+        }
+        body {
+            font-family: ipag !important;
+        }
+        small{color:#666;font-size:13px}
+        h1{text-align:center}
+        h1,h2,h3,h4{font-weight:bold}
+        ul {
+            list-style: none;
+        }
+        table {width:100%}
+        .p-table tbody p,.p-table tfoot *{text-align:right}
+        .float{
+           float:left;
+           width:50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="p-index__body" id="invoice_for_print">
+        <div class="p-document__head">
+            <h1 class="c-text--center c-text__lv2 c-text__weight--900">販売代金請求書</h1>
+            <p style="position:absolute;top:0;right0;left:inherit"><small>発行日</small>
+            2021/12/24</p>
+        </div>
+        <div style="border-top:#000 2px solid;">
+            <div style="overflow:auto">
+            <div class="float">
+                <h3>— 販売先情報</h3>
+                <ul>
+                    <li>
+                        <p>
+                        <small>受注番号</small>10<br />
+                        <small>事業者名</small>
+                            <span class="c-text__lv3 data c-text__weight--900">KDDI株式会社
+                            <small class="c-text__lv5">御中</small>
+                        <br />
+                        <small>担当</small>山田 太郎<small>様</small><br />
+                            <small>住所</small>
+                                〒1040054
+                                千代田区
+                                飯田橋三丁目10番10号
+                                
+                        <br />
+                            <small>電話番号</small>
+                            08000010001
+                        <br />
+                            <small>メールアドレス</small>
+                            d.tsunemi@w.metroengines.jp
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="float" >
+                <h3>— 産地事業者</h3>
+                <ul>
+                    <li>
+                        <p>
+                            <small>出荷日</small>2021/12/24</span>
+                        <br />
+                            <small>生産事業者</small>株式会社ReBlue
+                        <br />
+                            <small>住所</small>
+                            〒104-0054 徳島県 海部郡海陽町宍喰浦字那佐337番地55
+                        <br />
+                            <small>電話番号</small>
+                            0800-001-0001
+                        <br />
+                            <small>メールアドレス</small>
+                            d.tsunemi@w.metroengines.jp<br />
+                            <small>振込先 —</small><br />
+                            <small>　銀行名</small>徳島信用金庫<br />
+                            <small>　支店名</small>徳島支店<br />
+                            <small>　支店番号</small>000<br />
+                            <small>　口座番号</small>普通 0123456<br />
+                            <small>　徳島漁業協同組合 組合長 山田太郎
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div style="clear:both">
+                <h2 style="border-top:1px solid;clear:both;text-align:right">
+                    <small>ご請求金額</small>
+                    10,400<small>円</small>
+                </h2>
+                <p style="text-align:right"><small>（振込手数料500円）振り込み手数料はご負担願います</small></p>
+            </div>
+        </div>
+        <div class="p-document__foot">
+            <h3 class="c-text__lv5 c-mgb8">— 注文明細</h3>
+            <ul class="p-list__border">
+                                                                    <li style="border-bottom:#ccc 1px solid">
+                        <div class="data">
+                            <p><small>注文日：</small>2021/12/21<br />
+                            <small>商品名：</small>テスト用岩牡蠣<br />
+                            <small>単価：</small>200<small>円/個</small>　
+                            <small>注文数：</small>2<small class="c-text__unit">件</small>　
+                            <small>価格：</small>400<small class="c-text__unit">円</small>　
+                            <small>箱代：</small>300<small class="c-text__unit">円</small>　
+                            <small>箱数：</small>2<small class="c-text__unit">箱</small></p>
+                        </div>
+                    </li>
+                                                    <li style="border-bottom:#ccc 1px solid">
+                        <div class="data">
+                            <p><small>注文日：</small>2021/12/21<br />
+                            <small>商品名：</small>海陽町産岩牡蠣(10個)<br />
+                            <small>単価：</small>2,000<small>円/個</small>　
+                            <small>注文数：</small>1<small class="c-text__unit">件</small>　
+                            <small>価格：</small>2,000<small class="c-text__unit">円</small>　
+                            <small>箱代：</small>300<small class="c-text__unit">円</small>　
+                            <small>箱数：</small>2<small class="c-text__unit">箱</small></p>
+                        </div>
+                    </li>
+                                                    <li style="border-bottom:#ccc 1px solid">
+                        <div class="data">
+                            <p><small>注文日：</small>2021/12/21<br />
+                            <small>商品名：</small>ヤマキ水産× Re:Blue】サンチレンケイ1.5kg／オイスターナイフ（白）付き<br />
+                            <small>単価：</small>3,000<small>円/個</small>　
+                            <small>注文数：</small>1<small class="c-text__unit">件</small>　
+                            <small>価格：</small>3,000<small class="c-text__unit">円</small>　
+                            <small>箱代：</small>300<small class="c-text__unit">円</small>　
+                            <small>箱数：</small>2<small class="c-text__unit">箱</small></p>
+                        </div>
+                    </li>
+                                                    <li style="border-bottom:#ccc 1px solid">
+                        <div class="data">
+                            <p><small>注文日：</small>2021/12/21<br />
+                            <small>商品名：</small>オイスターナイフ（黒）＆軍手セット（開け方ガイド付）<br />
+                            <small>単価：</small>5,000<small>円/個</small>　
+                            <small>注文数：</small>1<small class="c-text__unit">件</small>　
+                            <small>価格：</small>5,000<small class="c-text__unit">円</small>　
+                            <small>箱代：</small>300<small class="c-text__unit">円</small>　
+                            <small>箱数：</small>2<small class="c-text__unit">箱</small></p>
+                        </div>
+                    </li>
+                            </ul>
+            <ul>
+                <li>
+                    <p style="text-align:right"><small>小計：</small>10,400<small class="c-text__lv6">円</small>　　<small>内消費税（10%）</small><span class="c-text__lv6">1,040</span>円</p>
+                </li>
+                <li style="border-top:#000 2px solid;">
+                    <h2 style="text-align:right"><span class="c-text__lv6">合計</span>10,400<span class="c-text__lv6">円</span></h2>
+                </li>
+            </ul>
+        </div>
+        <div class="p-document__foot">
+            <table class="p-table">
+                <caption><p class="c-text__lv5">運送料金明細</p></caption>
+                <thead style="borer-bottom:1px solid;">
+                    <tr>
+                        <th style="width:130px"><p>日付</p></th>
+                        <th style="width:50px"><p>箱数</p></th>
+                        <th style="width:100px"><p>重量</p></th>
+                        <th style="width:100px"><p>配達料</p></th>
+                        <th style="width:100px"><p>取扱量</p></th>
+                        <th style=""><p>運賃合計</p></th>
+                    </tr>
+                </thead>
+                <tbody style="borer-bottom:#000 1px solid;">
+                                        <tr style="borer-bottom:1px solid;">
+                    <td>
+                        <p class="c-text__lv6">2021/12/21</p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">1<small>箱</small></p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">1.5<small>kg</small></p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">100<small>円</small></p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">1,000<small>円</small></p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">1,100<small>円</small></p>
+                    </td>
+                    </tr>
+                                        <tr style="borer-bottom:1px solid;">
+                    <td>
+                        <p class="c-text__lv6">2021/12/21</p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">1<small>箱</small></p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">1.5<small>kg</small></p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">100<small>円</small></p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">1,000<small>円</small></p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">1,100<small>円</small></p>
+                    </td>
+                    </tr>
+                                        <tr style="borer-bottom:1px solid;">
+                    <td>
+                        <p class="c-text__lv6">2021/12/21</p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">1<small>箱</small></p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">1.5<small>kg</small></p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">100<small>円</small></p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">1,000<small>円</small></p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">1,100<small>円</small></p>
+                    </td>
+                    </tr>
+                                        <tr style="borer-bottom:1px solid;">
+                    <td>
+                        <p class="c-text__lv6">2021/12/21</p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">1<small>箱</small></p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">1.5<small>kg</small></p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">100<small>円</small></p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">1,000<small>円</small></p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">1,100<small>円</small></p>
+                    </td>
+                    </tr>
+                                        <tr style="borer-bottom:1px solid;">
+                    <td>
+                        <p class="c-text__lv6">2021/12/21</p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">1<small>箱</small></p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">1.5<small>kg</small></p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">100<small>円</small></p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">1,000<small>円</small></p>
+                    </td>
+                    <td>
+                        <p class="c-text__lv6 c-text--right">1,100<small>円</small></p>
+                    </td>
+                    </tr>
+                                    </tbody>
+                <tfoot>
+                    <tr>
+                    <td></td><td></td><td></td><td></td><td></td>
+                    <td>
+                        <p class="c-text__lv5 c-text--right"><small>小計</small>
+                        5,500<small>円</small></p>
+                        <p class="c-text__lv5 c-text--right"><small>消費税(10%)</small>
+                        550<small>円</small></p>
+                        <h2><small>合計</small>6,550<small>円</small></h2>
+                    </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+@charset "UTF-8";
+/* ! ====================================================================================================
+　■ フラッシュ
+==================================================================================================== */
+.area_flash {
+    padding: 20px;
+    position: fixed;
+    top: 40px;
+    right: 0px;
+    pointer-events: none;
+    &.on{
+      z-index: 100 !important;
+    }
+  }
+  /* ! ==================================================
+  　リスト
+  ================================================== */
+  .list_flash {
+    width: auto;
+    > li {
+      opacity: 0;
+      pointer-events: all;
+      + li {
+        margin: 4px 0 0;
+      }
+      article {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: color(main);
+        box-shadow: 0px 6px 6px 0px rgba(0,0,0,.3);
+        position: relative;
+        border:2px solid #fff;
+        padding:15px 30px;
+        p {
+          font: 600 15px/1.4em 'noto sans japanese',sans-serif;
+          overflow: hidden;
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+        }
+      }
+        /* 個別 */
+      .flash_info article{ border-color: #9dabc3;}
+      .flash_info article:before { background: url(../img/ico/ico_flash/ico_flash_info.svg);}
+      .flash_success article{ border-color: #9dabc3;}
+      .flash_success article:before { background: url(../img/ico/ico_flash/ico_flash_success.svg);}
+      .flash_warning article{ border-color: #F29938;}
+      .flash_warning article:before { background: url(../img/ico/ico_flash/ico_flash_warning.svg);}
+      .flash_error article{ border-color: #c30011;}
+      .flash_error article:before { background: url(../img/ico/ico_flash/ico_flash_error.svg);}
+    }
+      /* ! キーフレーム ============================== */
+    > li{
+      animation: flash 3s ease forwards;
+      &:nth-of-type(2){ animation-delay: .1s;}
+      &:nth-of-type(3){ animation-delay: .2s;}
+      &:nth-of-type(4){ animation-delay: .3s;}
+      &:nth-of-type(5){ animation-delay: .4s;}
+      &:nth-of-type(6){ animation-delay: .5s;}
+      &:nth-of-type(7){ animation-delay: .6s;}
+    }
+    /* クリックして消す場合。 */
+    > .flash_remove {
+      animation: flash_remove .5s ease forwards;
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+  
+  
+  @keyframes flash {
+    0% {
+      opacity: 0;
+      transform: translateX(100%); 
+    }
+    10% {
+      opacity: 1;
+      transform: translate(0); 
+    }
+    89% {
+      opacity: 1;
+      transform: translate(0); 
+    }
+    90% {
+      height: 60px;
+    }
+    100% {
+      transform: translateX(50%); 
+      opacity: 0;
+      height: 0; 
+    }
+  }
+  
+  
+  @keyframes flash_fixed {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes flash_remove {
+    0% {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+    90% {
+      height: 60px;
+    }
+    100% {
+      transform: translateX(-50%);
+      opacity: 0;
+      height: 0;
+    }
+  }
+  
+  

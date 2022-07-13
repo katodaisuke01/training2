@@ -1,0 +1,107 @@
+@charset "UTF-8";
+.l-auth{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    z-index: 0;
+    position:relative;
+    &:before{
+        content:'';
+        display:block;
+        background:url(../image/logo/logo_white.svg) no-repeat center;
+        background-size:cover;
+        position:absolute;
+        top:0;
+        right:0;
+        height:400px; width:800px;
+        @include responsive (note){
+            height:300px; width:600px;
+        }
+        @include responsive (tabletWide){
+            height:200px; width:400px;
+        }
+        @include responsive (spWide){
+            height:100px; width:200px;
+        }
+    }
+    .l-container{
+        display: flex;
+        align-items: center;
+        z-index: 1;
+        .p-auth{
+            width: 100%;
+            &__body{
+                margin:0 auto;
+                max-width:500px;
+                .c-box{
+                    padding:40px;
+                    @include responsive (tablet){
+                        padding:16px 8px;
+                    }
+                    &__head{
+                        display:flex;
+                        align-items:center;
+                        flex-direction: column;
+                        title{
+                            font-size: 40px;
+                            font-style: italic;
+                            text-align: center;
+                        }
+                        .c-text__lv5{
+                            text-align: center;
+                        }
+                    }
+                }
+                form{
+                    .p-list{
+                        >li{
+                            .c-input{
+                                input{
+                                    height: 60px;
+                                    padding: 0 16px;
+                                    @include responsive (spWide){
+                                        height: 45px;
+                                        padding: 0 12px;
+                                    }
+                                }
+                            }
+                            .c-buttonArea__center{
+                                margin:0;
+                                *{
+                                    margin:0;
+                                    +*{
+                                        margin-top:24px;
+                                        @include responsive (tablet){
+                                            margin-top:16px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &__foot{
+                position:absolute;
+                bottom:8px;
+                right: 16px;
+                @include responsive (tablet){
+                    bottom:24px;
+                    right:inherit;
+                    left:50%;
+                    transform: translateX(-50%);
+                    width: 100%;
+                }
+                .c-copyright{
+                    color: #ccc;
+                    font-size: 11px;
+                    text-align: center;
+                    line-height: 1.2em;
+                    @include responsive (tablet){
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

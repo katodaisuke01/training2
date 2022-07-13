@@ -1,0 +1,253 @@
+@charset "UTF-8";
+/* ! ==================================================
+
+- テキスト
+
+================================================== */
+.title{
+    color: color(title);
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1em;
+    letter-spacing: .03em;
+    text-align: left;
+    display: flex; flex-wrap:wrap;
+    align-items: center;
+    span{
+      display: block;
+      margin-right: 4px;
+    }
+    small{
+      margin: 4px 0 0 8px;
+    }
+}
+.c-text,
+%c-text {
+  &__lv1 {
+    color: color(title);
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 1.45833em;
+    letter-spacing: 0;
+  }
+  &__lv2 {
+    color: color(title);
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.5em;
+    letter-spacing: .04em;
+  }
+  &__lv3 {
+    color: color(title);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.45833em;
+    letter-spacing: .03em;
+  }
+  &__lv4 {
+    color: color(title);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5em;
+    letter-spacing: .04em;
+  }
+  &__lv5 {
+    $lv5: #{&};
+    color: color(title);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5em;
+    letter-spacing: .04em;
+    &--base {
+      @extend #{$lv5};
+      color: color(base);
+      font-weight: 400;
+    }
+  }
+  &__lv6 {
+    color: color(title);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1.45455em;
+    letter-spacing: .04em;  
+  }
+  &__lv7 {
+    color: color(title);
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.45455em;
+    letter-spacing: .04em;  
+  }
+  &__sub {
+    color: color(base);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5em;
+    letter-spacing: .04em;
+  }
+  &__note {
+    color: color(title);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.45455em;
+    letter-spacing: 0;
+    display: inline-block;
+  }
+  &__unit {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1em;
+    margin: 0 2px;
+    letter-spacing: 0;
+    display: inline-block;
+    color: #666;
+  }
+  &__label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1em;
+    letter-spacing: 0;
+    display: inline-block;
+    color: #888;
+  }
+  &__main {
+    color: color(main);
+  }
+  &__accent {
+    color: color(accent);
+  }
+  &__gray {
+    color: color(aaa);
+  }
+  &__red {
+    color: color(alert);
+  }
+  &__green {
+    color: color(ok);
+  }
+  &__blue {
+    color: color(main);
+  }
+  &__weight--700 {
+    font-weight: 700;
+  }
+  &__weight--900 {
+    font-weight: 900;
+  }
+  &__letter--none {
+    letter-spacing: 0;
+  }
+  &--center {
+    text-align:center;
+  }
+  &--right {
+    text-align:right;
+  }
+  &--left {
+    text-align:left;
+  }
+  &__min {
+    font-size: 11px;
+    color: #666;
+  }
+}
+.c-number__insurance{
+  display: block;
+}
+// アラート分
+.c-alert{
+  padding:2px 8px 0;
+  border: #D92B89 1px solid;
+  position:relative;
+  p{
+    color:#D92B89;
+    font-size: 15px;
+    text-align: center;
+  }
+  a{
+    z-index: 1;
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    height:100%; width:100%;
+    +p{
+      &:after{
+        content: '';
+        display:block;
+        border-top: 1px solid ;
+        border-right: 1px solid;
+        height:6px;
+        width:6px;
+        transform: rotate(45deg);
+        margin-left: 4px;
+      }
+      &:hover{
+        background-color: transparent;
+      }
+    }
+  }
+}
+// 擬似要素
+[data-before]{
+  &:before{
+    content: attr(data-before) '';
+    font-size: 0.6em;
+    font-weight: 500;
+  }
+}
+[data-after]{
+  &:after{
+    content: attr(data-after) '';
+    font-size: 0.6em;
+    font-weight: 500;
+  }
+}
+.label{
+  &.stage1{
+    &:before{
+      content: '';
+      display: inline-block;
+      height:10px;width:10px;
+      border-radius: 50%;
+      border: #fff 2px solid;
+      background-color: #DB0016;
+      box-shadow: 0px 3px 6px rgba(0, 196, 226, .3);
+      margin-right: 4px;
+    }
+  }
+  &.stage2{
+    &:before{
+      content: '';
+      display: inline-block;
+      height:10px;width:10px;
+      border-radius: 50%;
+      border: #fff 2px solid;
+      background-color: #00B025;
+      box-shadow: 0px 3px 6px rgba(0, 196, 226, .3);
+      margin-right: 4px;
+    }
+  }
+  &.stage3{
+    &:before{
+      content: '';
+      display: inline-block;
+      height:10px;width:10px;
+      border-radius: 50%;
+      border: #fff 2px solid;
+      background-color: color(main);
+      box-shadow: 0px 3px 6px rgba(0, 196, 226, .3);
+      margin-right: 4px;
+    }
+  }
+  // 追加した処理中ステータス
+  &.stage4{
+    &:before{
+      content: '';
+      display: inline-block;
+      height:10px;width:10px;
+      border-radius: 50%;
+      border: #fff 2px solid;
+      background-color: #6594ff;
+      box-shadow: 0px 3px 6px rgba(0, 196, 226, .3);
+      margin-right: 4px;
+    }
+  }
+}

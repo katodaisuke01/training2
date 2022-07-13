@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="グループ_4187" data-name="グループ 4187" transform="translate(11920.249 5107.235)">
+    <g id="長方形_14837" data-name="長方形 14837" transform="translate(-11920.248 -5107.235)" fill="#fff" stroke="#ff9327" stroke-width="3">
+      <rect width="40" height="40" rx="12" stroke="none"/>
+      <rect x="1.5" y="1.5" width="37" height="37" rx="10.5" fill="none"/>
+    </g>
+    <g id="グループ_4185" data-name="グループ 4185" transform="translate(-11913.401 -5100.764)">
+      <path id="star_outline_black_24dp" d="M28.368,11.274l-9.479-.794L15.184,2l-3.7,8.493L2,11.274l7.2,6.059L7.036,26.338l8.148-4.778,8.148,4.778-2.149-9.005Z" transform="translate(-1.848 -1.523)" fill="none" stroke="#ff9300" stroke-width="3"/>
+      <rect id="長方形_14426" data-name="長方形 14426" width="27" height="28" transform="translate(0.153 -0.471)" fill="none"/>
+    </g>
+  </g>
+</svg>

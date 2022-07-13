@@ -1,0 +1,99 @@
+@charset "UTF-8";
+.l-auth{
+    min-height: 100vh;
+    background:url(../image/bg/bg_auth.jpg) no-repeat center;
+    background-size:cover;
+    width: 100vw;
+    overflow: hidden;
+    &:before{
+        content: none;
+    }
+    .l-container{
+        max-width: inherit;
+        background:none;
+        padding: 0;
+        .p-auth{
+            &__body{
+                max-width:inherit;
+                .l-12{
+                    margin:0;
+                    .l-6{
+                        padding: 0;
+                        display: flex;
+                        align-items: center;
+                        height: 100vh;
+                        position:relative;
+                        @include responsive (tablet){
+                            height:inherit;
+                            width: 100vw;
+                            padding: 24px;
+                        }
+                    }
+                }
+                .c-box{
+                    width: 100%;
+                    max-width: 450px;
+                    margin:0 auto;
+                    padding: 40px;
+                    display:flex;
+                    align-items:center;flex-direction: column;
+                    justify-content:center;
+                    @include responsive (tablet){
+                        padding:24px;
+                    }
+                    &__body{
+                        max-width: 400px;
+                    }
+                    form{
+                        .p-list{
+                            >li{
+                                .c-input{
+                                    input{
+                                        border-radius:16px;
+                                        @include responsive (spWide){
+                                            border-radius:14px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .c-logoArea{
+                    width: 100%;
+                    display:flex;
+                    align-items:center;
+                    flex-direction: column;
+                    .c-logo{
+                        width: 240px;
+                        @include responsive (sp){
+                            width: 160px;
+                        }
+                    }
+                    .c-tagline{
+                        max-width: 600px;
+                        width: 100%;
+                        margin:24px 0 16px;
+                        @include responsive (spWide){
+                            margin:8px 0 4px;
+                        }
+                    }
+                }
+            }
+            &__foot{
+                @include responsive (tablet){
+                    padding: 40px 16px 0;
+                    position: static;
+                    transform: inherit;
+                    .c-copyright{
+                        text-align: center;
+                    }
+                }
+                .c-copyright{
+                    text-align: left;
+                    word-break: break-all;
+                }
+            }
+        }
+    }
+}

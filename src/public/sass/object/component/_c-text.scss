@@ -1,0 +1,186 @@
+@charset "UTF-8";
+/* ! ==================================================
+- テキスト
+================================================== */
+.c-text,
+%c-text {
+  &__title {
+    color: color(base);
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 1.45833em;
+    letter-spacing: 0;
+    @include responsive (spWide){
+      font-size: 38px;
+    }
+  }
+  &__lv1 {
+    color: color(base);
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.45833em;
+    letter-spacing: 0;
+    @include responsive (spWide){
+      font-size: 32px;
+    }
+  }
+  &__lv2 {
+    color: color(base);
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.45833em;
+    letter-spacing: .04em;
+    @include responsive (spWide){
+      font-size: 25px;
+    }
+  }
+  &__lv3 {
+    color: color(base);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.45833em;
+    letter-spacing: .03em;
+    @include responsive (spWide){
+      font-size: 16px;
+    }
+  }
+  &__lv4 {
+    color: color(base);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.45833em;
+    letter-spacing: .04em;
+  }
+  &__lv5 {
+    $lv5: #{&};
+    color: color(base);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.45833em;
+    letter-spacing: .04em;
+    &--base {
+      @extend #{$lv5};
+      color: color(base);
+      font-weight: 400;
+    }
+  }
+  &__lv6 {
+    color: color(base);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1.45455em;
+    letter-spacing: .04em;  
+  }
+  &__lv7 {
+    color: color(base);
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.45455em;
+    letter-spacing: .04em;  
+  }
+  &__sub {
+    color: color(base);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5em;
+    letter-spacing: .04em;
+  }
+  &__label {
+    color: color(base);
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.2em;
+    letter-spacing: 0;
+    display: inline-block;
+  }
+  &__note {
+    color: color(base);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.45455em;
+    letter-spacing: 0;
+    display: inline-block;
+  }
+  &__unit {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1em;
+    margin: 0 2px;
+    letter-spacing: 0;
+    display: inline-block;
+    color: #888;
+  }
+  &__min {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 1.2em;
+    color: #444;
+  }
+  &__main {color: color(main);}
+  &__alert {color: color(alert);}
+  &__ok {color: color(ok);}
+  &__read {color:#555;}
+  &__weight--100 {font-weight: 100;}
+  &__weight--200 {font-weight: 200;}
+  &__weight--300 {font-weight: 300;}
+  &__weight--400 {font-weight: 400;}
+  &__weight--700 {font-weight: 700;}
+  &__weight--900 {font-weight: 900;}
+  &__letter--none {letter-spacing: 0;}
+  &--center {text-align: center;}
+  &--right {text-align: right;line-height:1;}
+  &__space--wrap {white-space: pre-wrap;}
+}
+.c-title{
+  display:flex; flex-wrap:wrap;
+  align-items:center;
+}
+.c-italic__en{
+  font-family:'times',serif;
+  font-style: italic;
+}
+// 単位の空き
+.c-unit{
+  &__before{margin-right:4px;}
+  &__after{margin-left:4px;}
+}
+// アラート分
+.c-alert{
+  padding: 5px 10px;
+  border: #D92B89 1px solid;
+  p{
+    color:#D92B89;
+    font-size: 15px;
+    text-align: center;
+  }
+}
+// 擬似要素
+[data-before]{
+  &:before{
+    content: attr(data-before)'';
+    font-size: 0.6em;
+    font-weight: 500;
+  }
+}
+[data-after]{
+  &:after{
+    content: attr(data-after)'';
+    font-size: 0.6em;
+    font-weight: 500;
+  }
+}
+.c-text__year{
+  letter-spacing:0;
+  .male{
+    background-color: #1ea8ff;color:#fff;
+    padding: 0 4px;border-radius:3px;
+  }
+  .female{
+    background-color: #FF57D8;color:#fff;
+    padding: 0 4px;border-radius:3px;
+  }
+  .other{
+    background-color: #888;color:#fff;
+    padding: 0 4px;border-radius:3px;
+  }
+}

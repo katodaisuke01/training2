@@ -1,0 +1,333 @@
+@charset "UTF-8";
+/* ! ==================================================
+- リスト
+================================================== */
+ul{
+  >li{
+    .head{
+      margin-bottom:8px;
+      @include responsive (tablet){
+        margin-bottom:4px;
+      }
+    }
+    .foot{
+      margin-top:8px;
+      @include responsive (tablet){
+        margin-bottom:4px;
+      }
+    }
+    &[data-href]{
+      cursor: pointer;
+      transition: all 0.1s;
+      &:hover{
+        background-color: color(pale);
+      }
+    }
+  }
+}
+.p-list {
+  >li{
+    +li{
+      margin-top:16px;
+      @include responsive (spWide){
+        margin-top:8px;
+      }
+    }
+  }
+  &__row{
+    >li{
+      display: flex; 
+      align-items: center;
+      +li{margin-top:16px;}
+      .head{min-width:200px;margin:0;}
+      .body{flex:auto;}
+      @include responsive (tablet){
+        flex-direction: column;
+        align-items: flex-start;
+        .head{margin:0 0 8px;}
+      }
+    }
+  }
+  &__wrap{
+    display: flex; flex-wrap:wrap;
+    margin: -8px;
+    >li{
+      padding: 8px;
+      .head{margin:0 0 8px;}
+      &.auto{
+        flex:1 1 auto;
+        max-width: 240px;
+      }
+      &.fix-150{
+        flex:0 0 150px;
+        width:150px;
+      }
+      &.fix-140{
+        flex:0 0 140px;
+        width:140px;
+      }
+      &.fix-130{
+        flex:0 0 130px;
+        width:130px;
+      }
+      &.fix-120{
+        flex:0 0 120px;
+        width:120px;
+      }
+    }
+    @include responsive (tablet){
+      margin: -4px;
+      >li{
+        padding: 4px;
+      }
+    }
+  }
+  &__split2{
+    display: flex;flex-wrap:wrap;
+    margin:-8px;
+    >li{
+      padding: 8px;
+      flex: 0 0 50%;
+      width: 50%;
+    }
+    @include responsive (tablet){
+      margin:-4px 0;
+      >li{
+        padding: 4px 0;
+        flex: 1 1 auto;
+        width: 100%;
+      }
+    }
+  }
+  &__split3{
+    display: flex;flex-wrap:wrap;
+    margin:-8px;
+    >li{
+      padding: 8px;
+      flex: 0 0 33.333%;
+      width: 33.333%;
+    }
+    @include responsive (tabletWide){
+      >li{
+        flex: 0 0 50%;
+        width: 50%;
+      }
+    }
+    @include responsive (spWide){
+      margin:-4px 0;
+      >li{
+        padding: 4px 0;
+        flex: 1 1 auto;
+        width: 100%;
+      }
+    }
+  }
+  &__split4{
+    display: flex;flex-wrap:wrap;
+    margin:-8px;
+    >li{
+      padding: 8px;
+      flex: 0 0 25%;
+      width: 25%;
+    }
+    @include responsive (note){
+      >li{
+        flex: 0 0 33.333%;
+        width: 33.333%;
+      }
+    }
+    @include responsive (tabletWide){
+      >li{
+        flex: 0 0 50%;
+        width: 50%;
+      }
+    }
+    @include responsive (spWide){
+      margin:-4px 0;
+      >li{
+        padding: 4px 0;
+        flex: 1 1 auto;
+        width: 100%;
+      }
+    }
+  }
+  &__split5{
+    display: flex;flex-wrap:wrap;
+    margin:-8px;
+    >li{
+      padding: 8px;
+      flex: 0 0 20%;
+      width: 20%;
+    }
+    @include responsive (note){
+      >li{
+        flex: 0 0 25%;
+        width: 25%;
+      }
+    }
+    @include responsive (tabletWide){
+      >li{
+        flex: 0 0 33.333%;
+        width: 33.333%;
+      }
+    }
+    @include responsive (spWide){
+      margin:-4px 0;
+      >li{
+        padding: 4px 0;
+        flex: 0 0 50%;
+        width: 50%;
+      }
+    }
+  }
+  &__border {
+    >li{
+      padding:0 0 8px;
+      +li{
+      border-top:1px solid color(linePale);
+      padding:8px 0;
+      }
+    }
+  }
+  &__column{
+    margin:0;
+    >li{
+      +li{
+        margin-top: 8px;
+      }
+      article{
+        display:flex;
+        align-items:center;
+        padding: 8px 16px;
+        border-radius:8px;
+        border:transparent 1px solid;
+        @include responsive (spWide){
+          flex-direction: column;
+        }
+        &:hover{
+          border:color(main) 1px solid;
+        }
+        .c-image{
+          width: 150px;
+          flex: 0 0 150px;
+          &__logo{
+            width: 100px;
+            flex: 0 0 100px;
+          }
+        }
+        .c-text{
+          flex:auto;
+          width: calc(100% - 148px);
+          margin:0 8px;
+          @include responsive (spWide){
+            width: 100%;
+          }
+          .c-upper{
+            display:flex; flex-wrap:wrap;
+            align-items:center;
+            .c-text__lv5{
+              margin-right: 8px;
+            }
+            .p-list__wrap{
+              align-items:center;
+              li{
+                padding: 4px;
+              }
+            }
+          }
+          .c-border__top{
+            border-top: 1px solid color(main);
+            padding-top: 8px;
+            margin-top: 8px;
+          }
+        }
+        .c-icon--arrow{
+          @include responsive (spWide){
+            display:none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ソートアイコン
+.updown{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  &:hover{
+    opacity: .6;
+  }
+  &:after{
+    content: '';
+    display: block;
+    background: #fff url(../image/icon/icon_updown.svg) no-repeat center;
+    background-size: cover;
+    height: 20px;
+    width: 20px;
+    margin-left: 5px;
+    border:color(main) 1px solid;
+    border-radius: 5px;
+  }
+}
+.updown.change{
+  &:after{
+    transform: rotate(180deg);
+  }
+}
+// ページネーション
+.p-pagination{
+  margin-top: 24px;
+  .p-list__wrap{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin:0 -4px;
+    >li{
+      padding: 0 4px;
+      &.current{
+        *{
+          border-bottom: color(accent) 2px solid;
+        }
+      }
+      >*{
+        display: block;
+        border: color(accent) 1px solid;
+        border-radius: 4px;
+        background-color: #fff;
+        transition: all 0.2s ease;
+        &:hover{
+          background-color: #fff;
+        }
+      }
+      span{
+        border: transparent 1px solid;
+      }
+      &.prev{
+        >*{
+          background-image: url(../image/icon/icon_arrow.svg);
+          transform: rotate(180deg);
+        }
+      }
+      &.next{
+        >*{
+          background-image: url(../image/icon/icon_arrow.svg);
+        }
+      }
+      span,a{
+        padding: 5px;
+        line-height: 1em;
+        text-align: center;
+        font-size:13px;
+        font-weight: 600;
+        color:color(accent);
+      }
+      a:hover{
+        background-color: #eee;
+      }
+    }
+  }
+}

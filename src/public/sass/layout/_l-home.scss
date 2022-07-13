@@ -1,0 +1,24 @@
+@charset "UTF-8";
+.l-home{
+    .p-information{
+        margin:-8px;
+        >div{padding:8px;}
+        margin-bottom: 24px;
+        .c-text__lv4 {
+            margin:4px 0;
+        }
+        .c-button__text{
+            font-size: 12px;
+            border-bottom:1px solid color(main);
+        }
+        .p-list__border{
+            >li{
+                display:flex; flex-wrap:wrap;
+                align-items:center;
+                padding:4px;
+                +li{border-color:#ccc;}
+                p{+p{margin-left: 8px;}}
+            }
+        }
+    }
+}

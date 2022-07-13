@@ -1,0 +1,92 @@
+@charset "UTF-8";
+.c-box{
+    background-color: #fff;
+    border-radius: 5px;
+    padding:20px;
+    width: 100%;
+    @include responsive (br) {
+        padding: 20px 10px;
+    }
+    &__600{
+        @extend .c-box;
+        max-width: 600px;
+        width:100%;
+    }
+    &__head{
+        margin: 0 0 16px;
+    }
+    &__body{
+        .c-text__lv5 {
+            &.name{
+                margin-bottom: 8px;
+            }
+        }
+    }
+    .c-buttonArea__center{
+        margin-top: 10px;
+        .c-button__lineBlack{
+            height: 30px;
+        }
+    }
+}
+.p-scroll{
+    overflow: auto;
+    width: 100%;
+    &.c-box{
+        padding: 10px;
+    }
+    &__yaxis600{
+        overflow: auto;
+        height: 600px;
+        @include responsive (tablet){
+            height: inherit;
+        }
+    }
+    &__yaxis500{
+        overflow: auto;
+        height: 500px;
+        @include responsive (tablet){
+            height: inherit;
+        }
+    }
+    &__yaxis450{
+        overflow: auto;
+        height: 450px;
+        @include responsive (tablet){
+            height: inherit;
+        }
+    }
+    &__yaxis200{
+        overflow: auto;
+        height: 200px;
+    }
+    &__inner{
+        padding: 4px;
+        &--1000{
+            padding: 4px;
+            min-width: 1000px;
+        }
+        &--900{
+            padding: 4px;
+            min-width: 900px;
+        }
+        &--850{
+            padding: 4px;
+            min-width: 850px;
+        }
+        &--500{
+            padding: 4px;
+            min-width: 500px;
+        }
+        @include responsive (tablet){
+            min-width: inherit !important;
+        }
+        .icon_next{
+          background-image: url(../image/icon/icon_arrow.svg);
+          border-radius: 50%;
+          width:20px;
+          display: block;
+          border:map-get($colors, main) 1px solid;
+        }
+    }
+}

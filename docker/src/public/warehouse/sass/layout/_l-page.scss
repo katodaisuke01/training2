@@ -1,0 +1,91 @@
+@charset "UTF-8";
+.page-workflow{
+  padding-bottom: 70px;
+}
+.l-page{
+  .p-order{
+    &__head{
+      display: flex;flex-wrap:wrap;
+      align-items: center;
+      position: relative;
+      // 戻るボタン
+      .c-icon__back{
+        background: #fff url(../image/icon/icon_back.svg) no-repeat center;
+        background-size: cover;
+        display: block;
+        width: 30px;
+        position: absolute;
+        border: color(main) 1px solid;
+        top:0;
+        left: -40px;
+        z-index: 1;
+        &:before{
+          content: '';
+          display: block;
+          padding-top: 100%;
+          width: 100%;
+        }
+      }
+    }
+    &__body{
+      margin-top: 10px;
+      .p-companyInfo{
+        border-radius: 0;
+        .p-list__row{
+          align-items: flex-start;
+          >li{
+            &.add{
+              .label{
+                display: flex;
+                align-items: center;
+                &:after{
+                  display: block;
+                  content: '追加注文';
+                  background-color: color(accent);
+                  color: #fff;
+                  font-size: 11px;
+                  line-height: 1em;
+                  font-weight: 700;
+                  padding:2px 3px;
+                  border-radius: 3px;
+                  margin-left: 4px;
+                }
+              }
+            }
+          }
+        }
+        .data{
+          &:after{
+            content: attr(data-unit) '';
+            color: #444;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 1.5em;
+          }
+        }
+      }
+    }
+    &__foot{
+      margin: 20px 0 0;
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+    }
+  }
+  .p-index{
+    &__600{
+      max-width:600px;
+    }
+    &__body{
+      .p-list{
+        >li{
+          display: flex; flex-wrap:wrap;
+          align-items: center;
+          .head{
+            min-width: 80px;
+          }
+        }
+      }
+    }
+  }
+}

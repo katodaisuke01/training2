@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/* ! ==================================================
+- html/body
+================================================== */
+*{box-sizing:border-box;letter-spacing:.06em;}
+html {
+  min-height: 100vh;
+  display: block;
+}
+body {
+  color:color(base);
+  font-size: 14px;
+  font-family:'Roboto','Noto Sans JP',-apple-system,BlinkMacSystemFont,Helvetica Neue,Segoe UI,Hiragino Kaku Gothic ProN,Hiragino Sans,ヒラギノ角ゴ ProN W3,Arial,メイリオ,Meiryo,sans-serif;
+  font-feature-settings: "palt";
+  background: color(back);
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  min-width:768px;
+  min-height: 100vh;
+  position:relative;
+  animation: fadeIn 3s ease 0s 1 normal;
+  -webkit-animation: fadeIn 3s ease 0s 1 normal;
+}
+/* ! --------------------------------------------------
+- text
+-------------------------------------------------- */
+p {
+  color:color(base);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.34em;
+  text-align: left;
+  word-break: break-word;
+}
+a {  
+  color:color(base);
+  word-break: break-word;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.34em;
+  text-decoration: none;
+  cursor: pointer;
+}
+strong{font-size:1.3em;}
+small{font-size:0.8em;}
+::selection {color: color(accent);}
+form {width: auto;}

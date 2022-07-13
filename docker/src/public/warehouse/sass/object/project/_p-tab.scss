@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+.p-tab__area{
+  display: flex;
+
+  .c-list__tab {
+    display: block;
+    cursor: pointer;
+    >li {
+      position:relative;
+      width: 250px;
+      height: 80px;
+      line-height: 30px;
+      text-align: center;
+      background-color: #C8ECF4;
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .c-text__lv4{
+        color: #afc9da;
+      }
+      &:before{
+        content: '';
+        width: 230px;
+        height: 60px;
+        border: #fff 1px solid;
+        border-radius: 4px;
+        display: block;
+        position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+        opacity:.4;
+        z-index: 1;
+      }
+      // 確認が終わったら
+      &.checked {
+        background-color: #C4E0E6;
+        border: none;
+        overflow: hidden;
+        &:after{
+          content: '';
+          position:absolute;
+          right: -16px;
+          bottom: -16px;
+          background-size: cover;
+          background: url(../image/icon/icon_check_white.svg) no-repeat center;
+          height:90px; width:90px;
+          display: block;
+          opacity: .5;
+          border: #fff 10px solid;
+          border-radius: 50%;
+        }
+        p{
+          color: color(accent);
+        }
+        &.active{
+          background-color: #f2f2f2;
+        }
+      }
+      //
+      &.active {
+        background-color: #fff;
+        border: none;
+        &:before{
+          border: color(user) 2px solid;
+          opacity: 1;
+        }
+        p{
+          color: color(user);
+        }
+      }
+    }
+  }
+  .c-list__content {
+    margin-left: 16px;
+    width: 100%;
+    >li {
+      display: none;
+      transition: all 0.2s;
+      position:relative;
+      &.show{
+        display: block;
+      }
+      &.checked{
+        &:before{
+          content: '';
+          display: block;
+          position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+          height:100%; width:100%;
+          background-color: rgba(255,255,255,0.8);
+          z-index: 1;
+        }
+        &:after{
+          content: '';
+          background: url(../image/icon/icon_check_green.svg) no-repeat center;
+          background-size: cover;
+          height:200px; width:200px;
+          border: color(ok) 10px solid;
+          border-radius:50%;
+          display: block;
+          position:absolute;
+          top: 100px;
+          left: 50%;
+          transform: translate(-50%, 0);
+          z-index: 2;
+        }
+      }
+    }
+  }
+}
+
+// jsなしのタブ切り替え表現
+
+// <div class="p-tab">
+// <input id="TAB-01" type="radio" name="TAB" checked="checked" />
+// <label class="p-tab__label" for="TAB-01">タブ1</label>
+// <div class="p-tab__content">
+//    コンテンツ 1
+// </div>
+// <input id="TAB-02" type="radio" name="TAB" />
+// <label class="p-tab__label" for="TAB-02">タブ2</label>
+// <div class="p-tab__content">
+//    コンテンツ 2
+// </div>
+// </div>
+.p-tab {
+  display: flex;
+  flex-wrap: wrap;
+  &__label {
+    color: #000;
+    border-bottom:transparent 2px solid;
+    margin:0 !important;
+    margin-right: 5px;
+    padding: 3px 12px;
+    order:-1;
+    border-radius: 3px 3px 0 0;
+    cursor: pointer;
+  }
+  &__content {
+    width: 100%;
+    display: none;
+    border-top:#000 1px solid;
+  }
+  input {
+    display: none;
+    +.p-tab__content {
+      margin: 0;
+    }
+     &:checked+.p-tab__label {
+      border-bottom:#000 2px solid;
+      +.p-tab__content {
+        display: block;
+      }
+    }
+  }
+}

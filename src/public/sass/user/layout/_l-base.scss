@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/* ! ==================================================
+- ベースレイアウト[サイドバー、メインを並べるために使用]
+================================================== */
+.l-base {
+  min-height: 100vh;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  flex:auto;
+}
+#l-base{
+    display: none;
+}
+#l-base__loading{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p{
+        color:color(main);
+        font-size: 20px;
+        font-weight:700;
+    }
+}
