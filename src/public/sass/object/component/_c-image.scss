@@ -18,7 +18,7 @@
 	&__wide{
 		@extend .c-image;
 		&:before{
-			padding-top:55%;
+			padding-top:56.18%;
 		}
 	}
 	&__vertical{
@@ -44,9 +44,6 @@
 	&__logo{
     @extend .c-image;
 		background-size:contain;
-		&:before{
-			padding-top:75%;
-		}
 	}
 }
 .c-icon{
@@ -230,6 +227,9 @@
 			background-image: url(../image/icon/icon_minus_white.svg);
 			background-color: color(main);
 		}
+	}
+	&--instagram{
+		background-image: url(../image/icon/icon_instagram.png);
 	}
 }
 .on{display: block !important;}

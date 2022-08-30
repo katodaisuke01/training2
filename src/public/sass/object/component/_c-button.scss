@@ -59,7 +59,6 @@
 %c-button{
 	display:flex;
 	align-items:center;
-	justify-content:center;
 	font-size: 15px;
 	font-weight: 600;
 	letter-spacing: .1em;
@@ -116,14 +115,16 @@
 		max-width: inherit;
 	}
 	&__text{
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 		font-size: 13px;
 		font-weight: 500;
-		border: 1px solid transparent;
 		color: color(main);
 		text-align:center;
 		transition: all 0.1s ease;
+		border: 1px solid;
+    padding: 4px 8px;
+    border-radius: 18px;
 		&:hover{
 			color: color(linePale);
 			.c-icon__arrow{

@@ -184,12 +184,12 @@ ul{
     >li{
       padding:0 0 8px;
       +li{
-      border-top:1px solid color(linePale);
+      border-top:1px solid color(accent);
       padding:8px 0;
       }
     }
   }
-  &__column{
+  &--column{
     margin:0;
     >li{
       +li{

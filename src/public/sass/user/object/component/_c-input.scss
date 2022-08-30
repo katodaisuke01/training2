@@ -28,7 +28,7 @@
   input[type="number"] {
     -moz-appearance:textfield;
   }
-  &__select{
+  &--select{
     select {
       @extend %common;
     }

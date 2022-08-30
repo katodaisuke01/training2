@@ -18,6 +18,7 @@
 <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
 <script src="{{asset('js/library/smooth-scroll.min.js')}}"></script>
 <script src="{{asset('js/library/smooth-scroll.polyfills.min.js')}}"></script>
-<script src="{{asset('js/library/ja.js')}}"></script>
+<!-- <script src="{{asset('js/library/ja.js')}}"></script> -->
 <script src="{{asset('js/library/remodal.min.js')}}"></script>
 <script src="{{asset('js/library/remodal.js')}}"></script>
+<!-- <script src="{{asset('js/library/muuri.min.js')}}"></script> -->

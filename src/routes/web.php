@@ -19,6 +19,13 @@ Route::get('/testmail', function(){
     // routeから作成したメールクラスを呼び出し
     return new App\Mail\professional\ConsultationDateFixed;
   });
+Route::group([
+  'as' => 'project.',
+  'prefix' => 'project'
+], function () {
+    Route::get('/', 'ProjectController@index')->name('index');
+    Route::get('/single', 'ProjectController@single')->name('single');
+});
 /* --------------------------------------------------------------------------
 ユーザー
 --------------------------------------------------------------------------*/

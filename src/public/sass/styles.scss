@@ -1,14 +1,5 @@
 @charset "UTF-8";
 // ==========================================================================
-// ライブラリー
-// ==========================================================================
-@import "library/remodal/remodal-default-theme";
-@import "library/remodal/remodal";
-@import "library/select2.min";
-@import "library/slick";
-@import "library/slick_theme";
-@import "library/luminous-basic.min";
-// ==========================================================================
 // 定義
 // ==========================================================================
 @import "foundation/reset";
@@ -16,6 +7,17 @@
 @import "foundation/variable/v-color";
 @import "common/base";
 @import "common/p-errorPage";
+// ==========================================================================
+// ライブラリー
+// ==========================================================================
+@import "library/remodal/remodal-default-theme";
+@import "library/remodal/remodal";
+@import "library/select2.min";
+@import "library/slick";
+@import "library/lightbox";
+@import "library/slick_theme";
+@import "library/animate";
+@import "library/luminous-basic.min";
 
 // ==========================================================================
 // レイアウト

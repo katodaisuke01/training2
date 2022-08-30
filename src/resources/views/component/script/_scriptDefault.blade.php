@@ -1,4 +1,5 @@
 <script>
+new WOW().init();
 // レスポンシブ メニュー
 //   開く 
 wow = new WOW(
@@ -64,7 +65,7 @@ $('.p-listNavi > li > a').on('click',function(){
 //スムーズスクロール
 $(function(){
   // #で始まるリンクをクリックしたら実行されます
-  $('a[href^="#"].smooth_scroll').click(function() {
+  $('a[href^="#"].c-scroll').click(function() {
     // スクロールの速度
     var speed = 500; // ミリ秒で記述
     var href= $(this).attr("href");
@@ -210,8 +211,20 @@ $(".c-icon__eye").click(function () {
       input.attr("type", "password");
    }
 });
-</script>
-<script>
+
+// スクロールで出現
+$(function() {
+  $(window).scroll(function() {
+    $(".scroll-block").each(function() {
+      var scroll = $(window).scrollTop();
+      var blockPosition = $(this).offset().top;
+      var windowHeihgt = $(window).height();
+      if (scroll > blockPosition - windowHeihgt + 100) {
+        $(this).addClass("blockIn");
+      }
+    });
+  });
+});
   //submitの２度押し禁止
 $(function () {
   $('form').submit(function () {

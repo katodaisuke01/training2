@@ -17,11 +17,6 @@ select{color:color(base);}
 .c-input {
   display:inline-flex;
   position: relative;
-  .c-input {
-    +* {
-      margin-left: 4px;
-    }
-  }
   $c-input: #{&};
   //共通要素
   %common {
@@ -79,8 +74,9 @@ select{color:color(base);}
   &--wrap {@extend #{$c-input};
     display:flex; flex-wrap:wrap;
     align-items: center;
-    >*+*{
-      margin-left: 8px;
+    margin:-4px;
+    >*{
+      padding: 4px;
     }
   }
   &--center {@extend #{$c-input};
@@ -97,7 +93,7 @@ select{color:color(base);}
       margin-left: 8px;
     }
   }
-  &__column{@extend #{$c-input};flex-direction:column;width:100%;}
+  &--column{@extend #{$c-input};flex-direction:column;width:100%;}
   &__600{@extend #{$c-input};width: 600px;
     @include responsive (spWide){width:100%;}
   }
@@ -191,7 +187,7 @@ select{color:color(base);}
     }
   }
   /* セレクトボックス */
-  &__select{
+  &--select{
     @extend #{$c-input};
     display: inline-flex;
     position: relative;
@@ -576,11 +572,8 @@ input[type="checkbox"],input[type="radio"],input[type="file"]{display:none;width
     }
   }
 }
-/* 住所などインプット要素を横に並べる場合 */
-.c-input + .c-input {
-  margin: 0 0 0 4px;
-}/* 住所などインプット要素を縦に並べる場合 */
-.c-input__column > .c-input + .c-input {
+/* 住所などインプット要素を縦に並べる場合 */
+.c-input--column > .c-input + .c-input {
   margin: 4px 0 0;
 }
 

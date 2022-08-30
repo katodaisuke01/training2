@@ -21,7 +21,7 @@
                 <p class="c-text__lv5 c-text__weight--700">応募する求人</p>
               </div>
               <div class="body">
-                <div class="c-input__select">
+                <div class="c-input--select">
                   <select name="">
                     <option>マーケティングディレクター職</option>
                     <option>営業職</option>

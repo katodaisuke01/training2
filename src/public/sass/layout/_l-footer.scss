@@ -4,13 +4,26 @@
 -------------------------------------------------- */
 .l-footer {
   width:100%;
+  padding: 0 24px 24px;
+  @include responsive (spWide){
+    padding: 0;
+  }
   .p-footer{
-    padding:4px 8px;
+    background-color: #000;
+    padding: 40px;
+    @include responsive (spWide){
+      padding:24;
+    }
     &__body{
       .c-copyright{
         font-size: 11px;
         text-align: right;
         color: #888;
+      }
+      img{
+        @include responsive (spWide){
+          margin-bottom:16px;
+        }
       }
     }
   }

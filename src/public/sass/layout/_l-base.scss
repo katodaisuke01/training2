@@ -20,7 +20,7 @@
   display: flex;
   margin: -16px;
   @include responsive (tablet){
-    margin:0;
+    margin: 0;
     flex-direction: column;
   }
   >div{
@@ -29,7 +29,7 @@
     @include responsive (tablet){
       flex: auto;
       width: 100%;
-      padding: 8px 0 0;
+      padding: 0;
       +div{
         margin-top: 8px;
       }
@@ -41,6 +41,10 @@
   .l-half{
     flex: 0 0 50%;
     width: 50%;
+    @include responsive (tablet){
+      flex: auto;
+      width: 100%;
+    }
   }
   .l-fix{
     $i: 5;

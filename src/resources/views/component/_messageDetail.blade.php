@@ -110,13 +110,13 @@
         <article class="c-box">
           <form action="" class="p-form">
             <div class="p-form__body">
-              <div class="c-input__column">
+              <div class="c-input--column">
               <?php
                 $url = $_SERVER['REQUEST_URI'];
                 ?>
                 @if(strstr($url,'company'))
                 <div class="c-input">
-                  <div class="c-input__select c-input__200">
+                  <div class="c-input--select c-input__200">
                     <select name="">
                       <option value="">返信内容を選択</option>
                       <option value="">お礼のご連絡</option>
@@ -126,7 +126,7 @@
                       <option value="">その他のご連絡</option>
                     </select>
                   </div>
-                  <div class="c-input__select c-input__200">
+                  <div class="c-input--select c-input__200">
                     <select name="">
                       <option value="">テンプレートを選択</option>
                       <option value="">テンプレートお礼用</option>
@@ -138,7 +138,7 @@
                 </div>
                 @else
                 <div class="c-input">
-                  <div class="c-input__select c-input__200">
+                  <div class="c-input--select c-input__200">
                     <select name="">
                       <option value="">返信内容を選択</option>
                       <option value="">お礼のご連絡</option>

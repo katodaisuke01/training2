@@ -14,8 +14,6 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'users',
     ],
 
     /*
@@ -35,38 +33,6 @@ return [
     |
     */
 
-    'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'industries',
-        ],
-
-        'industry' => [
-            'driver' => 'session',
-            'provider' => 'industries',
-        ],
-
-        'admin' => [
-            'driver' => 'session',
-            'provider' => 'admins',
-        ],
-
-        'warehouse' => [
-            'driver' => 'session',
-            'provider' => 'warehouses',
-        ],
-
-        'worker' => [
-            'driver' => 'session',
-            'provider' => 'workers',
-        ],
-
-        'solaseed' => [
-            'driver' => 'session',
-            'provider' => 'solaseeds',
-        ],
-    ],
-
     /*
     |--------------------------------------------------------------------------
     | User Providers
@@ -84,33 +50,6 @@ return [
     |
     */
 
-    'providers' => [
-        'industries' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\User::class,
-        ],
-        'admins' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\User::class,
-        ],
-        'warehouses' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Wuser::class,
-        ],
-        'workers' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Wuser::class,
-        ],
-        'solaseeds' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\DeliveryUser::class,
-        ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
-    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -127,42 +66,6 @@ return [
     |
     */
 
-    'passwords' => [
-        'industries' => [
-            'provider' => 'users',
-            'table' => 'password_resets',
-            'expire' => 60,
-            'throttle' => 60,
-        ],
-
-        'admins' => [
-            'provider' => 'admins',
-            'table' => 'password_resets',
-            'expire' => 60,
-            'throttle' => 60,
-        ],
-
-        'warehouses' => [
-            'provider' => 'warehouses',
-            'table' => 'password_resets',
-            'expire' => 60,
-            'throttle' => 60,
-        ],
-
-        'workers' => [
-            'provider' => 'workers',
-            'table' => 'password_resets',
-            'expire' => 60,
-            'throttle' => 60,
-        ],
-
-        'solaseeds' => [
-            'provider' => 'solaseeds',
-            'table' => 'password_resets',
-            'expire' => 60,
-            'throttle' => 60,
-        ],
-    ],
 
     /*
     |--------------------------------------------------------------------------

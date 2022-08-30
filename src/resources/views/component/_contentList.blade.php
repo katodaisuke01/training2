@@ -1,6 +1,6 @@
 <div class="c-box">
   <div class="c-box__body">
-    <ul class="p-list__column">
+    <ul class="p-list--column">
       <li data-href="{{ route('userMessage') }}">
         <article class="bg-fff shadow">
           <div class="c-image" style="background-image:url({{asset('../image/sample/image_1.jpg')}})"></div>

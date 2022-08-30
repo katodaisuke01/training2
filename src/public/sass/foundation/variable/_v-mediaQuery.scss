@@ -9,8 +9,8 @@ $breakPoints: (
   'tabletWide': 'screen and (max-width: 1024px)',
   'tablet': 'screen and (max-width: 820px)',
   'spWide': 'screen and (max-width: 560px)',
-  'sp': 'screen and (max-width: 400px)',
-  'spNarrow': 'screen and (max-width: 350px)'
+  'sp': 'screen and (max-width: 460px)',
+  'spNarrow': 'screen and (max-width: 380px)'
 );
 @mixin responsive($breakPoint) {
   @media #{map-get($breakPoints, $breakPoint)} {

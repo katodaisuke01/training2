@@ -1,5 +1,5 @@
 
-<!-- muuri -->
+<!-- muuri 
 <script>
 $(window).on('load',function(){ //画面遷移時にギャラリーの画像が被らないように、すべての読み込みが終わった後に実行する
 
@@ -70,7 +70,7 @@ function filterDo(){
 }
 
 });
-</script>
+</script>-->
 
 <!-- slick -->
 <script>
@@ -122,13 +122,13 @@ function filterDo(){
   });
 </script>
 
-<!-- lightbox -->
+<!-- lightbox
 <script>
 lightbox.option({
   'resizeDuration': 400,
   'wrapAround': true
 })
-</script>
+</script> -->
 <script>
   $('.datepicker').datepicker({
     dateFormat: 'yy/mm/dd',

@@ -8,7 +8,8 @@
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --cqonfig=node_modules/laravel-mix/setup/webpack.config.js",
-        "search": "npm search --"
+        "search": "npm search --",
+        "sass": "sass --watch sass:css --style compressed"
     },
     "devDependencies": {
         "@babel/cli": "^7.12.1",
