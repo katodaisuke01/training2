@@ -5,6 +5,7 @@
 .l-private {
   background-color: #fff;
   min-width:360px;
+  scroll-behavior: smooth;
   .l-base{
     display:flex;
     align-items:center;
@@ -179,8 +180,30 @@
               box-shadow: 2px 4px 0px rgba(0, 231, 231, 0.9);
               display:block;
               transition: all 0.2s;
+              position:relative;
               &:hover{
                 transform: translateY(4px);
+              }
+              &:after{
+                content: '';
+                display:block;
+                height:40px;
+                width:40px;
+                background:url(../image/icon/icon_finger.svg) no-repeat center;
+                background-size:cover;
+                position:absolute;
+                bottom:0;
+                right:20px;
+                -webkit-animation-timing-function: ease-in-out;
+                animation-timing-function: ease-in-out;
+                -webkit-animation-name: headShake;
+                animation-name: headShake;
+                -webkit-animation-duration: 2s;
+                animation-duration: 2s;
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+                -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
               }
             }
           }
