@@ -9,7 +9,7 @@
       </div>
       <div class="p-modal__body">
         <p class="c-text__lv4 c-text--center">退会してしまうと、あなたの入力したさまざまな情報はすべて削除され、復元できなくなってしまいます。<br />
-もしも転職活動にお疲れなら、プロフィールを一旦「非掲載」とし、転職活動をお休みすることも可能です。</p>
+        本当に退会しますか？</p>
       </div>
       <div class="p-modal__foot">
         <div class="c-buttonArea__center">

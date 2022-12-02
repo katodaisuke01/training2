@@ -20,6 +20,12 @@ Route::get('/testmail', function(){
     return new App\Mail\professional\ConsultationDateFixed;
   });
 Route::group([
+  'as' => '.',
+  'prefix' => ''
+], function () {
+    Route::get('/', 'ProjectController@index')->name('index');
+});
+Route::group([
   'as' => 'project.',
   'prefix' => 'project'
 ], function () {
