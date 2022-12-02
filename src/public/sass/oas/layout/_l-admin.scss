@@ -1,0 +1,56 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+- Adminレイアウト
+-------------------------------------------------- */
+.l-admin {
+  width:100%;
+  position:relative;
+  padding: 24px 24px 24px 186px;
+  flex:1 1 auto;
+  .l-frame{
+    &__head{
+      .c-title{
+        .c-text__lv3{
+          @include responsive (spWide){
+            font-size:20px;
+          }
+        }
+      }
+    }
+  }
+  .l-footer{
+    flex: 0 0 24px;
+    .p-footer{
+      padding:4px 8px;
+      &__body{
+        .c-copyright{
+          font-size: 11px;
+          text-align: right;
+          color: #888;
+        }
+      }
+    }
+  }
+  form{
+    .p-list{
+      >li{
+      }
+      &__wrap{
+        margin:-8px;
+        >li{
+          padding:8px;
+        }
+      }
+      &__border{
+        >li{
+          +li{
+            border-top:1px solid #ccc;
+          }
+        }
+      }
+    }
+    .c-border__top{
+      border-color:#ccc;
+    }
+  }
+}

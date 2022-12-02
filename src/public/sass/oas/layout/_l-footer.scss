@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+- フッターレイアウト
+-------------------------------------------------- */
+.l-footer {
+  width:100%;
+  @include responsive (spWide){
+    padding: 0;
+  }
+  .p-footer{
+    background-color: color(back);
+    padding: 1.5rem 1.5rem 4.5rem;
+    @include responsive (spWide){
+      padding: 1rem 1rem 4.5rem;
+    }
+    &__body{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      img{
+        +img{
+          @include responsive (spWide){
+            margin-top:1rem;
+          }
+        }
+      }
+    }
+    &__foot{
+      margin-top: 4px;
+      .c-text__copyright{
+        font-size: 11px;
+        text-align: right;
+        color: #888;
+      }
+    }
+  }
+}

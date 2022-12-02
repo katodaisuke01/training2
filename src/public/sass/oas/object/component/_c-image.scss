@@ -1,0 +1,236 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+- イメージ
+-------------------------------------------------- */
+.c-image{
+	background-image: url(../image/icon/icon_noimage_white.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 100%;
+	border-radius:2px;
+	&:before{
+		content:'';
+		display:block;
+		width: 100%;
+		padding-top:75%;
+	}
+	&__wide{
+		@extend .c-image;
+		&:before{
+			padding-top:56.18%;
+		}
+	}
+	&__vertical{
+		@extend .c-image;
+		&:before{
+			padding-top:125%;
+		}
+	}
+	&__square{
+    @extend .c-image;
+		&:before{
+			padding-top: 100%;
+		}
+	}
+	&__circle{
+    @extend .c-image;
+		border-radius: 50%;
+		min-width: 30px;
+		&:before{
+			padding-top: 100%;
+		}
+	}
+	&__logo{
+    @extend .c-image;
+		background-size:contain;
+	}
+}
+.c-icon{
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 100%;
+	display:block;
+	border-radius:4px;
+	&:before{
+		content:''; display:block; width: 100%; padding-top: 100%;
+	}
+	&__w12{ @extend .c-icon;width: 12px;}
+	&__w16{ @extend .c-icon;width: 16px;}
+	&__w20{ @extend .c-icon;width: 20px;}
+	&__w24{ @extend .c-icon;width: 24px;}
+	&__w32{ @extend .c-icon;width: 32px;}
+	&__w40{ @extend .c-icon;width: 40px;}
+	&__w48{ @extend .c-icon;width: 48px;}
+	&__w56{ @extend .c-icon;width: 56px;}
+	&__w64{ @extend .c-icon;width: 64px;}
+	&__w72{ @extend .c-icon;width: 72px;}
+	&__square{border-radius:0;}
+	&__circle{border-radius:50%;}
+	&__next{
+		background-image: url(../image/icon/icon_arrow.svg);
+		border: color(accent) 1px solid;
+		border-radius: 50%;
+		background-color: #FAFAFA;
+	}
+	&--back{
+		background-image: url(../image/icon/icon_arrow.svg);
+		background-color:#fff;
+		transform: rotate(180deg);
+		box-shadow: 0px -3px 6px rgba(207,97,0,.15);
+		border: 1px solid color(accent);
+	}
+	&--bell{
+		background-image: url(../image/icon/icon_bell.svg);
+	}
+	&--star{
+		background-image: url(../image/icon/admin/icon_star.svg);
+	}
+	&--layout{
+		background-image: url(../image/icon/admin/icon_layout.svg);
+	}
+	&--user{
+		background-image: url(../image/icon/admin/icon_user.svg);
+	}
+	&--building{
+		background-image: url(../image/icon/admin/icon_building.svg);
+	}
+	&--mail{
+		background-image: url(../image/icon/admin/icon_mail.svg);
+	}
+	&--message{
+		background-image: url(../image/icon/admin/icon_message.svg);
+	}
+	&--post{
+		background-image: url(../image/icon/admin/icon_post.svg);
+	}
+	&--master{
+		background-image: url(../image/icon/admin/icon_master.svg);
+	}
+	&--setting{
+		background-image: url(../image/icon/admin/icon_setting.svg);
+	}
+	&--flag{
+		background-image: url(../image/icon/admin/icon_flag.svg);
+	}
+	&--cross{
+		background-image: url(../image/icon/admin/icon_cross.svg);
+	}
+	&--edit{
+		background-image: url(../image/icon/company/icon_edit.svg);
+	}
+	&--license{
+		background-image: url(../image/icon/company/icon_license.svg);
+	}
+	&--document{
+		background-image: url(../image/icon/company/icon_document.svg);
+	}
+	&--thumbnail{
+		background-image: url(../image/icon/icon_man_white.svg);
+		background-color: #E6A000;
+		border-radius: 50%;
+	}
+	&--heart{
+		background-image: url(../image/icon/icon_heart_gray.svg);
+	}
+	&--heart__line{
+		background-image: url(../image/icon/icon_heart_line.svg);
+	}
+	&--favorite{
+		background-image: url(../image/icon/icon_star_gray.svg);
+		background-color: #fff;
+		cursor: pointer;
+		&.selected{
+			background-image: url(../image/icon/icon_star_white.svg);
+			background-color: #E6A000;
+		}
+	}
+	&--arrow{
+		background-image: url(../image/icon/icon_arrow.svg);
+	}
+	&--arrow__top{
+		background-image: url(../image/icon/icon_arrow.svg);
+		transform: rotate(-90deg);
+	}
+	&--arrow__bottom{
+		background-image: url(../image/icon/icon_arrow.svg);
+		transform: rotate(90deg);
+	}
+	&--arrow__back{
+		background-image: url(../image/icon/icon_arrow.svg);
+		transform: rotate(180deg);
+	}
+	&--arrow__black{
+		background-image: url(../image/icon/icon_arrow_black.svg);
+	}
+	&--star{
+		background-image: url(../image/icon/icon_star.svg);
+	}
+	&--check{
+		background-image: url(../image/icon/icon_check.svg);
+	}
+	&--mail{
+		background-image: url(../image/icon/icon_mail.svg);
+	}
+	&--dl{
+		background-image: url(../image/icon/icon_dl.svg);
+	}
+	&--star__white{
+		background-image: url(../image/icon/icon_star_white.svg);
+	}
+	&--check__white{
+		background-image: url(../image/icon/icon_check_white.svg);
+	}
+	&--mail__white{
+		background-image: url(../image/icon/icon_mail_white.svg);
+	}
+	&--dl__white{
+		background-image: url(../image/icon/icon_dl_white.svg);
+	}
+	&--question{
+		background-image: url(../image/icon/icon_question.svg);
+	}
+	&--question__white{
+		background-image: url(../image/icon/icon_question_white.svg);
+	}
+	&__ok{
+		background-image: url(../image/icon/icon_check_green.svg);
+		width:60px;
+	}
+	&__movable{
+		background-image: url(../image/icon/icon_line.svg);
+		width:16px;
+		cursor: move;
+	}
+	// 新規作成とか用のボタンの装飾
+	&--plus{
+		background-image: url(../image/icon/icon_plus.svg);
+		background-color: transparent;
+		border: color(main) 1px solid;
+		border-radius: 50%;
+		padding: 0;
+		cursor:pointer;
+		&:hover{
+			background-image: url(../image/icon/icon_plus_white.svg);
+			background-color: color(main);
+		}
+	}
+	&--minus{
+		background-image: url(../image/icon/icon_minus.svg);
+		background-color: transparent;
+		border: color(main) 1px solid;
+		border-radius: 50%;
+		padding:0;
+		cursor:pointer;
+		&:hover{
+			background-image: url(../image/icon/icon_minus_white.svg);
+			background-color: color(main);
+		}
+	}
+	&--instagram{
+		background-image: url(../image/icon/icon_instagram.png);
+	}
+}
+.on{display: block !important;}
+.off{display: none !important;}

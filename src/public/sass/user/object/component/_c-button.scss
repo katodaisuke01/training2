@@ -1,9 +1,0 @@
-@charset "UTF-8";
-/* ! --------------------------------------------------
-- ボタン
--------------------------------------------------- */
-%c-button{border-radius:30px !important;}
-.c-button{
-  @extend %c-button;
-  &__lg,&__sm,&__min{@extend %c-button;}
-}

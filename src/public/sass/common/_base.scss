@@ -17,11 +17,23 @@ body {
   display:flex;
   flex-direction:column;
   align-items:center;
-  min-width:768px;
+  min-width:320px;
   min-height: 100vh;
   position:relative;
   animation: fadeIn 3s ease 0s 1 normal;
   -webkit-animation: fadeIn 3s ease 0s 1 normal;
+}
+.win {
+  /* Windows (全バージョン)のみ */
+  body {
+    font-feature-settings: normal;
+  }
+}
+@supports (-ms-ime-align: auto){
+  /* edgeのみ */
+  body {
+    font-feature-settings: normal;
+  }
 }
 /* ! --------------------------------------------------
 - text

@@ -1,0 +1,23 @@
+@charset "UTF-8";
+.p-section{
+    margin-top: 3rem;
+    @include responsive (spWide){
+        margin-top: 5rem;
+    }
+    @include responsive (tabletWide){
+        margin-top: 100px;
+    }
+    &__head{
+        margin-bottom: 1.5rem;
+        @include responsive (spWide){
+            margin-bottom: 2.5rem;
+        }
+    }
+    &__foot{
+        margin-top: 1.5rem;
+        @include responsive (spWide){
+            margin-top: 2.5rem;
+        }
+    }
+}
+

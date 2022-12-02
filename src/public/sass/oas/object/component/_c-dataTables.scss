@@ -1,0 +1,188 @@
+@charset "UTF-8";
+// データテーブルの使用
+.dataTables_wrapper {
+  position:relative;
+  .dataTables_filter{
+    position: absolute;
+    top:-48px;
+    left: 0;
+    text-align: left;
+    @include responsive (tabletWide){
+      position:static;
+      top:0;
+      left:0;
+      margin:0 0 8px;
+    }
+    label{
+      margin:0;
+      position:relative;
+      &:after{
+        content: '';
+        display: block;
+        background: url(../image/icon/icon_glass.svg) no-repeat center;
+        background-size: cover;
+        height:24px; width:24px;
+        position:absolute;top:50%;right:4px;transform:translate(0,-50%);
+      }
+    }
+    input{
+      height: 35px;
+      border:color(form) 1px solid;
+      border-radius: 3px;
+      padding: 4px 30px 4px 4px;
+    }
+  }
+  .dataTables_scroll{
+    >div{
+      +div{
+        .p-table{
+          thead{
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+  .p-table{
+    min-width: 600px;
+    width: 100% !important;
+    thead {
+      .sortable{
+        p{
+          display:flex; flex-wrap:wrap;
+          align-items: center;
+          &:after{
+            content: '';
+            display: block;
+            background: url(../image/icon/icon_updown.svg) no-repeat center;
+            background-size: cover;
+            width: 16px;
+            height: 16px;
+            opacity: .3;
+            border: color(main) 1px solid;
+            border-radius: 3px;
+            margin-left: 4px;
+          }
+        }
+        &.sorting_desc{
+          p{
+            &:after{
+              opacity: 1;
+            }
+          }
+        }
+        &.sorting_asc{
+          p{
+            &:after{
+              opacity: 1;
+              transform: rotate(180deg);
+            }
+          }
+        }
+        &:last-child,&.unsort{
+          cursor: default;
+          padding: 4px;
+          &:after{
+            content: none;
+          }
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          border-bottom:#e8e8e8 1px solid;
+          .c-image__logo{
+            width:40px;
+          }
+        }
+      }
+    }
+  }
+  // 左下の表示件数情報
+  .dataTables_info{
+    position:absolute;
+    bottom:0;
+    left:0;
+    color:color(sub);
+    padding: 0;
+    @include responsive (spWide){
+      position: static;
+      padding: 8px 0;
+    }
+  }
+  // ページネーション
+  .dataTables_paginate.paging_simple_numbers{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 16px;
+    span{
+      margin:0 8px;
+      display: flex; flex-wrap:wrap;
+    }
+    a{
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      box-shadow: 0px 3px 6px rgba(226, 139, 0, 0.15);
+      border-radius: 3px;
+      padding: 2px 8px;
+      transition: all 0.2s;
+      color: color(sub);
+      cursor: pointer;
+      +a{
+        margin-left: 4px;
+      }
+      &:hover{
+        color: color(main);
+        box-shadow: 0px 1px 3px rgba(0, 80, 127, 0.15);
+        transform: translateY(2px);
+      }
+      &.previous{
+        &:before{
+          content: '';
+          display: block;
+          height:6px; width:6px;
+          transform: rotate(-135deg);
+          border-top: color(accent) 1px solid;
+          border-right: color(accent) 1px solid;
+          margin-right: 4px;
+        }
+        &:hover{
+          &:before{
+            border-color: color(main);
+          }
+        }
+      }
+      &.next{
+        &:after{
+          content: '';
+          display: block;
+          height:6px; width:6px;
+          transform: rotate(45deg);
+          border-top: color(main) 1px solid;
+          border-right: color(main) 1px solid;
+          margin-left: 4px;
+        }
+        &:hover{
+          &:after{
+            border-color: color(main);
+          }
+        }
+      }
+      &.disabled,&.current{
+        color: color(sub);
+        transform: inherit;
+        box-shadow: none;
+        cursor: default;
+        &:before, &:after{
+          content: none;
+        }
+        &:hover{
+          color: color(base);
+        }
+      }
+    }
+  }
+}

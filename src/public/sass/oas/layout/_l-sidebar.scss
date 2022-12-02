@@ -1,0 +1,160 @@
+@charset "UTF-8";
+.l-sidebar{
+  padding: 16px;
+  position:fixed;top:0;left:0;
+  height:100%;
+  .p-sidebar{
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    padding: 0;
+    &__head{
+      padding: 16px;
+      h1{margin-top: 8px;}
+    }
+    &__body{
+      flex:1 1 auto;
+      height: calc(100% - 70px);
+      padding:8px 0 0;
+    }
+    &__foot{
+      height:70px;
+      padding: 16px;
+    }
+    .c-list__nav{
+      >li{
+        position:relative;
+        a{
+          display:flex; flex-wrap:wrap;
+          align-items:center;
+          font-weight: 500;
+          padding: 12px 8px;
+          color: color(base);
+        }
+        .c-icon__w24{
+          margin-right: 4px;
+        }
+        &.dashboard{
+          .c-icon__w24{
+            &:before{
+              background-image: url(/image/icon/admin/icon_layout.svg);
+            }
+          }
+          &.current,&:hover{
+            .c-icon__w24{
+              &:before{
+                background-image: url(/image/icon/admin/icon_layout_white.svg);
+              }
+            }
+          }
+        }
+        &.user{
+          .c-icon__w24{
+            &:before{
+              background-image: url(/image/icon/admin/icon_user.svg);
+            }
+          }
+          &.current,&:hover{
+            .c-icon__w24{
+              &:before{
+                background-image: url(/image/icon/admin/icon_user_white.svg);
+              }
+            }
+          }
+        }
+        &.company{
+          .c-icon__w24{
+            &:before{
+              background-image: url(/image/icon/admin/icon_building.svg);
+            }
+          }
+          &.current,&:hover{
+            .c-icon__w24{
+              &:before{
+                background-image: url(/image/icon/admin/icon_building_white.svg);
+              }
+            }
+          }
+        }
+        &.contact{
+          .c-icon__w24{
+            &:before{
+              background-image: url(/image/icon/admin/icon_mail.svg);
+            }
+          }
+          &.current,&:hover{
+            .c-icon__w24{
+              &:before{
+                background-image: url(/image/icon/admin/icon_mail_white.svg);
+              }
+            }
+          }
+        }
+        &.master{
+          .c-icon__w24{
+            &:before{
+              background-image: url(/image/icon/admin/icon_master.svg);
+            }
+          }
+          &.current,&:hover{
+            .c-icon__w24{
+              &:before{
+                background-image: url(/image/icon/admin/icon_master_white.svg);
+              }
+            }
+          }
+        }
+        &.message{
+          .c-icon__w24{
+            &:before{
+              background-image: url(/image/icon/admin/icon_message.svg);
+            }
+          }
+          &.current,&:hover{
+            .c-icon__w24{
+              &:before{
+                background-image: url(/image/icon/admin/icon_message_white.svg);
+              }
+            }
+          }
+        }
+        &.post{
+          .c-icon__w24{
+            &:before{
+              background: url(/image/icon/admin/icon_post.svg);
+            }
+          }
+          &.current,&:hover{
+            .c-icon__w24{
+              &:before{
+                background: url(/image/icon/admin/icon_post_white.svg);
+              }
+            }
+          }
+        }
+        &.setting{
+          .c-icon__w24{
+            &:before{
+              background-image: url(/image/icon/admin/icon_setting.svg);
+            }
+          }
+          &.current,&:hover{
+            .c-icon__w24{
+              &:before{
+                background-image: url(/image/icon/admin/icon_setting_white.svg);
+              }
+            }
+          }
+        }
+        &:hover,&.current{
+          background-color: color(main);
+          a{
+            color: #fff;
+          }
+        }
+      }
+    }
+
+  }
+}

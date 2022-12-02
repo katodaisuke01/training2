@@ -5,6 +5,6 @@
 @section('title', 'HOME')
 
 @section('content')
-<div class=""></div>
+<div></div>
 
 @endsection

@@ -1,0 +1,46 @@
+@charset "UTF-8";
+%l-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width:100%;
+  @include responsive (spWide){
+    grid-template-columns: 1fr 1fr;
+  }
+  @include responsive (tabletWide){
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+.l-grid{
+  &--gap8{
+    @extend %l-grid;
+    gap: .5rem;
+  }
+  &--gap16{
+    @extend %l-grid;
+    gap: 1rem;
+  }
+  &--gap24{
+    @extend %l-grid;
+    gap: 1.5rem;
+  }
+  &--gap32{
+    @extend %l-grid;
+    gap: 2rem;
+  }
+  &--gap40{
+    @extend %l-grid;
+    gap: 2.5rem;
+  }
+}
+.c-masonry{
+  columns:2;
+  >*{
+    display:block;
+    margin-bottom: 1rem;
+  }
+  @include responsive (spWide){columns:3;}
+  @include responsive (tablet){columns:4;}
+  @include responsive (pc){columns:5;}
+  @include responsive (pcWide){columns:6;}
+}

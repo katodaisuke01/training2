@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja" class="@yield('page')">
+  <head>
+    <meta charset="utf-8">
+    <meta property="og:url" content="{{ request()->url() }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@yield('title')" />
+    <meta property="og:description" content="@yield('description')" />
+    <meta property="og:site_name" content="Personal" />
+    <meta property="og:image" content="{{ asset('user/cmn/img/ogp.png') }}" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+    
+    <meta name="description" content="@yield('description')">
+    <meta name="keywords" content="">
+    <meta name="author" content="@yield('title')">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>@yield('title')</title>
+
+    <script src="{{asset('js/jquery/jquery-3.4.1.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery.ui.datepicker-ja.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+    <script src="{{asset('js/library/wow.min.js')}}"></script>
+    <script src="{{asset('js/library/lightbox.min.js')}}"></script>
+    <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
+    <script src="{{asset('js/library/smooth-scroll.min.js')}}"></script>
+    <script src="{{asset('js/library/smooth-scroll.polyfills.min.js')}}"></script>
+
+    <!-- favicon -->
+    <link rel="preload" href="{{ asset('image/marry/logo/favicon/safari-pinned-tab.png') }}" as="font" type="font/woff2" crossorigin>
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('image/marry/logo/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('image/marry/logo/favicon/favicon.ico') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('image/marry/logo/favicon/favicon.ico') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Roboto:wght@100;200;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/ato0lir.css">
+
+    <link rel="stylesheet" href="{{ asset('css/styles-marry.css') }}">
+    
+    <meta name="msapplication-TileColor" content="#2c67e1">
+    <meta name="theme-color" content="#ffffff">
+    <script type="text/javascript">
+      window.onload = function() {
+      document.getElementById('l-base__loading').style.display = 'none';
+      document.getElementById('l-base').style.display = 'flex';
+      }
+    </script>
+  </head>
+  <body class="@yield('page_class')" id="top">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N23GSBF"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+        <!-- ! フラッシュ ============================== -->
+    @include('component._flash')
+    <div id="l-base__loading">
+      @include('component._loading')
+    </div>
+    <div class="l-base" id="l-base">
+      <main class="l-main">
+        <!-- ! start_ページ内コンテンツ ============================== -->
+        @yield('content')
+        <!-- ! end_ページ内コンテンツ ============================== -->
+      </main>
+      @include('layouts.marry._footer')
+    </div>
+    <script>
+      //スムーズスクロール
+      $(function(){
+        // #で始まるリンクをクリックしたら実行されます
+        $('a[href^="#"].c-scroll').click(function() {
+          // スクロールの速度
+          var speed = 500; // ミリ秒で記述
+          var href= $(this).attr("href");
+          var target = $(href == "#" || href == "" ? 'html' : href);
+          var position = target.offset().top;
+          $('body,html').animate({scrollTop:position}, speed, 'swing');
+          return false;
+        });
+      });
+      // スクロールで出現
+      $(function() {
+        $(window).scroll(function() {
+          $(".scroll-block").each(function() {
+            var scroll = $(window).scrollTop();
+            var blockPosition = $(this).offset().top;
+            var windowHeihgt = $(window).height();
+            if (scroll > blockPosition - windowHeihgt + 100) {
+              $(this).addClass("blockIn");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

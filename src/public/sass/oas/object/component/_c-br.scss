@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/* 指定のワイド以上でON */
+.on{
+  &_pcWide{display:none; @include responsive (pcWide){display:block;}}
+  &_pc{display:none; @include responsive (pc){display:block;}}
+  &_note{display:none; @include responsive (note){display:block;}}
+  &_tabletWide{display:none; @include responsive (tabletWide){display:block;}}
+  &_tablet{display:none; @include responsive (tablet){display:block;}}
+  &_spWide{display:none; @include responsive (spWide){display:block;}}
+}
+ /* 指定のワイド以上でOFF */
+ .off{
+  &_pcWide{ @include responsive (pcWide){display:none;}}
+  &_pc{ @include responsive (pc){display:none;}}
+  &_note{ @include responsive (note){display:none;}}
+  &_tabletWide{ @include responsive (tabletWide){display:none;}}
+  &_tablet{ @include responsive (tablet){display:none;}}
+  &_spWide{ @include responsive (spWide){display:none;}}
+}

@@ -37,33 +37,20 @@
     </script>
   </head>
   <body class="@yield('page_class')" id="top">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N23GSBF"
-                    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-        <!-- ! フラッシュ ============================== -->
+    <!-- ! フラッシュ ============================== -->
     @include('component._flash')
     <div id="l-base__loading">
       @include('component._loading')
     </div>
     <div class="l-base" id="l-base">
       <main class="l-main">
-        <!-- ! ヘッダー ============================== -->
-        <?php
-        $url = $_SERVER['REQUEST_URI'];
-        ?>
-        @if(strstr($url,'home'))
-        @else
-        @include('component._bread')
-        @endif
         <!-- ! start_ページ内コンテンツ ============================== -->
         @yield('content')
         <!-- ! end_ページ内コンテンツ ============================== -->
       </main>
-      @include('component.user._footer')
     </div>
     @include('component.modal._modal_delete')
-    @include('component.modal._modal_withdrawal')
+    {{-- @include('component.modal._modal_withdrawal')--}}
     @include('component.script._scriptDefault')
     @include('component.script._scriptDetail')
   </body>

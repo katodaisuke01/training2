@@ -1,0 +1,308 @@
+@charset "UTF-8";
+// トップ
+.p-view{
+  background:url(../image/oas/bg/bg-view.png) no-repeat center bottom;
+  background-size: cover;
+  padding: 2rem 1rem 4rem;
+  position:relative;
+  overflow-x: hidden;
+  // carイラスト
+  &:before,&:after{
+    content: '';
+    display:block;
+    width: 180px;
+    aspect-ratio: 8 / 5;
+    position:absolute;
+    bottom:-24px;
+    z-index: 1;
+    @include responsive (tablet){
+      width: 300px;
+    }
+    @include responsive (pc){
+      width: 400px;
+    }
+  }
+  &:before{
+    background:url(../image/oas/img/img_car_left.png) no-repeat center;
+    background-size: cover;
+    left:-24px;
+    @include responsive (tablet){
+      left:0;
+    }
+  }
+  &:after{
+    background:url(../image/oas/img/img_car_right.png) no-repeat center;
+    background-size: cover;
+    right:-24px;
+    @include responsive (tablet){
+      right:0;
+    }
+  }
+  @include responsive (tablet){
+    padding: 4rem 0;
+    height: 700px;
+  }
+  &__head{
+    img{
+      width: 230px;
+      margin:0 auto;
+      @include responsive (tablet){
+        width: 380px;
+      }
+    }
+  }
+  &__body{
+    img{
+      width: 100%;
+      max-width:900px;
+      margin:0 auto;
+    }
+    p{
+      color: #fff;
+      margin-top: .5rem;
+    }
+  }
+}
+.p-section{
+  &__head{
+    &--title{
+      font-size: 1rem;
+      @include responsive (spWide){
+        font-size: 20px;
+      }
+      @include responsive (tablet){
+        font-size: 3.5rem;
+      }
+      strong{
+        font-size: 2.25rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        @include responsive (spWide){
+          font-size: 3rem;
+        }
+        @include responsive (tablet){
+          font-size: 3.5rem;
+        }
+        position:relative;
+        &:after{
+          content: '';
+          display: block;
+          width: 100%;
+          height: 1px;
+          background-color: #000;
+          position:absolute;
+          bottom:0;
+          left:50%;
+          transform:translate(-50%,0);
+          @include responsive (spWide){
+            width: 400px;
+          }
+          @include responsive (tablet){
+            width: 500px;
+          }
+        }
+      }
+    }
+  }
+}
+// キャンペーン
+.p-campaign{
+  position:relative;
+  padding-bottom: 100px;
+  &:before{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translate(-50%,0);
+    display:block;
+    content: '';
+    background:url(../image/oas/bg/bg-campaign.png) no-repeat center bottom;
+    background-size:cover;
+    width: 100%;
+    aspect-ratio: 3/1;
+  }
+  .p-section{
+    &__body{
+      .c-box{
+        border-left:3px solid color(main);
+        border-right:3px solid color(main);
+        @include responsive (tablet){
+          border-left:6px solid color(main);
+          border-right:6px solid color(main);
+        }
+        &__body{
+          display:flex;
+          align-items:center;
+          .c-text__lv2{
+            background-color: color(main);
+            height:60px;
+            width:60px;
+            flex: 0 0 60px;
+            border-radius:4px;
+            color: #fff;
+            text-align: center;
+            line-height: 1;
+            padding: .5rem 0;
+            letter-spacing: 0;
+            @include responsive (spWide){
+              height:90px;
+              width:90px;
+              flex: 0 0 90px;
+              padding: 1rem 0;
+            }
+          }
+          .c-text__lv3{
+            margin-left:1rem;
+            @include responsive (spWide){
+              margin-left:1.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// 当選者数と抽選スケジュール
+.p-information{
+  &__content{
+    @include responsive (spWide){
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    &--item{
+      padding: 4px;
+      width: 100%;
+      @include responsive (spWide){
+        width: 50%;
+      }
+      @include responsive (note){
+        width: 33.333%;
+      }
+      .c-box{
+        box-shadow: 0px 8px 20px rgba(141, 0, 0, .1);
+        padding:1rem;
+        @include responsive (spWide){
+          padding: 2rem 1rem;
+        }
+        .p-list__border{
+          legend{
+            width: 100px;
+            color: #888;
+            font-size: 13px;
+          }
+          .item{
+            display:flex;
+            flex-wrap:wrap;
+            align-items:center;
+            .c-text__lv4{
+              font-size: 20px;
+              small{
+                font-size: 14px;
+                margin:0 4px;
+              }
+              span{
+                font-size: 12px;
+                background-color: #000;
+                color: #fff;
+                border-radius:50%;
+                transform: translateY(-4px);
+                display: inline-block;
+                height:20px;
+                width:20px;
+                text-align: center;
+              }
+              +span{
+                margin:0 4px;
+              }
+            }
+            .c-text__lv5{
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// オンラインオートサロンとは
+.p-about{
+  .p-section{
+    &__body{
+      display:flex;
+      flex-direction: column;
+      @include responsive (tabletWide){
+        flex-direction: row;
+        flex-wrap:wrap;
+        align-items:center;
+      }
+      .c-box{
+        border-left:3px solid color(main);
+        box-shadow: 0px 8px 20px rgba(141, 0, 0, .1);
+        border-right:3px solid color(main);
+        width: 90%;
+        margin:-3rem auto 0;
+        z-index: 1;
+        @include responsive (tablet){
+          border-left:6px solid color(main);
+          border-right:6px solid color(main);
+        }
+        @include responsive (tabletWide){
+          margin:0 0 0 -3rem;
+          width: 50%;
+        }
+      }
+    }
+  }
+  &__image{
+    width: 100%;
+    box-shadow: 20px 20px 0px rgb(240, 223, 223);
+    @include responsive (tablet){
+      width: 75%;
+    }
+    @include responsive (tabletWide){
+      width: 50%;
+    }
+  }
+}
+// 詳細
+.p-detail{
+  .p-section{
+    &__body{
+      .c-box{
+        padding: 1rem 2rem;
+        @include responsive (tablet){
+          padding: 2rem 4rem;
+        }
+        h5{
+          margin-top: 1rem;
+          &:after{
+            content: '';
+            width: 100px;
+            height: 1px;
+            background-color: color(888);
+            display: inline-block;
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+// ダブルキャンペーン
+.p-double{
+  background:url(../image/oas/bg/bg-double.png) no-repeat center top;
+  background-size: cover;
+  padding: 4rem 0;
+  .p-section{
+    &__head{
+      img{
+        margin:0 auto;
+      }
+    }
+    &__body{
+      .c-box{
+      }
+    }
+  }
+}
