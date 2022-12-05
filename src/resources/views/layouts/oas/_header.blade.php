@@ -1,5 +1,5 @@
 <header class="l-header">
-  <a href="" class="c-logoArea">
+  <a href="https://www.tokyoautosalon.jp/2023/" target="_blank" class="c-logoArea">
     <img src="{{asset('../image/oas/logo/logo_tas_wide_horizontal.png')}}" alt="東京オートサロン2023ロゴ" class="c-logo">
   </a>
 </header>

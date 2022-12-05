@@ -20,4 +20,10 @@
         }
     }
 }
-
+.c-buttonArea__bottom--fixed{
+    display:flex;
+    flex-direction: column-reverse;
+    @include responsive (spWide){
+        flex-direction: row;
+    }
+}

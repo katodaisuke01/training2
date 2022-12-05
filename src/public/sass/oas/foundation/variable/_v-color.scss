@@ -11,7 +11,7 @@ $colors: (
   'ok':#1AA800,
   // テキスト
   'base': #000,
-  '888': #888,
+  'gray-888': #888,
   'back': #F5F5F5,
 ) !default;
 @function color($colorName) {

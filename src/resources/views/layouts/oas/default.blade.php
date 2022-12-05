@@ -7,7 +7,7 @@
     <meta property="og:title" content="@yield('title')" />
     <meta property="og:description" content="@yield('description')" />
     <meta property="og:site_name" content="Personal" />
-    <meta property="og:image" content="{{ asset('user/cmn/img/ogp.png') }}" />
+    <meta property="og:image" content="{{ asset('image/oas/img/ogp.png') }}" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
     
     <meta name="description" content="@yield('description')">
@@ -28,10 +28,10 @@
     <script src="{{asset('js/library/css_browser_selector.js')}}"></script>
 
     <!-- favicon -->
-    <link rel="preload" href="{{ asset('image/logo/favicon/safari-pinned-tab.png') }}" as="font" type="font/woff2" crossorigin>
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('image/logo/favicon/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('image/logo/favicon/favicon.ico') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('image/logo/favicon/favicon.ico') }}">
+    <link rel="preload" href="{{ asset('image/oas/logo/favicon/safari-pinned-tab.png') }}" as="font" type="font/woff2" crossorigin>
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('image/oas/logo/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('image/oas/logo/favicon/favicon.ico') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('image/oas/logo/favicon/favicon.ico') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">

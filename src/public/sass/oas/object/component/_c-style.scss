@@ -35,72 +35,32 @@
     font-weight: 700;
   }
 }
-.c-attractive{
-  color: color(main);
-  background-color: #fff;
-  border-radius:8px;
-  padding: 6px 8px 3px;
-  border: 2px solid color(main);
-  font-size: 13px;
-  font-weight:700;
-  display: flex;
-  font-weight: 700;
-  align-items: center;
-  line-height: 1;
-  cursor: pointer;
-  &:before{
-    content: '';
-    display:block;
-    background: url(../image/icon/icon_heart_gray.svg) no-repeat center;
-    background-size:cover;
-    height:24px; width:24px;
-    margin:0 4px 3px 0;
-  }
-  &.checked{
-    background-color: color(main);
-    color: #fff;
-    &:before{
-      background: url(../image/icon/icon_heart_white.svg) no-repeat center;
+.c-date{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  p{
+    font-size: 20px;
+    small{
+      font-size: 14px;
+      margin:0 4px;
     }
-  }
-}
-.c-tag{
-  &__main{
-    border: 1px solid color(main);
-    color: color(main);
-    font-size: 11px;
-    padding: 2px 8px;
-    display:flex;
-    font-size: 14px;
-    align-items:center;
-    font-weight:500;
-    border-radius:8px;
-    &.full{
-      background:linear-gradient(135deg, #EFD800, #EF6500);
+    span{
+      font-size: 12px;
+      background-color: #000;
       color: #fff;
-      border: none;
+      border-radius:50%;
+      transform: translateY(-4px);
+      display: inline-block; 
+      padding: 1px 4px 0;
+      text-align: center;
+    }
+    +span{
+      margin:0 4px;
     }
   }
-  &__gray{
-    color: #000;
-    background-color: #EFF1F4;
-    padding: 6px 14px;
-  }
-  &__black{
-    color: #fff;
-    background-color: #000;
-    padding: 2px 4px 1px;
-    font-size:11px;
-    font-weight:500;
-    display: inline;
-  }
-  &__black--line{
-    color: #000;
-    border:1px solid #000;
-    background-color: #fff;
-    padding: 2px 4px 1px;
-    font-size:11px;
-    border-radius:4px;
+  .c-text__lv5{
+    font-size: 18px;
   }
 }
 .c-full{

@@ -35,6 +35,21 @@ body {
     font-feature-settings: normal;
   }
 }
+// スクロールバー
+::-webkit-scrollbar{
+  height: 10px;
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: #ddd;
+    border-radius: 4px;
+    height: 10px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: color(main);
+  border-radius: 4px;
+  height: 10px;
+}
 /* ! --------------------------------------------------
 - text
 -------------------------------------------------- */

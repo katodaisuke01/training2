@@ -1,8 +1,8 @@
 @extends('layouts.oas.default')
 
 @section('page_class', 'l-home l-body')
-@section('description', 'OnlineAutoSalonのLP')
-@section('title', 'OnlineAutoSalonとは')
+@section('description', 'OnlineAutoSalonのLPです。総額100万円分Amazonギフト券プレゼントキャンペーン概要。')
+@section('title', '総額100万円分Amazonギフト券プレゼントキャンペーン | OnlineAutoSalon')
 
 @section('content')
   <section class="p-section p-campaign">
@@ -15,23 +15,23 @@
       <div class="p-section__body">
         <div class="c-box bg-fff scroll-block fade-block2">
           <div class="c-box__body">
-            <div class="l-grid--gap24">
-              <div class="p-campaign__concept">
-                <p class="c-text__lv4">ログインとキャンペーンエントリーで毎週1名様に</p>
-                <p class="c-text">Amazonギフト券10万円分</p>
-                <p class="c-text__lv3">最終週は当選者数大幅アッププレゼント</p>
-              </div>
-              <div class="p-campaign__detail">
-                <p class="c-text__lv3 c-text--center c-text__weight--900">プレゼント総額<strong>100</strong>万円<strong>!</strong></p>
-                <p class="c-text">オンラインオートサロンにユーザー登録された方はもちろん、まだ登録がない方も応募は簡単！<br>ぜひこの機会に毎週エントリーしよう！</p>
-              </div>
+            <div class="p-campaign__concept">
+              <p class="c-text__lv4 c-text--center c-text__weight--700">ログインとキャンペーンエントリーで毎週1名様に</p>
+              <p class="c-text__lv3 c-text--center c-text__weight--700 bg-main"><strong>Amazon</strong>ギフト券<strong>10</strong>万円分</p>
+              <p class="c-text__lv3 c-text--center c-text__weight--700">最終週は当選者数大幅アッププレゼント</p>
+            </div>
+            <div class="p-campaign__detail">
+              <p class="c-text__lv3 c-text--center c-text__weight--900">プレゼント総額<strong>100</strong>万円<strong>!</strong></p>
+              <p class="c-text__lv4 c-text--center">オンラインオートサロンにユーザー登録された方は<br class="on_tablet">もちろん、まだ登録がない方も応募は簡単！<br>ぜひこの機会に毎週エントリーしよう！</p>
             </div>
           </div>
         </div>
+      </div>
+      <div class="p-section__foot">
         <div class="c-box bg-fff scroll-block fade-block2">
           <div class="c-box__body">
-            <h4 class="c-text__lv2">応募方法</h4>
-            <p class="c-text__lv3">オンラインオートサロンにユーザー登録＋キャンペーンにエントリーするだけ！</p>
+            <h4 class="c-text__lv2 c-text__weight--900">応募方法</h4>
+            <p class="c-text__lv3 c-text__weight--700">オンラインオートサロンにユーザー登録＋キャンペーンにエントリーするだけ！</p>
           </div>
         </div>
       </div>
@@ -47,54 +47,177 @@
       </div>
       <div class="p-section__body">
         <div class="p-information__content">
-            <?php
-              function infoList(){
-                return [
-                  ['month' => '12'],
-                  ['month' => '12'],
-                  ['month' => '12'],
-                  ['month' => '12'],
-                  ['month' => '1'],
-                ];
-              }
-            ?>
-          @php($infoList = infoList())
-          @foreach($infoList as $info)
-            <div class="p-information__content--item scroll-block fade-block2">
-              <div class="c-box bg-fff">
-                <div class="c-box__head">
-                  <div class="p-information__title">
-                    <span>Week</span>
-                    <p class="c-text__lv4 c-text__weight--700">第<strong>1</strong>回<strong>プレゼント</strong></p>
-                  </div>
-                </div>
-                <div class="c-box__body">
-                  <ul class="p-list__border p-list__row">
-                    <li>
-                      <legend>エントリー期間</legend>
-                      <div class="item">
-                        <p class="c-text__lv4 c-text__weight--700">{{ $info['month'] }}<small>月</small>9<small>日</small><span>金</span></p>
-                        <span>〜</span>
-                        <p class="c-text__lv4 c-text__weight--700">{{ $info['month'] }}<small>月</small>15<small>日</small><span>木</span></p>
-                      </div>
-                    </li>
-                    <li>
-                      <legend>抽選日</legend>
-                      <div class="item">
-                        <p class="c-text__lv4 c-text__weight--700">{{ $info['month'] }}<small>月</small>16<small>日</small><span>金</span></p>
-                      </div>
-                    </li>
-                    <li>
-                      <legend>当選数</legend>
-                      <div class="item">
-                        <p class="c-text__lv5 c-text__weight--700 c-text__main">Amazonギフト券10万円×1名</p>
-                      </div>
-                    </li>
-                  </ul>
+          <div class="p-information__content--item scroll-block fade-block2">
+            <div class="c-box bg-fff">
+              <div class="c-box__head">
+                <div class="p-information__title">
+                  <p>Week</p>
+                  <h5 class="c-text__lv4 c-text__weight--700">第<strong>1</strong>回<strong>プレゼント</strong></h5>
                 </div>
               </div>
+              <div class="c-box__body">
+                <ul class="p-list__border p-list__row">
+                  <li>
+                    <legend>エントリー期間</legend>
+                    <div class="item c-date">
+                      <p class="c-text__lv4 c-text__weight--700">12<small>月</small>9<small>日</small><span>金</span></p>
+                      <span>〜</span>
+                      <p class="c-text__lv4 c-text__weight--700">12<small>月</small>15<small>日</small><span>木</span></p>
+                    </div>
+                  </li>
+                  <li>
+                    <legend>抽選日</legend>
+                    <div class="item c-date">
+                      <p class="c-text__lv4 c-text__weight--700">12<small>月</small>16<small>日</small><span>金</span></p>
+                    </div>
+                  </li>
+                  <li>
+                    <legend>当選数</legend>
+                    <div class="item">
+                      <p class="c-text__lv4 c-text__weight--700 c-text__main">Amazonギフト券10万円×1名</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
-          @endforeach
+          </div>
+          <div class="p-information__content--item scroll-block fade-block2">
+            <div class="c-box bg-fff">
+              <div class="c-box__head">
+                <div class="p-information__title">
+                  <p>Week</p>
+                  <h5 class="c-text__lv4 c-text__weight--700">第<strong>2</strong>回<strong>プレゼント</strong></h5>
+                </div>
+              </div>
+              <div class="c-box__body">
+                <ul class="p-list__border p-list__row">
+                  <li>
+                    <legend>エントリー期間</legend>
+                    <div class="item c-date">
+                      <p class="c-text__lv4 c-text__weight--700">12<small>月</small>16<small>日</small><span>金</span></p>
+                      <span>〜</span>
+                      <p class="c-text__lv4 c-text__weight--700">12<small>月</small>22<small>日</small><span>木</span></p>
+                    </div>
+                  </li>
+                  <li>
+                    <legend>抽選日</legend>
+                    <div class="item c-date">
+                      <p class="c-text__lv4 c-text__weight--700">12<small>月</small>23<small>日</small><span>金</span></p>
+                    </div>
+                  </li>
+                  <li>
+                    <legend>当選数</legend>
+                    <div class="item">
+                      <p class="c-text__lv4 c-text__weight--700 c-text__main">Amazonギフト券10万円×1名</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="p-information__content--item scroll-block fade-block2">
+            <div class="c-box bg-fff">
+              <div class="c-box__head">
+                <div class="p-information__title">
+                  <p>Week</p>
+                  <h5 class="c-text__lv4 c-text__weight--700">第<strong>3</strong>回<strong>プレゼント</strong></h5>
+                </div>
+              </div>
+              <div class="c-box__body">
+                <ul class="p-list__border p-list__row">
+                  <li>
+                    <legend>エントリー期間</legend>
+                    <div class="item c-date">
+                      <p class="c-text__lv4 c-text__weight--700">12<small>月</small>23<small>日</small><span>金</span></p>
+                      <span>〜</span>
+                      <p class="c-text__lv4 c-text__weight--700">12<small>月</small>29<small>日</small><span>木</span></p>
+                    </div>
+                  </li>
+                  <li>
+                    <legend>抽選日</legend>
+                    <div class="item c-date">
+                      <p class="c-text__lv4 c-text__weight--700">12<small>月</small>30<small>日</small><span>金</span></p>
+                    </div>
+                  </li>
+                  <li>
+                    <legend>当選数</legend>
+                    <div class="item">
+                      <p class="c-text__lv4 c-text__weight--700 c-text__main">Amazonギフト券10万円×1名</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="p-information__content--item scroll-block fade-block2">
+            <div class="c-box bg-fff">
+              <div class="c-box__head">
+                <div class="p-information__title">
+                  <p>Week</p>
+                  <h5 class="c-text__lv4 c-text__weight--700">第<strong>4</strong>回<strong>プレゼント</strong></h5>
+                </div>
+              </div>
+              <div class="c-box__body">
+                <ul class="p-list__border p-list__row">
+                  <li>
+                    <legend>エントリー期間</legend>
+                    <div class="item c-date">
+                      <p class="c-text__lv4 c-text__weight--700">12<small>月</small>30<small>日</small><span>金</span></p>
+                      <span>〜</span>
+                      <p class="c-text__lv4 c-text__weight--700">1<small>月</small>5<small>日</small><span>木</span></p>
+                    </div>
+                  </li>
+                  <li>
+                    <legend>抽選日</legend>
+                    <div class="item c-date">
+                      <p class="c-text__lv4 c-text__weight--700">1<small>月</small>6<small>日</small><span>金</span></p>
+                    </div>
+                  </li>
+                  <li>
+                    <legend>当選数</legend>
+                    <div class="item">
+                      <p class="c-text__lv4 c-text__weight--700 c-text__main">Amazonギフト券10万円×1名</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="p-information__content--item scroll-block fade-block2">
+            <div class="c-box bg-fff">
+              <div class="c-box__head">
+                <div class="p-information__title">
+                  <p>Week</p>
+                  <h5 class="c-text__lv4 c-text__weight--700">第<strong>5</strong>回<strong>プレゼント</strong></h5>
+                </div>
+              </div>
+              <div class="c-box__body">
+                <ul class="p-list__border p-list__row">
+                  <li>
+                    <legend>エントリー期間</legend>
+                    <div class="item c-date">
+                      <p class="c-text__lv4 c-text__weight--700">1<small>月</small>6<small>日</small><span>金</span></p>
+                      <span>〜</span>
+                      <p class="c-text__lv4 c-text__weight--700">1<small>月</small>12<small>日</small><span>木</span></p>
+                    </div>
+                  </li>
+                  <li>
+                    <legend>抽選日</legend>
+                    <div class="item c-date">
+                      <p class="c-text__lv4 c-text__weight--700">1<small>月</small>13<small>日</small><span>金</span></p>
+                    </div>
+                  </li>
+                  <li>
+                    <legend>当選数</legend>
+                    <div class="item">
+                      <p class="c-text__lv4 c-text__weight--700 c-text__main">Amazonギフト券10万円×1名</p>
+                      <p class="c-text__lv4 c-text__weight--700 c-text__main">Amazonギフト券1万円×10名</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -117,10 +240,10 @@
         </div>
         <div class="c-box__foot">
           <div class="c-buttonArea__center">
-            <a href="https://id.san-ei-corp.co.jp/users/login?dept_code=oas&redirect=https%3A%2F%2Fwww.tokyoautosalon.jp%2Fauth%2Fret%2F63883221777ee5.16544373?token={token}"
-            class="c-button__line c-button__lg" target="_blank">ログインしてエントリー</a>
             <a href="https://id.san-ei-corp.co.jp/users/add?redirect=https%3A%2F%2Fwww.tokyoautosalon.jp%2Fauth%2Fret%2F63883221777ee5.16544373%3Ftoken%3D%7Btoken%7D&dept_code=oas"
             class="c-button__lg" target="_blank">登録してエントリー</a>
+            <a href="https://id.san-ei-corp.co.jp/users/login?dept_code=oas&redirect=https%3A%2F%2Fwww.tokyoautosalon.jp%2Fauth%2Fret%2F63883221777ee5.16544373?token={token}"
+            class="c-button__line c-button__lg" target="_blank">ログインしてエントリー</a>
           </div>
         </div>
       </div>
@@ -181,35 +304,37 @@
       <div class="p-section__body">
         <div class="c-box bg-fff scroll-block fade-block2">
           <div class="c-box__head">
-            <h5>概要</h5>
+            <h5 class="c-text__lv2 c-text__weight--700">概要</h5>
           </div>
           <div class="c-box__body">
             <p class="c-text__lv3 c-text__weight--700">
               ハッシュタグ「<span class="c-text__alert">#東京オートサロン2023愛車</span>」をつけてご自身の愛車写真をInstagramに投稿するだけ。
             </p>
-            <a href="https://www.instagram.com/tokyo_autosalon_official/" class="c-text__main" target="_blank">東京オートサロン2023 Instagramはこちら</a>
+            <a href="https://www.instagram.com/tokyo_autosalon_official/" class="c-text__lv6" target="_blank">東京オートサロン2023 Instagramはこちら</a>
           </div>
         </div>
         <div class="c-box bg-fff scroll-block fade-block2">
           <div class="c-box__head">
-            <h5>期間</h5>
+            <h5 class="c-text__lv2 c-text__weight--700">期間</h5>
           </div>
           <div class="c-box__body">
             <p class="c-text__lv3 c-text__weight--700">
               東京オートサロン2023 in 幕張メッセ 開催期間中
             </p>
-            <p class="c-text__lv2 c-text__weight--700">
-              東京オートサロン2023 in 幕張メッセ 開催期間中
-            </p>
+            <div class="c-date">
+              <p class="c-text__lv2 c-text__weight--700">1<small>月</small>13<small>日</small><span>金</span></p>
+              <span>〜</span>
+              <p class="c-text__lv2 c-text__weight--700">1<small>月</small>15<small>日</small><span>日</span></p>
+            </div>
           </div>
         </div>
         <div class="c-box bg-fff scroll-block fade-block2">
           <div class="c-box__head">
-            <h5>賞品</h5>
+            <h5 class="c-text__lv2 c-text__weight--700">賞品</h5>
           </div>
           <div class="c-box__body">
-            <p class="c-text__lv3 c-text__weight--700">
-            東京オートサロン2023オリジナルグッズ<small>を<br>投稿者の中から抽選で10名様にプレゼント！</small>
+            <p class="c-text__lv3 c-text__weight--700 c-text__main">
+            東京オートサロン2023オリジナルグッズ<small class="c-text__lv5">を<br>投稿者の中から</small>抽選で10名様<small class="c-text__lv5">にプレゼント！</small>
             </p>
             <p>※当選者への連絡は東京オートサロン公式InstagramからDMで行います。連絡のためInstagramアカウントのフォローをお願いします。</p>
             <p>※投稿された写真は東京オートサロン、オンラインオートサロンで記事として紹介する場合があります。</p>

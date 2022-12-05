@@ -7,9 +7,6 @@
   @include responsive (spWide){
     grid-template-columns: 1fr 1fr;
   }
-  @include responsive (tabletWide){
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 }
 .l-grid{
   &--gap8{

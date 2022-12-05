@@ -5,7 +5,6 @@
   background-size: cover;
   padding: 2rem 1rem 4rem;
   position:relative;
-  overflow-x: hidden;
   // carイラスト
   &:before,&:after{
     content: '';
@@ -58,20 +57,20 @@
       margin:0 auto;
     }
     p{
-      color: #fff;
+      color: white;
       margin-top: .5rem;
+      text-shadow: 0px 2px 4px rgb(99, 0, 0);
     }
   }
 }
 .p-section{
   &__head{
     &--title{
-      font-size: 1rem;
-      @include responsive (spWide){
-        font-size: 20px;
-      }
-      @include responsive (tablet){
-        font-size: 3.5rem;
+      h3{
+        font-size: 1rem;
+        @include responsive (spWide){
+          font-size: 20px;
+        }
       }
       strong{
         font-size: 2.25rem;
@@ -108,7 +107,10 @@
 // キャンペーン
 .p-campaign{
   position:relative;
-  padding-bottom: 100px;
+  padding-bottom: 3rem;
+  @include responsive (spWide){
+    padding-bottom: 100px;
+  }
   &:before{
     position:absolute;
     bottom:0;
@@ -121,6 +123,72 @@
     width: 100%;
     aspect-ratio: 3/1;
   }
+  .p-section__body{
+    .c-box{
+      &__body{
+        flex-direction: column;
+        @include responsive (tabletWide){
+          flex-direction: row;
+        }
+      }
+    }
+  }
+  &__concept{
+    flex:1 1 50%;
+    .bg-main{
+      color: white;
+      padding: .5rem 1rem .3rem;
+      margin:.5rem 0;
+      strong{
+        font-size: 2rem;
+        @include responsive (tablet){
+          font-size: 36px;
+        }
+      }
+    }
+  }
+  &__detail{
+    flex:1 1 auto;
+    width: 100%;
+    margin-top: 1rem;
+    @include responsive (tablet){
+      margin:0;
+      flex:1 1 50%;
+      padding-left: 1.5rem;
+    }
+    .c-text__lv3{
+      color: color(main);
+      position:relative;
+      margin-bottom: 0.5rem;
+      &:before{
+        content: '';
+        display:block;
+        position:absolute;
+        bottom:-0.5rem;
+        left:50%;
+        transform:translate(-50%,-50%);
+        width: 80%;
+        height: 24px;
+        mix-blend-mode:multiply;
+        z-index: -1;
+        background-color: #FFEB00;
+      }
+      strong{
+        font-size: 3rem;
+        font-style:italic;
+        letter-spacing: -0.05em;
+        @include responsive (tablet){
+          font-size: 4rem;
+        }
+      }
+    }
+  }
+  .c-box{
+    &__body{
+      display:flex;
+      align-items:center;
+    }
+  }
   .p-section{
     &__body{
       .c-box{
@@ -130,54 +198,127 @@
           border-left:6px solid color(main);
           border-right:6px solid color(main);
         }
-        &__body{
-          display:flex;
-          align-items:center;
-          .c-text__lv2{
-            background-color: color(main);
-            height:60px;
-            width:60px;
-            flex: 0 0 60px;
-            border-radius:4px;
-            color: #fff;
-            text-align: center;
-            line-height: 1;
-            padding: .5rem 0;
-            letter-spacing: 0;
-            @include responsive (spWide){
-              height:90px;
-              width:90px;
-              flex: 0 0 90px;
-              padding: 1rem 0;
-            }
-          }
-          .c-text__lv3{
-            margin-left:1rem;
-            @include responsive (spWide){
-              margin-left:1.5rem;
-            }
+      }
+    }
+    &__foot{
+      .c-box{
+        .c-text__lv2{
+          background-color: color(main);
+          height:60px;
+          width:60px;
+          flex: 0 0 60px;
+          border-radius:4px;
+          color: white;
+          text-align: center;
+          line-height: 1;
+          padding: .5rem 0;
+          letter-spacing: 0;
+          @include responsive (spWide){
+            height:90px;
+            width:90px;
+            flex: 0 0 90px;
+            padding: 1rem 0;
           }
         }
-      }
+        .c-text__lv3{
+          margin-left:1rem;
+          @include responsive (spWide){
+            margin-left:1.5rem;
+          }
+        }
+      }  
     }
   }
 }
 // 当選者数と抽選スケジュール
 .p-information{
+  &__title{
+    display:flex;
+    align-items:center;
+    margin:-2rem 0 0 -1rem;
+    @include responsive (tablet){
+      margin:-4rem 0 0 -1rem;
+    }
+    p{
+      background-color: color(base);
+      border-radius:50%;
+      border:3px solid white;
+      height:70px;
+      width:70px;
+      color: white;
+      display:flex;
+      flex-direction: column;
+      align-items:center;
+      justify-content:center;
+      z-index: 1;
+      padding: 0 0 8px;
+      box-shadow: 0px 4px 8px rgba(141, 0, 0, .15);
+      @include responsive (tablet){
+        height:90px;
+        width:90px;
+      }
+      &:after{
+        counter-increment: number 1;
+        content: counter(number) " ";
+        display:block;
+        font-style: italic;
+        font-size: 3rem;
+        margin-top: 0.5rem;
+        @include responsive (tablet){
+          margin-top: 1rem;
+          font-size: 4rem;
+        }
+      }
+    }
+    h5{
+      background-color: color(main);
+      padding:1rem 2rem 1rem 1.5rem;
+      color: white;
+      margin-left: -1rem;
+      position:relative;
+      &:after{
+        content: '';
+        display:block;
+        background:url(../image/oas/img/img_info_title.svg) no-repeat center;
+        background-size:cover;
+        height: 100%;
+        width: 20px;
+        position: absolute;
+        right: -20px;
+        top: 0;
+      }
+    }
+  }
   &__content{
+    counter-reset: number 0;
     @include responsive (spWide){
       display:flex;
       flex-wrap:wrap;
       justify-content:center;
     }
     &--item{
-      padding: 4px;
       width: 100%;
-      @include responsive (spWide){
+      +div{
+        padding-top: 1.5rem;
+        @include responsive (tablet){
+          padding: 4px;
+        }
+      }
+      @include responsive (tablet){
+        padding: 4px;
         width: 50%;
+        &:nth-child(3),&:nth-child(4),&:nth-child(5){
+          padding-top: 2rem;
+        }
       }
       @include responsive (note){
         width: 33.333%;
+        &:nth-child(3){
+          padding: 4px;
+        }
+        &:nth-child(4),&:nth-child(5){
+          padding-top: 2rem;
+        }
       }
       .c-box{
         box-shadow: 0px 8px 20px rgba(141, 0, 0, .1);
@@ -185,40 +326,14 @@
         @include responsive (spWide){
           padding: 2rem 1rem;
         }
+        @include responsive (tablet){
+          height: 100%;
+        }
         .p-list__border{
           legend{
             width: 100px;
             color: #888;
             font-size: 13px;
-          }
-          .item{
-            display:flex;
-            flex-wrap:wrap;
-            align-items:center;
-            .c-text__lv4{
-              font-size: 20px;
-              small{
-                font-size: 14px;
-                margin:0 4px;
-              }
-              span{
-                font-size: 12px;
-                background-color: #000;
-                color: #fff;
-                border-radius:50%;
-                transform: translateY(-4px);
-                display: inline-block;
-                height:20px;
-                width:20px;
-                text-align: center;
-              }
-              +span{
-                margin:0 4px;
-              }
-            }
-            .c-text__lv5{
-              font-size: 18px;
-            }
           }
         }
       }
@@ -272,17 +387,25 @@
       .c-box{
         padding: 1rem 2rem;
         @include responsive (tablet){
-          padding: 2rem 4rem;
+          padding: 2rem 3.75rem;
         }
         h5{
           margin-top: 1rem;
+          font-size: .83rem;
           &:after{
             content: '';
             width: 100px;
             height: 1px;
-            background-color: color(888);
+            background-color: color(gray-888);
             display: inline-block;
-            margin-left: 8px;
+            margin: 0 0 5px 8px;
+          }
+        }
+        p{
+          a{
+            &:hover{
+              border-bottom: 1px solid;
+            }
           }
         }
       }
@@ -296,12 +419,72 @@
   padding: 4rem 0;
   .p-section{
     &__head{
+      display: flex;
+      justify-content:center;
       img{
         margin:0 auto;
+        max-width: 115%;
+        @include responsive (tablet){
+          max-width: inherit;
+          width: 100%;
+        }
       }
     }
     &__body{
       .c-box{
+        @include responsive (tabletWide){
+          display:flex;
+          align-items:center;
+        }
+        &__head{
+          margin: -2rem 0 1rem;
+          @include responsive (tabletWide){
+            margin: 0 1rem 0 -3rem;
+          }
+          h5{
+            color: white;
+            background-color: color(base);
+            border: 3px solid white;
+            box-shadow: 0px 4px 8px rgba(52, 0, 0, 0.15);
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%; 
+            padding: 8px 0 0 0;
+            height:100px;
+            width:100px;
+            margin: 0 auto;
+            @include responsive (tabletWide){
+              margin:0;
+            }
+          }
+        }
+        &__body{
+          .c-text__lv3{
+            small{
+              @include responsive (tablet){
+                font-size: 1rem;
+              }
+            }
+          }
+          a.c-text__lv6{
+            &:hover{
+              border-bottom: 1px solid color(base);
+            }
+          }
+          .c-date {
+            p{
+              font-size: 2rem;
+              small{
+                font-size: 1.5rem;
+              }
+              span{
+                font-size: 20px;
+                padding: 5px 6px 1px;
+              }
+            }
+          }
+        }
       }
     }
   }
