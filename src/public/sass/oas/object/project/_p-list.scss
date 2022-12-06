@@ -36,10 +36,12 @@ ul{
   }
   &__row{
     >li{
-      display:flex;
-      flex-wrap:wrap;
-      align-items:center;
       .head{margin:0 0 8px;}
+      @include responsive (spWide){
+        display:flex;
+        flex-wrap:wrap;
+        align-items:center;
+      }
       @include responsive (tablet){
         .head{min-width:200px;margin:0;}
         .body{flex:auto;}

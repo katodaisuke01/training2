@@ -136,7 +136,7 @@
                   <li>
                     <legend>抽選日</legend>
                     <div class="item c-date">
-                      <p class="c-text__lv4 c-text__weight--700">12<small>月</small>30<small>日</small><span>金</span></p>
+                      <p class="c-text__lv4 c-text__weight--700">1<small>月</small>6<small>日</small><span>金</span></p>
                     </div>
                   </li>
                   <li>
@@ -319,7 +319,7 @@
           </div>
           <div class="c-box__body">
             <p class="c-text__lv3 c-text__weight--700">
-              東京オートサロン2023 in 幕張メッセ 開催期間中
+              東京オートサロン2023 in 幕張メッセ <br class="off_spWide">開催期間中
             </p>
             <div class="c-date">
               <p class="c-text__lv2 c-text__weight--700">1<small>月</small>13<small>日</small><span>金</span></p>

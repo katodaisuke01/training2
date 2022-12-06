@@ -262,7 +262,7 @@
         content: counter(number) " ";
         display:block;
         font-style: italic;
-        font-size: 3rem;
+        font-size: 2.75rem;
         margin-top: 0.5rem;
         @include responsive (tablet){
           margin-top: 1rem;
@@ -476,11 +476,21 @@
             p{
               font-size: 2rem;
               small{
-                font-size: 1.5rem;
+                font-size: 1rem;
+                @include responsive (spWide){
+                  font-size: 1.5rem;
+                }
               }
               span{
-                font-size: 20px;
+                padding:5px 6px 3px;height: 28px;width:28px;
+                display: inline-flex;
+                align-items:center;
+                justify-content:center;
+                font-size: 1rem;
                 padding: 5px 6px 1px;
+                @include responsive (spWide){
+                  font-size: 1.5rem;
+                }
               }
             }
           }

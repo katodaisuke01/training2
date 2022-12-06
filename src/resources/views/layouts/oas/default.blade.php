@@ -48,8 +48,6 @@
     </script>
   </head>
   <body class="@yield('page_class')" id="top">
-        <!-- ! フラッシュ ============================== -->
-    @include('component._flash')
     <div id="l-base__loading">
       @include('component._loading')
     </div>

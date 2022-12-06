@@ -8,6 +8,7 @@
   background-color: color(back);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 #l-base{display: none;}
 #l-base__loading{
