@@ -72,6 +72,9 @@
           font-size: 20px;
         }
       }
+      span{
+        margin-top: .5rem;
+      }
       strong{
         font-size: 2.25rem;
         font-weight: 500;
@@ -90,7 +93,7 @@
           height: 1px;
           background-color: #000;
           position:absolute;
-          bottom:0;
+          bottom:4px;
           left:50%;
           transform:translate(-50%,0);
           @include responsive (spWide){
@@ -177,6 +180,7 @@
         font-size: 3rem;
         font-style:italic;
         letter-spacing: -0.05em;
+        margin:0 4px;
         @include responsive (tablet){
           font-size: 4rem;
         }
@@ -259,13 +263,13 @@
       }
       &:after{
         counter-increment: number 1;
-        content: counter(number) " ";
+        content: counter(number) '';
         display:block;
         font-style: italic;
         font-size: 2.75rem;
         margin-top: 0.5rem;
         @include responsive (tablet){
-          margin-top: 1rem;
+          margin-top: 1.25rem;
           font-size: 4rem;
         }
       }

@@ -8,95 +8,75 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   @return $weight rem($px) #{"/"} $lineHeight $family;
 }
-.c-text,
 %c-text {
+  color: color(base);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.618em;
+  letter-spacing: 0.05em;
+}
+.c-text{
   &__title {
-    color: color(base);
-    font-weight: 500;
+    @extend %c-text;
     font-size: 2.5rem;
-    line-height: 1.45833em;
     letter-spacing: 0;
     @include responsive (spWide){
       font-size: 3rem;
     }
   }
   &__lv1 {
-    color: color(base);
-    font-weight: 500;
+    @extend %c-text;
     font-size: 2rem;
-    line-height: 1.45833em;
-    letter-spacing: 0;
     letter-spacing: .08em;
     @include responsive (spWide){
       font-size: 2.5rem;
     }
   }
   &__lv2 {
-    color: color(base);
-    font-weight: 500;
+    @extend %c-text;
     font-size: 1.5rem;
-    line-height: 1.45833em;
-    letter-spacing: .04em;
     @include responsive (spWide){
       font-size: 2rem;
     }
   }
   &__lv3 {
-    color: color(base);
-    font-weight: 500;
-    font-size: 1rem;
-    line-height: 1.45833em;
-    letter-spacing: .03em;
+    @extend %c-text;
     @include responsive (spWide){
       font-size: 1.5rem;
     }
   }
   &__lv4 {
-    color: color(base);
-    font-weight: 500;
+    @extend %c-text;
     font-size: 14px;
-    line-height: 1.45833em;
-    letter-spacing: .04em;
     @include responsive (spWide){
       font-size: 1rem;
     }
   }
   &__lv5 {
-    $lv5: #{&};
-    color: color(base);
-    font-weight: 500;
+    @extend %c-text;
     font-size: 0.85rem;
-    line-height: 1.45833em;
-    letter-spacing: .04em;
     &--base {
-      @extend #{$lv5};
       color: color(base);
-      font-weight: 400;
     }
   }
   &__lv6 {
-    color: color(base);
-    font-weight: 500;
-    font-size: 0.8333rem;
-    line-height: 1.45455em;
-    letter-spacing: .04em;  
+    @extend %c-text;
+    font-weight: 400;
+    font-size: 0.8rem;
   }
   &__lv7 {
-    color: color(base);
-    font-weight: 600;
+    @extend %c-text;
+    font-weight: 400;
     font-size: 0.75rem;
-    line-height: 1.45455em;
-    letter-spacing: .04em;  
   }
   &__sub {
+    @extend %c-text;
     color: color(base);
     font-weight: 500;
     font-size: 0.75rem;
-    line-height: 1.5em;
-    letter-spacing: .04em;
   }
   &__label {
-    color: color(base);
+    @extend %c-text;
     font-weight: 400;
     font-size: 0.8333rem;
     line-height: 1.2em;
@@ -104,10 +84,9 @@
     display: inline-block;
   }
   &__note {
-    color: color(base);
+    @extend %c-text;
     font-weight: 400;
-    font-size: 0.75rem;
-    line-height: 1.45455em;
+    font-size: 0.8rem;
     letter-spacing: 0;
     display: inline-block;
   }

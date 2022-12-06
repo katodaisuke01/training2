@@ -9,7 +9,7 @@
     <div class="l-container__1080">
       <div class="p-section__head">
         <div class="p-section__head--title scroll-block fade-block2">
-          <h3 class="c-text__lv2 c-text__weight--700 c-text--center"><strong>CAMPAIGN</strong><br>キャンペーン概要</h3>
+          <h3 class="c-text__lv2 c-text__weight--700 c-text--center"><strong>CAMPAIGN</strong><br><span>キャンペーン概要</span></h3>
         </div>
       </div>
       <div class="p-section__body">
@@ -30,7 +30,7 @@
       <div class="p-section__foot">
         <div class="c-box bg-fff scroll-block fade-block2">
           <div class="c-box__body">
-            <h4 class="c-text__lv2 c-text__weight--900">応募方法</h4>
+            <h4 class="c-text__lv2 c-text__weight--700">応募方法</h4>
             <p class="c-text__lv3 c-text__weight--700">オンラインオートサロンにユーザー登録＋キャンペーンにエントリーするだけ！</p>
           </div>
         </div>
@@ -42,7 +42,7 @@
     <div class="l-container">
       <div class="p-section__head">
         <div class="p-section__head--title scroll-block fade-block2">
-          <h3 class="c-text__lv2 c-text__weight--700 c-text--center"><strong>INFORMATION</strong><br>当選者数と抽選スケジュール</h3>
+          <h3 class="c-text__lv2 c-text__weight--700 c-text--center"><strong>INFORMATION</strong><br><span>当選者数と抽選スケジュール</span></h3>
         </div>
       </div>
       <div class="p-section__body">
@@ -225,7 +225,7 @@
   <section class="p-section p-about">
     <div class="p-section__head">
       <div class="p-section__head--title scroll-block fade-block2">
-        <h3 class="c-text__lv2 c-text__weight--700 c-text--center"><strong>ABOUT</strong><br>オンラインオートサロンとは</h3>
+        <h3 class="c-text__lv2 c-text__weight--700 c-text--center"><strong>ABOUT</strong><br><span>オンラインオートサロンとは</span></h3>
       </div>
     </div>
     <div class="p-section__body">
@@ -253,7 +253,7 @@
     <div class="l-container__960">
       <div class="p-section__head">
         <div class="p-section__head--title scroll-block fade-block2">
-          <h3 class="c-text__lv2 c-text__weight--700 c-text--center"><strong>DETAIL</strong><br>詳細情報</h3>
+          <h3 class="c-text__lv2 c-text__weight--700 c-text--center"><strong>DETAIL</strong><br><span>詳細情報</span></h3>
         </div>
       </div>
       <div class="p-section__body scroll-block fade-block2">
