@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/* br */
+/* 指定のワイドで折れる */
+.p-bread{
+  width:100%;
+  &__body{
+    padding:6px 0 4px;
+    display:flex;
+    align-items:center;
+    .p-list__bread{
+      margin-left:8px;
+      display:flex; flex-wrap:wrap;
+      align-items:center;
+      >li{
+        display:flex; flex-wrap:wrap;
+        align-items:center;
+        &:after{
+          content:'';
+          display:block;
+          height:5px; width:5px;
+          transform:rotate(45deg);
+          border-right:1px solid #888;
+          border-top:1px solid #888;
+          margin:0 6px 2px;
+        }
+        &:last-child{
+          &:after{content:none;}
+        }
+        p,a,span{
+          color:#888;
+          font-size:11px;
+          font-weight:400;
+        }
+        a{&:hover{opacity:.5;}}
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@charset "UTF-8";
+// ページネーション
+.p-pagination{
+  margin-top: 24px;
+  .p-list__wrap{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin:0 -4px;
+    >li{
+      padding: 0 4px;
+      &.current{
+        *{
+          border-bottom: color(accent) 2px solid;
+        }
+      }
+      >*{
+        display: block;
+        border: color(accent) 1px solid;
+        border-radius: 4px;
+        background-color: #fff;
+        transition: all 0.2s ease;
+        &:hover{
+          background-color: #fff;
+        }
+      }
+      span{
+        border: transparent 1px solid;
+      }
+      &.prev{
+        >*{
+          background-image: url(../image/icon/icon_arrow.svg);
+          transform: rotate(180deg);
+        }
+      }
+      &.next{
+        >*{
+          background-image: url(../image/icon/icon_arrow.svg);
+        }
+      }
+      span,a{
+        padding: 5px;
+        line-height: 1em;
+        text-align: center;
+        font-size:13px;
+        font-weight: 600;
+        color:color(accent);
+      }
+      a:hover{
+        background-color: #eee;
+      }
+    }
+  }
+}

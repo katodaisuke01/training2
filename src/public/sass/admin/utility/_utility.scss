@@ -1,0 +1,224 @@
+@charset "UTF-8";
+/* ——————————————————————————————————————————————————————————————
+WOWアニメーション
+—————————————————————————————————————————————————————————————— */
+.fadeInUp{
+  -webkit-animation: fadeInUp 2s ease 0s 1 normal;
+  animation: fadeInUp 2s ease 0s 1 normal;
+}
+/* 画面外 */
+.fade-block2 {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all .8s ease-in;
+}
+/* 画面に入った時の動き */
+.fade-block2.blockIn {
+  transform: translateY(0);
+  opacity: 1;
+}
+/* ——————————————————————————————————————————————————————————————
+シャドウ
+—————————————————————————————————————————————————————————————— */
+.shadow{
+  filter: drop-shadow(0px 4px 10px rgba(0, 169, 207, 0.2));
+	box-shadow: 0px 4px 10px rgba(229,150,0,.2);
+	-webkit-box-shadow:0px 4px 10px rgba(229,150,0,.2);
+}
+/* ——————————————————————————————————————————————————————————————
+情報なし
+—————————————————————————————————————————————————————————————— */
+.p-noContent{
+  padding:30px;
+  min-height: 150px;
+  background-color: color(bgGray);
+  width: 100%;
+  display: flex;flex-wrap:wrap;
+  align-items: center;
+  justify-content: center;
+  .c-text{
+    color: #aaa;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+/* ——————————————————————————————————————————————————————————————
+限定的なレイアウト
+—————————————————————————————————————————————————————————————— */
+.c-full{
+  width: 100% !important;
+  flex: 1 1 auto !important;
+}
+.c-none{
+  display:none;
+}
+.c-right{
+  margin-inline-start: auto;
+}
+.c-center{
+  margin:0 auto;
+  text-align:center;
+  justify-content:center;
+}
+.c-border{
+  padding:8px 8px 4px;
+  border: 1px solid color(main);
+  border-radius:8px;
+  &__top{
+    border-top:1px solid color(accent);
+    padding-top: 1rem;
+    margin-top: 1rem;
+  }
+}
+/* ——————————————————————————————————————————————————————————————
+ニューモーフィズム
+—————————————————————————————————————————————————————————————— */
+.c-bulge{
+  background-color:#F0F1F4;
+  box-shadow: 7px 7px 20px rgba(174,174,192,.4), -7px -7px 1rem rgba(255,255,255, 1);
+  padding:1rem;
+  border-radius: 1rem;
+  flex: auto;
+  @include responsive (spWide){
+    padding:2rem;
+  }
+}
+.c-concave{
+  background-color:#F0F1F4;
+  box-shadow: -5px -5px 5px rgba(255,255,255,.7) inset, 5px 5px 5px rgba(107, 112, 125, .1) inset;
+  padding: 1rem;
+  flex: auto;
+  border-radius: 1rem;
+  @include responsive (spWide){
+    padding:2rem;
+  }
+}
+// 背景色
+.bg{
+  &-fff{
+    background-color: #fff;
+  }
+  &-back{
+    background-color: color(back);
+  }
+  &-main{
+    background-color: color(main);
+    p{color:#fff;}
+  }
+  &-accent{
+    background-color: color(accent);
+    p{color:#fff;}
+  }
+}
+/* ——————————————————————————————————————————————————————————————
+width
+—————————————————————————————————————————————————————————————— */
+.u-w0 {
+  width: 0;
+}
+.u-w100p {
+  width: 100%;
+}
+@for $i from 1 through 40 {
+  $num: $i * 10;
+  .u-w#{$num} {
+    width: #{$num}px;
+  }
+}
+@for $i from 1 through 8 {
+  $num: $i * 50;
+  .u-w#{$num} {
+    width: #{$num}px;
+  }
+}
+
+/* ——————————————————————————————————————————————————————————————
+margin
+—————————————————————————————————————————————————————————————— */
+.u-m0 {
+  margin: 0;
+}
+
+// margin-top
+@for $i from 0 through 50 {
+  $num: $i * 4;
+  .u-mgt#{$num} {
+    margin-top: #{calc($num / 2)}px;
+  }
+}
+@include responsive(tabletWide) {
+  @for $i from 0 through 50 {
+    $num: $i * 4;
+    .u-mgt#{$num} {
+      margin-top: #{$num}px;
+    }
+  }
+}
+// margin-bottom
+@for $i from 0 through 50 {
+  $num: $i * 4;
+  .u-mgb#{$num} {
+    margin-bottom: #{calc($num / 2)}px;
+  }
+}
+@include responsive(tabletWide) {
+  @for $i from 0 through 50 {
+    $num: $i * 4;
+    .u-mgb#{$num} {
+      margin-bottom: #{$num}px;
+    }
+  }
+}
+/* ——————————————————————————————————————————————————————————————
+padding
+—————————————————————————————————————————————————————————————— */
+.u-p0 {
+  padding: 0;
+}
+// margin-bottom
+@for $i from 0 through 50 {
+  $num: $i * 4;
+  .u-pdt#{$num} {
+    padding-top: #{calc($num / 2)}px;
+  }
+}
+@include responsive(tabletWide) {
+  @for $i from 0 through 50 {
+    $num: $i * 4;
+    .u-pdt#{$num} {
+      padding-top: #{$num}px;
+    }
+  }
+}
+// padding-bottom
+@for $i from 0 through 50 {
+  $num: $i * 4;
+  .u-pdb#{$num} {
+    padding-bottom: #{calc($num / 2)}px;
+  }
+}
+@include responsive(tabletWide) {
+  @for $i from 0 through 50 {
+    $num: $i * 4;
+    .u-pdb#{$num} {
+      padding-bottom: #{$num}px;
+    }
+  }
+}
+/* ——————————————————————————————————————————————————————————————
+flex
+—————————————————————————————————————————————————————————————— */
+.u-align {
+  display: flex;
+  align-items: center;
+  // 水平方向
+  &--horizontal {
+    @extend .u-align;
+    flex-direction: column;
+  }
+  &--both {
+    @extend .u-align;
+    justify-content: center;
+  }
+}
+

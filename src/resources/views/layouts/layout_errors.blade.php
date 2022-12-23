@@ -28,7 +28,7 @@
     <script type="text/javascript">
       setTimeout("redirect()", 8000);
       function redirect(){
-      location.href='{{route('index')}}';
+      location.href='';
       }
     </script>
   </head>
@@ -53,10 +53,8 @@
               ?>
               @if(strstr($url,'company'))
                 <a href="{{route('company')}}" class="c-button">企業トップへ戻る</a>
-              @elseif(strstr($url,'admin'))
-                <a href="{{route('admin')}}" class="c-button">管理トップへ戻る</a>
               @else
-                <a href="{{route('index')}}" class="c-button">ユーザートップへ戻る</a>
+                <a href="" class="c-button">ユーザートップへ戻る</a>
               @endif
             </div>
           </div>

@@ -1,0 +1,346 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+- ボタン
+-------------------------------------------------- */
+%buttonArea{margin: -4px;
+	@include responsive (tablet){
+		align-items:center;justify-content:inherit;
+	}
+}
+.c-buttonArea{
+	@extend %buttonArea;
+	&__wrap{
+		@extend %buttonArea;
+		display:flex;flex-wrap:wrap;
+		align-items: flex-end;
+	}
+	&__center{
+		@extend %buttonArea;
+		display:flex;flex-wrap:wrap;
+		justify-content: center;
+		align-items: center;
+	}
+	&__end{
+		@extend %buttonArea;
+		display:flex;flex-wrap:wrap;
+		justify-content: flex-end;
+		margin-left: auto;
+		align-items: flex-end;
+	}
+	&__bottom{
+		@extend %buttonArea;
+		display:flex;flex-wrap:wrap;
+		align-items: flex-end;
+	}
+	&__bottom--end{
+		position:fixed;
+		bottom:8px;
+		right:24px;
+		@include responsive (spWide){
+			right:8px;
+		}
+	}
+	&__bottom--fixed{
+		position:fixed;
+		bottom:0;
+		left:0;
+		background-color: rgba($color: #000000, $alpha: 0.9);
+		padding: 8px;
+		border-radius:0;
+    z-index: 2;
+		width: 100%;
+		@include responsive (spWide){
+			display:flex;
+			align-items:center;
+			justify-content:center;
+		}
+	}
+}
+.c-column{flex-direction: column;}
+%c-button{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: .1em;
+	line-height: 1em;
+	padding: 3px 8px;
+	background:linear-gradient(135deg, #FFF336, #FA2318, #000586);
+	color: #fff;
+	border:color(light) 1px solid;
+	border-radius:25px;
+	height: 45px;
+	margin:4px;
+	transition: all 0.1s ease;
+	cursor: pointer;
+	@include responsive (spWide){
+		font-size: 16px;
+		width: 100%;
+		min-width: 100px;
+		max-width: 300px;
+	}
+	&:hover{
+		background:color(light);
+		color:color(main);
+		border-color:color(main);
+	}
+}
+.c-button{
+	@extend %c-button;
+	// サイズ
+	&__lg{
+    @extend %c-button;
+		font-size: 16px;
+		width: 100%;
+		@include responsive (spWide){
+			height: 60px;
+			border-radius:30px;
+		}
+	}
+	&__sm{
+    @extend %c-button;
+		height: 40px;
+		font-size: 13px;
+		max-width:200px;
+	}
+	&__min{
+    @extend %c-button;
+		height: 30px;
+		font-size: 12px;
+		width: auto;
+	}
+	&__wide{
+    @extend %c-button;
+		min-width:200px;
+	}
+	&__full{
+    @extend %c-button;
+		width:100%;
+		max-width: inherit;
+	}
+	&__text{
+		display: inline-flex;
+		align-items: center;
+		font-size: 13px;
+		font-weight: 500;
+		color: color(main);
+		text-align:center;
+		transition: all 0.1s ease;
+		border: 1px solid;
+    padding: 4px 8px;
+    border-radius: 18px;
+		&:hover{
+			color: color(linePale);
+			.c-icon__arrow{
+				transform: translateX(4px)
+			}
+		}
+		.c-icon__arrow{
+			display: inline-block;
+			border-radius: 50%;
+			border:#888 1px solid;
+			margin-left: 4px;
+			transition: all 0.2s ease;
+		}
+	}
+	&__text--white{
+		display: flex;
+		align-items: center;
+		font-size: 13px;
+		font-weight: 500;
+		border: 1px solid transparent;
+		color:#fff;
+		text-align:center;
+		transition: all 0.1s ease;
+		&:hover{
+			color: color(linePale);
+		}
+	}
+	// カラー
+	&__white{
+    @extend %c-button;
+		border: #fff 1px solid;
+		background: #fff;
+		color: color(main);
+		&:hover{
+			color: #fff;
+			background: color(main);
+		}
+	}
+	&__gray{
+    @extend %c-button;
+		background: #c7c7c7;
+		border-color: #c7c7c7;
+		&:hover{
+			color: #fff;
+			background: #666;
+			border:1px solid #c7c7c7;
+		}
+	}
+	&__pale{
+    @extend %c-button;
+		background:#FFD576;
+		border-color:#FFD576;
+		color: color(main);
+		&:hover{
+			color: #fff;
+			background: color(main);
+		}
+	}
+	&__line{
+    @extend %c-button;
+		background: transparent;
+		color: color(main);
+		border: 1px solid color(main);
+		&:hover{
+			background: color(main);
+			color: #fff;
+		}
+	}
+	&__line--white{
+    @extend %c-button;
+		border: #fff 1px solid;
+		background: transparent;
+		color: #fff;
+		&:hover{
+			background: #fff;
+			color: color(main);
+		}
+	}
+	&__line--black{
+    @extend %c-button;
+		border: #000 1px solid;
+		background: transparent;
+		color: #000;
+		&:hover{
+			border: #000 1px solid;
+			background: #000;
+			color: #fff;
+		}
+	}
+	&__line--gray{
+    @extend %c-button;
+		background: transparent;
+		border-color: #888;
+		color: #888;
+		&:hover{
+			color: #fff;
+			background: #888;
+		}
+	}
+	&:disabled{
+		cursor: auto;
+		background: #eee;
+		border-color: #eee;
+		color: #fff;
+		&:hover{
+			background: #eee;
+			border-color: #eee;
+			color: #fff;
+		}
+	}
+	// 形状
+	&__round{
+    @extend %c-button;
+		border-radius: 30px;
+	}
+	&__back{
+		font-size:13px;
+		font-weight:400;
+		display:block;
+		padding:8px 8px 8px 16px;
+		position:relative;
+		color:color(main);
+		&:before{
+			content:'';
+			display:block;
+			position:absolute;top:12px;left:0;
+			height:8px; width:8px;
+			border-top:1px solid;
+			border-left:1px solid;
+			transform:rotate(-45deg);
+		}
+		&:hover{
+			color:color(accent);
+		}
+	}
+}
+.c-button__switch{
+	color: color(main);
+	background: #fff;
+	border-radius: 20px 0 0 20px; 
+	margin-right: 0;
+	width: 100px;
+	+.c-button__switch{
+		border-radius: 0 20px 20px 0;
+		margin-left: 0;
+		margin-right: 5px;
+	}
+}
+.c-button__switch.current{
+	background: color(main);
+	color: #fff;
+}
+
+//画面下部に固定
+.p-fixBottom{
+	display: flex; flex-wrap:wrap;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 10px 20px 20px;
+	background: #fff;
+	z-index: 3;
+	box-shadow: 0px -3px 6px rgba(0, 100, 139, 0.1);
+	>.c-button__wide{
+		position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+		margin:0;
+	}
+}
+.c-button__rise{
+	position:fixed;
+	bottom:16px;
+	right:24px;
+	border-radius: 50%;
+	border:color(main) 1px solid;
+	background:#fff;
+	height:48px;
+	width:48px;
+	transition: all 0.2s ease;
+	@include responsive (tablet){
+		right:16px;
+	}
+	a{
+		position:relative;
+    height: 100%;
+    width: 100%;
+    display: block;
+	}
+	.c-icon__rise{
+		position:absolute;
+		top:55%;
+		left:50%;
+		transform:translate(-50%,-50%) rotate(-45deg);
+		height:8px; width:8px;
+		border-top: color(main) 1px solid;
+		border-right: color(main) 1px solid;
+		transition: all 0.2s ease;
+		&:before{
+			content: '';
+			display: block;
+			padding-top: 100%;
+			width: 100%;
+		}
+	}
+	&:hover{
+		background: color(main);
+		.c-icon__rise{
+			border-color: #fff;
+		}
+	}
+}

@@ -1,0 +1,182 @@
+@charset "UTF-8";
+.l-sidebar{
+  padding: .5rem;
+  position:sticky;
+  top:0;
+  left:0;
+  background-color: #eee;
+  display:flex;
+  height: 60px;
+  @include responsive (tabletWide){
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 0;
+  }
+  &__head{
+    max-width: 100px;
+    margin:0 auto;
+    padding:0 0 1rem;
+    @include responsive (tabletWide){
+      max-width: inherit;
+      padding:0 1rem 1rem;
+    }
+    a{
+      @include responsive (tabletWide){
+        max-width: inherit;
+      }
+    }
+    h1{margin-top: 8px;}
+  }
+  &__body{
+    flex: auto;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    @include responsive (tabletWide){
+      display:block;
+    }
+    >div{
+      a{
+        display:flex;
+        flex-wrap:wrap;
+        align-items:center;
+        font-weight: 500;
+        line-height:1;
+        padding: 0 .5rem;
+        font-size: 0;
+        @include responsive (tablet){
+          font-size: 11px;
+        }
+        @include responsive (tabletWide){
+          font-size: 13px;
+          padding: 1rem .5rem 1rem 1rem;
+        }
+        &:before{
+          content: '';
+          display:block;
+          background-size:cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          height:24px;
+          width:24px;
+          margin:0 0 4px;
+          @include responsive (tabletWide){
+            margin: 0 .5rem 0 0;
+          }
+        }
+      }
+
+      &.current,&:hover{
+        a{
+          background-color: color(base);
+          color: #fff;
+        }
+      }
+      position:relative;
+      &.dashboard{
+        a{
+          &:before{
+            background-image: url(/image/icon/admin/icon_layout.svg);
+          }
+        }
+        &.current,&:hover{
+          a{
+            &:before{
+              background-image: url(/image/icon/admin/icon_layout_white.svg);
+            }
+          }
+        }
+      }
+      &.user{
+        a{
+          &:before{
+            background-image: url(/image/icon/admin/icon_user.svg);
+          }
+        }
+        &.current,&:hover{
+          &:before{
+            background-image: url(/image/icon/admin/icon_user_white.svg);
+          }
+        }
+      }
+      &.company{
+        a{
+        &:before{
+          background-image: url(/image/icon/admin/icon_building.svg);
+        }
+        &.current,&:hover{
+          &:before{
+            background-image: url(/image/icon/admin/icon_building_white.svg);
+          }
+        }
+      }
+      }
+      &.contact{
+        a{
+        &:before{
+          background-image: url(/image/icon/admin/icon_mail.svg);
+        }
+        &.current,&:hover{
+          &:before{
+            background-image: url(/image/icon/admin/icon_mail_white.svg);
+          }
+        }
+      }
+      }
+      &.master{
+        a{
+          &:before{
+            background-image: url(/image/icon/admin/icon_master.svg);
+          }
+          &.current,&:hover{
+            &:before{
+              background-image: url(/image/icon/admin/icon_master_white.svg);
+            }
+          }
+        }
+      }
+      &.message{
+        a{
+          &:before{
+            background-image: url(/image/icon/admin/icon_message.svg);
+          }
+          &.current,&:hover{
+            &:before{
+              background-image: url(/image/icon/admin/icon_message_white.svg);
+            }
+          }
+        }
+      }
+      &.post{
+        a{
+          &:before{
+            background: url(/image/icon/admin/icon_post.svg);
+          }
+          &.current,&:hover{
+            &:before{
+              background: url(/image/icon/admin/icon_post_white.svg);
+            }
+          }
+        }
+      }
+      &.setting{
+        a{
+          &:before{
+            background-image: url(/image/icon/admin/icon_setting.svg);
+          }
+          &.current,&:hover{
+            &:before{
+              background-image: url(/image/icon/admin/icon_setting_white.svg);
+            }
+          }
+        }
+      }
+    }
+  }
+  &__foot{
+    @include responsive (tabletWide){
+      padding: 1rem 1rem 0;
+    }
+  }
+}
+

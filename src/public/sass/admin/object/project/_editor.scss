@@ -1,0 +1,21 @@
+@charset "UTF-8";
+.p-editor{
+    border: 1px solid color(main);
+    border-radius:8px;
+    padding: 16px;
+    background-color:#f7f7f7;
+    @include responsive (pc){
+        padding: 16px 16px 16px 56px;
+    }
+    .ce-block{
+        &__content{
+            background-color:#fff;
+            padding:0 8px;
+            h1{font-size:40px;font-weight:700;}
+            h2{font-size:32px;font-weight:700;}
+            h3{font-size:24px;font-weight:700;}
+            h4{font-size:16px;font-weight:700;}
+            h5{font-size:14px;font-weight:700;}
+        }
+    }
+}

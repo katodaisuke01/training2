@@ -1,0 +1,657 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+- インプット
+-------------------------------------------------- */
+input:-webkit-autofill {
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+textarea {
+  padding: 8px;
+  resize: none;
+  min-height: 100px;
+  @include responsive(spWide){
+    min-height: 200px;
+  }
+}
+select{color:color(base);}
+.c-input {
+  display:inline-flex;
+  position: relative;
+  $c-input: #{&};
+  //共通要素
+  %common {
+    font-size: 14px; 
+    height: 40px;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid color(border);
+    border-radius: 4px;
+    color: color(base);
+    background-color: #fff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    @include responsive(spWide){
+      height: 50px;
+    }
+  }
+  // プレイスホルダー
+  ::-webkit-input-placeholder { color: color(third);}
+  :-ms-input-placeholder { color: color(third);}
+  ::-moz-placeholder { color: color(third);}
+  // -- インプット search number file checkbox radio submit 
+  input,select {
+    @extend %common;
+    &.datepicker{height: 35px;}
+  }
+  textarea {
+    @extend %common;
+    padding: 5px 8px;
+    resize: none;
+    min-height: 100px;
+    @include responsive(spWide){
+      padding: 8px;
+      min-height: 200px;
+    }
+  }
+  //numberのスピンボタン非表示
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance:textfield;
+  }
+  &--full {
+    @extend #{$c-input};
+    width: 100%;
+    input,
+    textarea {
+      width: 100%;
+    }
+  }
+  &--wrap {@extend #{$c-input};
+    display:flex; flex-wrap:wrap;
+    align-items: center;
+    margin:-4px;
+    >*{
+      padding: 4px;
+    }
+  }
+  &--center {@extend #{$c-input};
+    display: -webkit-flex; display: flex;
+    align-items: center;
+    >*+*{
+      margin-left: 8px;
+    }
+  }
+  &--end {@extend #{$c-input};
+    display: -webkit-flex; display: flex;
+    align-items: flex-end;
+    >*+*{
+      margin-left: 8px;
+    }
+  }
+  &--column{@extend #{$c-input};flex-direction:column;width:100%;}
+  &__600{@extend #{$c-input};width: 100%;
+    @include responsive (spWide){width:600px;}
+  }
+  &__500{@extend #{$c-input};width: 100%;
+    @include responsive (spWide){width:500px;}
+  }
+  &__400{@extend #{$c-input};width: 100%;
+  @include responsive (spWide){width:400px;}
+}
+  &__350{@extend #{$c-input};width: 100%;
+  @include responsive (spWide){width:350px;}
+}
+  &__300{@extend #{$c-input};width: 100%;
+  @include responsive (spWide){width:300px;}
+}
+  &__250{@extend #{$c-input};width: 250px;}
+  &__200{@extend #{$c-input};width: 200px;}
+  &__150{@extend #{$c-input};width: 150px;}
+  &__100{@extend #{$c-input};width: 100px;}
+  &__70{@extend #{$c-input};width: 70px;}
+  &__50{@extend #{$c-input};width: 50px;}
+  // -- チェックボックス・ラジオ共通項目
+  %commonInput {    
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  %commonBox {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(/img/admin/p-input/radio.svg);
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    position: absolute;
+    top: 50%;
+    left: -4px;
+    transform: translateY(-50%);
+  }
+  %commonLabel {
+    color: color(border);
+    font-size: 14px;
+    line-height: 1em;
+    display: flex;
+    align-items: center;
+    height: 32px;
+    padding: 0 12px 0 20px;
+    position: relative; 
+  }
+  // -- 日付入力
+  &--date{
+    position:relative;
+    width: 150px;
+    &:before{
+      content: '';
+      display: block;
+      background: url(../image/icon/icon_calendar.svg) no-repeat center;
+      background-size: cover;
+      position:absolute;
+      right: 10px;
+      top: 50%;
+      margin: 0;
+      height:24px;width:24px;
+      transform: translateY(-50%);
+    }
+  }
+  &--pw{
+    position:relative;
+    .c-icon__eye{
+      background-size: cover !important;
+      background: url(../image/icon/icon_eye_close.svg) no-repeat center;
+      width: 24px;
+      position:absolute;
+      top: 50%;
+      right: 8px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      &:before{
+        content: '';
+        display: block;
+        padding-top: 100%;
+        width: 100%;
+      }
+      &.visible{
+        background: url(../image/icon/icon_eye_open.svg) no-repeat center;
+      }
+    }
+  }
+  /* セレクトボックス */
+  &--select{
+    @extend #{$c-input};
+    display: inline-flex;
+    position: relative;
+    &:before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      background: url(../image/icon/icon_dropdown.svg);
+      background-size: contain !important;
+      background-position: center center !important;
+      background-repeat: no-repeat !important;
+      position: absolute;
+      top: 50%;
+      right: 4px;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    select {
+      @extend %common;
+      padding-right:20px !important;width: 100%;
+    }
+  }
+}
+// -- チェックボックス&ラジオボタン
+.c-checkbox,.c-radio {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  &--column {
+    flex-direction: column;
+  }
+  input[type="checkbox"],input[type="radio"] {
+    @extend %commonInput;
+    + label {
+      color: color(base);
+      font-size: 14px;
+      position:relative;
+      cursor: pointer;
+      display:flex; flex-wrap:wrap;
+      align-items:center;
+      &:before {
+        content: '';
+        height:20px; width:20px;
+        background-color: #fff;
+        border: 1px solid color(border);
+        border-radius:3px;
+        display: block;
+        margin-right: 4px;
+      }
+      &:after{
+        content: '';
+        display: none;
+        border-radius:2px;
+        height:14px; width:9px;
+        border-bottom: 3px solid color(border);
+        border-right: 3px solid color(border);
+        position: absolute;
+        top: 0;
+        left: 6px;
+        transform: rotate(45deg);
+      }
+    }
+    &:checked + label {
+      &:after{
+        display:block;
+      }
+    }
+  }
+  &__button{
+    background:linear-gradient(135deg, #EFD800, #EF6500);
+    padding: 2px;
+    border-radius:8px;
+    input[type="checkbox"],input[type="radio"] {
+      +label{
+        border-radius:6px;
+        color: color(main);
+        background: #fff;
+        padding:4px 16px;
+        font-size: 14px;
+        font-weight:700;
+        @include responsive (spWide){
+          padding:4px 8px;
+          font-size: 13px;
+        }
+        &:before,&:after{
+          content: none;
+        }
+        .c-icon__w16{
+          margin-right:8px;
+        }
+      }
+      &:checked + label {
+        background:transparent;
+        color:#fff;
+        .c-icon--heart{
+          background-image:url(../image/icon/icon_heart_white.svg);
+        }
+      }
+    }
+  }
+  &__icon{
+    input[type="checkbox"],input[type="radio"] {
+      +label{
+        font-size: 13px;
+        color: #888;
+        &:before,&:after{
+          content: none;
+        }
+        .c-icon--favorite{
+          border-radius:50%;
+          margin-right: 4px;
+        }
+      }
+      &:checked +label {
+        color: color(main);
+        .c-icon--favorite {
+          background-image:url(../image/icon/icon_star_white.svg);
+          background-color: color(main);
+        }
+      }
+    }
+  }
+  &.c-switch{
+    input[type="checkbox"]{
+      +label{
+        width:50px;
+        height: 24px;
+        background-color: #ddd;
+        border-radius: 12px;
+        position:relative;
+        transition: all 0.2s ease;
+        &:before{
+          height:20px; width:20px;
+          display: block;
+          content: '';
+          z-index: 1;
+          background-color: #fff;
+          position:absolute;
+          top: 50%;
+          left: 2px;
+          border-radius: 50%;
+          transition: all 0.2s ease;
+        }
+        &:after{
+          position:absolute;top:5px;right:-55px;
+          content: '未対応';
+          font-size: 13px;
+          font-weight: 500;
+          color: color(alert);
+          display: block;
+          height:inherit; width:inherit;
+        }
+      }
+      &:checked{
+        +label{
+          background-color:color(ok);
+          &:before{
+            left: 28px;
+          }
+          &:after{
+            content: '対応済';
+            color: color(ok);
+          }
+        }
+      }
+    }
+    &__publish{
+      input[type="checkbox"]{
+        +label{
+          &:after{
+            content: '未公開';
+          }
+        }
+        &:checked{
+          +label{
+            &:after{
+              content: '公開中';
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// -- ラジオ
+.c-radio {
+  margin:-8px;
+  +p{
+    margin-top: 8px;
+  }
+  input[type="radio"] {
+    +label{
+      line-height: 1em;
+      padding:8px;
+      width:auto;
+      &:before,&:after{
+        border-radius:50%;
+      }
+      &:before{
+        margin-right: 8px;
+      }
+      &:after{
+        height:10px; width:10px;
+        border: none;
+        background-color: color(main);
+        top: 50%;
+        left: 13px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  label {
+    @extend %commonLabel;
+    &:before {
+      content: '';
+      display: block;
+      height:16px; width:16px;
+      border-radius: 50%;
+      background-color: #ddd;
+    }
+    @extend %commonBox;
+    &:after {
+      content: none;
+    }
+  }
+}
+
+.required,.optional {
+  display:flex; flex-wrap:wrap;
+  align-items:center;
+  &:after {
+    border: 1px solid color(main);
+    border-radius: 3px;
+    line-height: 1em;
+    font-size: 10px;
+    padding: 2px 2px 1px;
+    height: auto;
+    margin-left: 4px;
+  }
+}
+.required {
+  &:after {
+    content: "必須";
+    background-color: color(main);
+    color: #fff;
+  }
+}
+.optional {
+  &:after {
+    content: "任意";
+    border: 1px solid color(main);
+    color: color(border);
+  }
+}
+input[readonly],textarea[readonly]{
+  border: none;
+  background: none;
+  padding: 0;
+}
+/* デフォルトリセットなど */
+input,select,button,textarea{ -webkit-appearance: none; -moz-appearance: none; appearance: none;}
+button { outline: none;}
+select::-ms-expand { display: none;}
+input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px #fafafa inset;}
+input[type="checkbox"],input[type="radio"],input[type="file"]{display:none;width:100%;border-radius:0 !important;padding: 0;}
+
+/* イメージ、ファイル系 */
+.c-input--image,.c-input--file{
+  width: 100%;
+  max-width: 600px;
+  input[type="file"]{
+    +label{
+      background:#e3edf1 url(../image/icon/icon_noimage_white.svg) no-repeat center;
+      background-size: cover;
+      display: block;
+      width: 100%;
+      border-radius: 3px;
+      cursor: pointer;
+      border: 1px solid color(border);
+      &.c-user{
+        background-image: url(../image/icon/icon_nobody_white.svg);
+      }
+      &:before{
+        content: '';
+        display: block;
+        padding-top: 70%;
+        width: 100%;
+      }
+      &:hover{
+        opacity: .7;
+      }
+    }
+  }
+  &.wide{
+    input[type="file"]+label{
+      &:before{padding-top:50%;}
+    }
+  }
+  &.square{
+    input[type="file"]+label{
+      background-size:contain;
+      &:before{padding-top:100%;}
+    }
+  }
+  &.c-user{
+    input[type="file"]+label{
+      background-image: url(../image/icon/icon_nobody_white.svg);
+      &:before{
+        content: '';
+        display: block;
+        padding-top: 125%;
+        width: 100%;
+      }
+    }
+  }
+}
+/* 住所などインプット要素を縦に並べる場合 */
+.c-input--column > .c-input + .c-input {
+  margin: 4px 0 0;
+}
+
+*:disabled{
+  border-color: transparent;
+  background: #eee;
+  color: #fff;
+  &+ label{
+    opacity: .3;
+  }
+}
+
+/* ラベルがない場合 */
+.c-checkbox .label-none {
+  padding: 0 0 0 16px; /* boxの幅分 */margin:0 auto;
+}
+/* プレイスホルダー */
+input::-webkit-input-placeholder { color:rgba(0,0,0,.25);line-height: normal;}
+input:-ms-input-placeholder { color:rgba(0,0,0,.25);line-height: normal;}
+input::-moz-placeholder { color:rgba(0,0,0,.25);line-height: normal;}
+textarea::-webkit-input-placeholder { color:rgba(0,0,0,.25);line-height: normal;}
+
+// スイッチ式ラジオボタン
+.c-switch{
+  margin:0 auto;
+  display: flex;
+  width: 200px;
+  height: 35px;
+  &.c-radio{
+    input[type="radio"] + label{
+      margin: 0;
+      font-size:14px;
+      font-weight:500;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.5em;
+      padding: 0;
+      width: 50%;
+      box-shadow: 0px 2px 4px rgba(0,0,0,.1);
+      border-radius: 3px 0 0 3px;
+      background-color: #ccc;
+      color: #fff;
+      &:before, &:after{
+        display: none;
+      }
+      + input + label{
+        border-radius: 0 3px 3px 0;
+      }
+    }
+    input[type=radio]:checked + label{
+      background-color:#1dbe00;
+      &:before{
+        content: none;
+      }
+      &:after{
+        display: none;
+      }
+    }
+    input{
+      +label{
+        +input[type=radio]:checked{
+          +label{
+            background-color: color(888);
+          }
+        }
+      }
+    }
+  }
+}
+// エラーメッセージ
+.c-text__error,.error{
+  padding:3px 8px 2px;
+  color: #fff !important;
+  background-color: #D92B89;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 5px;
+  display: inline-flex;
+  &:before{
+    content: '!';
+    font-weight:900;font-size:15px;
+    margin-right: 4px;
+  }
+}
+//DatePicker
+body .ui-datepicker{
+  &.ui-widget.ui-widget-content{
+    border: none;
+    border-radius:0;
+    .ui-state-active{
+      background-color: color(main);
+      border-color: color(accent);
+    }
+  }
+  box-shadow: 0px 4px 8px rgba(126, 55, 0, 0.15);
+  .ui-datepicker{
+    &-title{
+      position:relative;
+      select{
+        padding:4px;
+        border:1px solid color(main);
+        text-align: center;
+        width: 70px;
+        border-radius:4px;
+        cursor: pointer;
+        &:hover{
+          background-color: color(linePale);
+        }
+        &.ui-datepicker-year{
+          margin-right: 4px;
+        }
+        &.ui-datepicker-month{
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+  .ui-state-default{
+    border: none;
+    &:hover{
+      background-color: color(linePale);
+    }
+  }
+  .ui-button{
+    &.ui-state-disabled{
+      &:hover{
+        border: none;
+      }
+      &:active{
+        border: none;
+      }
+    }
+  }
+  .ui-corner{
+    &-all{
+      border: none;
+      background-color:color(accent);
+      border-radius:0;
+    }
+    &-top{border: none;}
+    &-left{border: none;}
+    &-tl{border: none;}
+  }
+  .ui-state-highlight{
+    color: #fff;
+    background-color: color(main);
+    border-color: color(accent);
+  }
+}

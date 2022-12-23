@@ -12,4 +12,8 @@ class PageController extends Controller
   {
     return view('oas/index');
   }
+  public function admin()
+  {
+    return view('admin/index');
+  }
 }

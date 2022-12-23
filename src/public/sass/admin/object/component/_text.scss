@@ -1,0 +1,161 @@
+@charset "UTF-8";
+/* ! ==================================================
+- テキスト
+================================================== */
+@function font($weight, $px, $lineHeight) {
+  $family: "Montserrat", "Noto Sans JP", -apple-system, "BlinkMacSystemFont",
+    "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  @return $weight rem($px) #{"/"} $lineHeight $family;
+}
+%c-text {
+  color: color(base);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.618em;
+  letter-spacing: 0.05em;
+}
+.c-text{
+  &__title {
+    @extend %c-text;
+    font-size: 2.5rem;
+    letter-spacing: 0;
+    @include responsive (spWide){
+      font-size: 3rem;
+    }
+  }
+  &__lv1 {
+    @extend %c-text;
+    font-size: 2rem;
+    letter-spacing: .08em;
+    @include responsive (spWide){
+      font-size: 2.5rem;
+    }
+  }
+  &__lv2 {
+    @extend %c-text;
+    font-size: 1.5rem;
+    @include responsive (spWide){
+      font-size: 2rem;
+    }
+  }
+  &__lv3 {
+    @extend %c-text;
+    @include responsive (spWide){
+      font-size: 1.5rem;
+    }
+  }
+  &__lv4 {
+    @extend %c-text;
+    font-size: 14px;
+    @include responsive (spWide){
+      font-size: 1rem;
+    }
+  }
+  &__lv5 {
+    @extend %c-text;
+    font-size: 0.85rem;
+    &--base {
+      color: color(base);
+    }
+  }
+  &__lv6 {
+    @extend %c-text;
+    font-weight: 400;
+    font-size: 0.8rem;
+  }
+  &__lv7 {
+    @extend %c-text;
+    font-weight: 400;
+    font-size: 0.75rem;
+  }
+  &__sub {
+    @extend %c-text;
+    color: color(base);
+    font-weight: 500;
+    font-size: 0.75rem;
+  }
+  &__label {
+    @extend %c-text;
+    font-weight: 400;
+    font-size: 0.8333rem;
+    line-height: 1.2em;
+    letter-spacing: 0;
+    display: inline-block;
+  }
+  &__note {
+    @extend %c-text;
+    font-weight: 400;
+    font-size: 0.8rem;
+    letter-spacing: 0;
+    display: inline-block;
+  }
+  &__unit {
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1em;
+    margin: 0 2px;
+    letter-spacing: 0;
+    display: inline-block;
+    color: #888;
+  }
+  &__min {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 1.2em;
+    color: #444;
+  }
+  &__main {color: color(main);}
+  &__alert {color: color(alert);}
+  &__accent {color: color(accent);}
+  &__ok {color: color(ok);}
+  &__read {color:#555;}
+  &__weight--100 {font-weight: 100;}
+  &__weight--200 {font-weight: 200;}
+  &__weight--300 {font-weight: 300;}
+  &__weight--400 {font-weight: 400;}
+  &__weight--700 {font-weight: 700;}
+  &__weight--900 {font-weight: 900;}
+  &__letter--none {letter-spacing: 0;}
+  &--center {text-align: center;}
+  &--right {text-align: right;line-height:1;}
+  &__space--wrap {white-space: pre-wrap;}
+}
+.c-title{
+  display:flex; flex-wrap:wrap;
+  align-items:center;
+}
+.c-italic__en{
+  font-family:'times',serif;
+  font-style: italic;
+}
+// 単位の空き
+.c-unit{
+  &__before{margin-right:4px;}
+  &__after{margin-left:4px;}
+}
+// アラート分
+.c-alert{
+  padding: 5px 10px;
+  border: #EF0065 1px solid;
+  p{
+    color:#EF0065;
+    font-size: 15px;
+    text-align: center;
+  }
+}
+// 擬似要素
+[data-before]{
+  &:before{
+    content: attr(data-before)'';
+    font-size: 0.6em;
+    font-weight: 500;
+  }
+}
+[data-after]{
+  &:after{
+    content: attr(data-after)'';
+    font-size: 0.6em;
+    font-weight: 500;
+  }
+}

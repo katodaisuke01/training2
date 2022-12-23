@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+- ボックス
+-------------------------------------------------- */
+.c-box{
+    width: 100%;
+    &.bg-fff{
+        padding:1rem;
+        background-color: rgba($color: #fff, $alpha: 0.85);
+        @include responsive (tablet){
+            padding: 2rem;
+        }
+    }
+    +.c-box{
+        margin-top: 1.5rem;
+    }
+    &__200{max-width: 200px;margin:0 auto;}
+    &__500{max-width: 500px;margin:0 auto;}
+    &__600{max-width: 600px;margin:0 auto;}
+    &__700{max-width: 700px;margin:0 auto;}
+    &__800{max-width: 800px;margin:0 auto;}
+    &__900{max-width: 900px;margin:0 auto;}
+    &__head{
+        margin-bottom: 1rem;
+    }
+    &__foot{
+        margin-top: 1rem;
+    }
+}
+.p-data__none{
+    background-color:#ddd;
+    border-radius:8px;
+    padding:24px;
+    margin:24px 0;
+    height:150px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    p{
+        color:#888;
+        @include responsive (spWide){
+            font-size:16px;
+        }
+    }
+}

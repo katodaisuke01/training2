@@ -1,0 +1,36 @@
+@use "cms/foundation/_reset.scss";
+@use "cms/foundation/_base.scss";
+@use "cms/foundation/_responsive.scss";
+
+@use "cms/form/_group.scss";
+@use "cms/form/_form.scss";
+@use "cms/table/_table.scss";
+
+@use "cms/layout/_wrapper.scss";
+@use "cms/layout/_header.scss";
+@use "cms/layout/_sidebar.scss";
+@use "cms/layout/_main.scss";
+@use "cms/layout/_footer.scss";
+
+@use "cms/object/component/_btn.scss" as c-btn;
+@use "cms/object/component/_link.scss" as c-link;
+@use "cms/object/component/_box.scss" as c-box;
+@use "cms/object/component/_heading.scss" as c-heading;
+@use "cms/object/component/_divider.scss" as c-divider;
+@use "cms/object/component/_dl.scss" as c-dl;
+
+@use "cms/object/project/_auth.scss" as p-auth;
+@use "cms/object/project/_main.scss" as p-main;
+@use "cms/object/project/_header.scss" as p-header;
+@use "cms/object/project/_sidebar.scss" as p-sidebar;
+
+@use "cms/object/project/_dashboard.scss" as p-dashboard;
+@use "cms/object/project/_bread.scss" as p-bread;
+@use "cms/object/project/_tab.scss" as p-tab;
+@use "cms/object/project/_profile.scss" as p-profile;
+
+// utility
+@use "cms/utility/_margin.scss" as u-margin;
+@use "cms/utility/_padding.scss" as u-padding;
+@use "cms/utility/_width.scss" as u-width;
+@use "cms/utility/_align.scss" as u-align;
