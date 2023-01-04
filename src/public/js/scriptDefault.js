@@ -173,9 +173,9 @@ $(function() {
     $('.area_flash').addClass('flash_on');
   }
 });
-//デザイン用スクリプト
-$(".c-favorite").click(function(){
-  $(this).toggleClass("select");
+//アコーディオン用スクリプト
+$(".c-accordion").click(function(){
+  $(this).toggleClass("open");
 });
 // パスワードの可視or不可視
 $(".c-icon__eye").click(function () {

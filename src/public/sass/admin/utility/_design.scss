@@ -1,0 +1,94 @@
+@use "../foundation/var" as *;
+/* ——————————————————————————————————————————————————————————————
+シャドウ
+—————————————————————————————————————————————————————————————— */
+.shadow{
+  filter: drop-shadow(0px 4px 10px rgba(0, 169, 207, 0.1));
+	box-shadow: 0px 4px 10px rgba(0, 169, 207,.1);
+	-webkit-box-shadow:0px 4px 10px rgba(0, 169, 207, 0.1);
+}
+/* ——————————————————————————————————————————————————————————————
+ボーダー
+—————————————————————————————————————————————————————————————— */
+.c-border{
+  border: #ddd 1px solid;
+  &__top{
+    border-top: #ddd 1px solid;
+    padding-top: 1rem;
+  }
+  &__bottom{
+    border-bottom: #ddd 1px solid;
+    padding-bottom: 1rem;
+  }
+}
+/* ——————————————————————————————————————————————————————————————
+情報なし
+—————————————————————————————————————————————————————————————— */
+.p-noContent{
+  padding:30px;
+  min-height: 150px;
+  background-color: color(bgGray);
+  width: 100%;
+  display: flex;flex-wrap:wrap;
+  align-items: center;
+  justify-content: center;
+  .c-text{
+    color: #aaa;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+/* ——————————————————————————————————————————————————————————————
+限定的なレイアウト
+—————————————————————————————————————————————————————————————— */
+.c-full{
+  width: 100% !important;
+  flex: 1 1 auto !important;
+}
+.c-none{
+  display:none;
+}
+.c-right{
+  margin-inline-start: auto;
+}
+.c-center{
+  margin:0 auto;
+  text-align:center;
+  justify-content:center;
+}
+// 背景色
+.bg{
+  &-fff{
+    background-color: #fff;
+  }
+  &-back{
+    background-color: color(back);
+  }
+  &-main{
+    background-color: color(main);
+    p{color:#fff;}
+  }
+  &-accent{
+    background-color: color(accent);
+    p{color:#fff;}
+  }
+}
+.c-accordion{
+  position:relative;
+  height:24px;
+  width:24px;
+  background-color: #777;
+  .p-list{
+    display:none;
+    position:absolute;
+    bottom:0;
+    right:0;
+    background-color: white;
+    padding: 1rem;
+  }
+  &.open{
+    .p-list{
+      display:block;
+    }
+  }
+}

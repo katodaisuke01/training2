@@ -69,17 +69,6 @@
     }
   }
 }
-// flex
-.f{
-	&-wrap{display:flex;flex-wrap:wrap;flex:auto;}
-	&-column{display:flex;flex-direction:column;}
-	&-j_start{display:flex;justify-content: flex-start;}
-	&-j_center{display:flex;justify-content: center;}
-	&-j_end{display:flex;justify-content: flex-end;}
-	&-a_start{display:flex;align-items:flex-start;flex:auto;}
-	&-a_center{display:flex;align-items:center;flex:auto;}
-	&-a_end{display:flex;align-items:flex-end;flex:auto;}
-}
 // ローディング
 .p-loading {
   height: 150px;

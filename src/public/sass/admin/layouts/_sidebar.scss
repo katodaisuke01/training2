@@ -1,0 +1,219 @@
+@use "../foundation/responsive" as *;
+@use "../foundation/_var" as *;
+.l-sidebar{
+  padding: .5rem;
+  position:sticky;
+  top:0;
+  left:0;
+  background-color: #eee;
+  height: 60px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  @include responsive (tabletWide){
+    flex-direction: column;
+    gap: inherit;
+    height: auto;
+    padding: 1rem 0;
+  }
+  &__head{
+    max-width: 80px;
+    margin:0 1rem 0 0;
+    @include responsive (tabletWide){
+      margin:0 auto;
+      max-width: inherit;
+      padding:0 1rem 1rem;
+    }
+    a{
+      &:hover{
+        opacity: .7;
+      }
+      @include responsive (tabletWide){
+        max-width: inherit;
+      }
+    }
+    h1{margin-top: 8px;}
+  }
+  &__body{
+    display:flex;
+    align-items:center;
+    @include responsive (tabletWide){
+      display:block;
+      width: 100%;
+    }
+    >div{
+      position:relative;
+      a{
+        display:flex;
+        flex-wrap:wrap;
+        align-items:center;
+        font-weight: 500;
+        line-height:1;
+        padding: 0 .5rem;
+        font-size: 0;
+        @include responsive (tabletWide){
+          font-size: 13px;
+          padding: 1rem .5rem 1rem 1rem;
+        }
+        &:before{
+          content: '';
+          display:block;
+          background-size:cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          height:24px;
+          width:24px;
+          margin:0 0 4px;
+          @include responsive (tabletWide){
+            margin: 0 .5rem 0 0;
+          }
+        }
+      }
+      &.is-active,&:hover{
+        a{
+          font-size: 13px;
+          @include responsive (tabletWide){
+            font-size: 13px;
+            background-color: color(base);
+            color: #fff;
+          }
+        }
+      }
+      &.dashboard{
+        a{
+          &:before{
+            background-image: url(/image/icon/admin/icon_layout.svg);
+          }
+        }
+        &.is-active,&:hover{
+          a{
+            &:before{
+              @include responsive (tabletWide){
+                background-image: url(/image/icon/admin/icon_layout_white.svg);
+              }
+            }
+          }
+        }
+      }
+      &.user{
+        a{
+          &:before{
+            background-image: url(/image/icon/admin/icon_user.svg);
+          }
+        }
+        &.is-active,&:hover{
+          a{
+            &:before{
+              @include responsive (tabletWide){
+                background-image: url(/image/icon/admin/icon_user_white.svg);
+              }
+            }
+          }
+        }
+      }
+      &.company{
+        a{
+          &:before{
+            background-image: url(/image/icon/admin/icon_building.svg);
+          }
+        }
+        &.is-active,&:hover{
+          a{
+            &:before{
+              @include responsive (tabletWide){
+                background-image: url(/image/icon/admin/icon_building_white.svg);
+              }
+            }
+          }
+        }
+      }
+      &.contact{
+        a{
+          &:before{
+            background-image: url(/image/icon/admin/icon_mail.svg);
+          }
+        }
+        &.is-active,&:hover{
+          a{
+            &:before{
+              @include responsive (tabletWide){
+                background-image: url(/image/icon/admin/icon_mail_white.svg);
+              }
+            }
+          }
+        }
+      }
+      &.master{
+        a{
+          &:before{
+            background-image: url(/image/icon/admin/icon_master.svg);
+          }
+        }
+        &.is-active,&:hover{
+          a{
+            &:before{
+              @include responsive (tabletWide){
+                background-image: url(/image/icon/admin/icon_master_white.svg);
+              }
+            }
+          }
+        }
+      }
+      &.message{
+        a{
+          &:before{
+            background-image: url(/image/icon/admin/icon_message.svg);
+          }
+        }
+        &.is-active,&:hover{
+          a{
+            &:before{
+              @include responsive (tabletWide){
+                background-image: url(/image/icon/admin/icon_message_white.svg);
+              }
+            }
+          }
+        }
+      }
+      &.post{
+        a{
+          &:before{
+            background: url(/image/icon/admin/icon_post.svg);
+          }
+        }
+        &.is-active,&:hover{
+          a{
+            &:before{
+              @include responsive (tabletWide){
+                background: url(/image/icon/admin/icon_post_white.svg);
+              }
+            }
+          }
+        }
+      }
+      &.setting{
+        a{
+          &:before{
+            background-image: url(/image/icon/admin/icon_setting.svg);
+          }
+        }
+        &.is-active,&:hover{
+          a{
+            &:before{
+              @include responsive (tabletWide){
+                background-image: url(/image/icon/admin/icon_setting_white.svg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__foot{
+    margin-inline-start: auto;
+    @include responsive (tabletWide){
+      margin:0;
+      padding: 1rem 1rem 0;
+    }
+  }
+}

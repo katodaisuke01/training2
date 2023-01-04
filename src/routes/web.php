@@ -31,7 +31,15 @@ Route::group([
   'as' => 'admin.',
   'prefix' => 'admin'
 ], function () {
-    Route::get('/', 'PageController@admin')->name('index');
+  Route::get('/', 'PageController@dashboard')->name('dashboard');
+  Route::get('/user', 'PageController@user')->name('user');
+  Route::get('/user/detail', 'PageController@user.detail')->name('userDetail');
+  Route::get('/company', 'PageController@company')->name('company');
+  Route::get('/message', 'PageController@message')->name('message');
+  Route::get('/contact', 'PageController@contact')->name('contact');
+  Route::get('/post', 'PageController@post')->name('post');
+  Route::get('/master', 'PageController@master')->name('master');
+  Route::get('/setting', 'PageController@setting')->name('setting');
 });
 Route::group([
   'as' => 'marry.',

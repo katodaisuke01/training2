@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@use "../../foundation/responsive" as *;
 .l-auth{
     display: flex;
     align-items:center;
@@ -34,16 +34,16 @@
                 margin:0 auto;
                 max-width:500px;
                 .c-box{
-                    padding:40px;
+                    padding:2.5rem;
                     @include responsive (tablet){
-                        padding:16px 8px;
+                        padding:1rem .5rem;
                     }
                     &__head{
                         display:flex;
                         align-items:center;
                         flex-direction: column;
                         title{
-                            font-size: 40px;
+                            font-size: 2.5rem;
                             font-style: italic;
                             text-align: center;
                         }
@@ -58,7 +58,7 @@
                             .c-input{
                                 input{
                                     height: 60px;
-                                    padding: 0 16px;
+                                    padding: 0 1rem;
                                     @include responsive (spWide){
                                         height: 45px;
                                         padding: 0 12px;
@@ -70,9 +70,9 @@
                                 *{
                                     margin:0;
                                     +*{
-                                        margin-top:24px;
+                                        margin-top:1.5rem;
                                         @include responsive (tablet){
-                                            margin-top:16px;
+                                            margin-top:1rem;
                                         }
                                     }
                                 }
@@ -83,10 +83,10 @@
             }
             &__foot{
                 position:absolute;
-                bottom:8px;
-                right: 16px;
+                bottom:.5rem;
+                right: 1rem;
                 @include responsive (tablet){
-                    bottom:24px;
+                    bottom:1.5rem;
                     right:inherit;
                     left:50%;
                     transform: translateX(-50%);

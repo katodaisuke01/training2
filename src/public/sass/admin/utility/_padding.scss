@@ -1,0 +1,37 @@
+@use "../foundation/responsive" as *;
+/* ——————————————————————————————————————————————————————————————
+padding
+—————————————————————————————————————————————————————————————— */
+.u-p0 {
+  padding: 0;
+}
+// padding-top
+@for $i from 0 through 50 {
+  $num: $i * 4;
+  .u-pdt#{$num} {
+    padding-top: #{calc($num / 2)}px;
+  }
+}
+@include responsive(tabletWide) {
+  @for $i from 0 through 50 {
+    $num: $i * 4;
+    .u-pdt#{$num} {
+      padding-top: #{$num}px;
+    }
+  }
+}
+// padding-bottom
+@for $i from 0 through 50 {
+  $num: $i * 4;
+  .u-pdb#{$num} {
+    padding-bottom: #{calc($num / 2)}px;
+  }
+}
+@include responsive(tabletWide) {
+  @for $i from 0 through 50 {
+    $num: $i * 4;
+    .u-pdb#{$num} {
+      padding-bottom: #{$num}px;
+    }
+  }
+}

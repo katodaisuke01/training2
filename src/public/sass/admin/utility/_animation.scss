@@ -1,0 +1,18 @@
+/* ——————————————————————————————————————————————————————————————
+WOWアニメーション
+—————————————————————————————————————————————————————————————— */
+.fadeInUp{
+  -webkit-animation: fadeInUp 2s ease 0s 1 normal;
+  animation: fadeInUp 2s ease 0s 1 normal;
+}
+/* 画面外 */
+.fade-block2 {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all .8s ease-in;
+}
+/* 画面に入った時の動き */
+.fade-block2.blockIn {
+  transform: translateY(0);
+  opacity: 1;
+}

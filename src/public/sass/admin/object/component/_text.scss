@@ -1,12 +1,22 @@
-@charset "UTF-8";
+@use "../../foundation/responsive" as *;
+@use "../../foundation/_var" as *;
 /* ! ==================================================
 - テキスト
 ================================================== */
-@function font($weight, $px, $lineHeight) {
-  $family: "Montserrat", "Noto Sans JP", -apple-system, "BlinkMacSystemFont",
-    "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  @return $weight rem($px) #{"/"} $lineHeight $family;
+// 擬似要素
+[data-before]{
+  &:before{
+    content: attr(data-before)'';
+    font-size: 0.6em;
+    font-weight: 500;
+  }
+}
+[data-after]{
+  &:after{
+    content: attr(data-after)'';
+    font-size: 0.6em;
+    font-weight: 500;
+  }
 }
 %c-text {
   color: color(base);
@@ -121,10 +131,6 @@
   &--right {text-align: right;line-height:1;}
   &__space--wrap {white-space: pre-wrap;}
 }
-.c-title{
-  display:flex; flex-wrap:wrap;
-  align-items:center;
-}
 .c-italic__en{
   font-family:'times',serif;
   font-style: italic;
@@ -142,20 +148,5 @@
     color:#EF0065;
     font-size: 15px;
     text-align: center;
-  }
-}
-// 擬似要素
-[data-before]{
-  &:before{
-    content: attr(data-before)'';
-    font-size: 0.6em;
-    font-weight: 500;
-  }
-}
-[data-after]{
-  &:after{
-    content: attr(data-after)'';
-    font-size: 0.6em;
-    font-weight: 500;
   }
 }

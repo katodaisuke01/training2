@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Innovation-Lab/feature#readme",
   "dependencies": {
+    "nuxt": "^3.0.0",
     "sass": "^1.53.0"
   }
 }

@@ -1,0 +1,72 @@
+@use "../foundation/responsive" as *;
+/* ! ==================================================
+- ヘッダー
+================================================== */
+.l-header {
+	width: 100%;
+	padding:8px 24px;
+	height: 50px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	@include responsive (tablet){
+		height: 40px;
+		padding:8px 16px;
+	}
+	.c-logoArea{
+		display:block;
+		&:hover{
+			opacity: .7;
+		}
+		.c-logo{
+			height:1rem;
+			display:block;
+			@include responsive (spWide){
+				height:1.5rem;
+			}
+		}
+	}
+}
+// 通常のハンバーガーメニュー
+.nav_toggle{
+	height:40px; 
+	width:40px;
+	border-radius: 4px;
+	display: none;
+	border: #000 1px solid;
+	background-color:rgba(255,255,255,.2);
+	position:relative;
+	transition: all 0.2s ease;
+	z-index: 100;
+	cursor: pointer;
+	span{
+		height:1px; width:30px;
+		background-color: #000;
+		display: block;
+		position:absolute;
+		top:15px;
+		left:50%;
+		transition: all 0.2s ease;
+		transform:translate(-50%,0);
+		+span{
+			top:22px;
+		}
+		&.close{
+			top:50%;
+			transform:translate(-50%,-50%) rotate(45deg);
+			+span{
+				transform:translate(-50%,-50%) rotate(-45deg);
+			}
+		}
+	}
+	@include responsive (spWide){
+		display: block;
+			z-index: 99;
+		&:hover{
+			background-color: #eee;
+			span{
+				width: 20px;
+			}
+		}
+	}
+}

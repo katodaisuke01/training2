@@ -1,0 +1,31 @@
+$breakpoints: (
+  "spWide": (
+    min-width: 576px,
+  ),
+  "tablet": (
+    min-width: 768px,
+  ),
+  "tabletWide": (
+    min-width: 1024px,
+  ),
+  "note": (
+    min-width: 1120px,
+  ),
+  "pc": (
+    min-width: 1280px,
+  ),
+  "pcWide": (
+    min-width: 1440px,
+  ),
+) !default;
+@mixin responsive($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media screen and #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+  // エラー時
+  @else {
+    @error "指定されたブレークポイントは定義されていません。" + "指定できるブレークポイントは次のとおりです。 -> #{map-keys(breakpoints.$breakpoints)}";
+  }
+}

@@ -1,0 +1,65 @@
+@use "../foundation/_var" as *;
+%l-frame,.l-frame{
+  flex: auto;
+  &__narrow{
+    @extend %l-frame;
+    max-width:900px;
+  }
+}
+.p-frame{
+  &__head{
+    display: flex;
+    align-items:center;
+    flex: auto;
+    border-bottom: 1px solid color(gray_light);
+    padding: 1rem 1rem .5rem;
+    .c-title{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      width: 100%;
+      .icon{
+        height:24px;
+        width:24px;
+      }
+      h2{
+        margin-left: .5rem;
+        line-height: 1;
+      }
+      .c-button__sm{
+        height: 30px;
+        margin-inline-start: 8px;
+      }
+    }
+    &--action{
+      display:flex;
+      margin-inline-start: auto;
+      a{
+        border-bottom: 1px dotted;
+        &:hover{
+          color: color(main);
+        }
+      }
+    }
+  }
+  &__body{
+    padding:2rem;
+    .c-box{
+      &__head{
+        display:flex; flex-wrap:wrap;
+        align-items:center;
+        .c-right{
+          display:flex; flex-wrap:wrap;
+          p{
+            margin-right: 1rem;
+            &:last-child{margin:0;}
+          }
+          span{margin-right:.25rem;}
+        }
+      }
+    }
+  }
+  &__foot{
+    margin-top: 1.5rem;
+  }
+}

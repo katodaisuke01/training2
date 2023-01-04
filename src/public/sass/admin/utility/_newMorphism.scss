@@ -1,0 +1,25 @@
+@use "../foundation/responsive" as *;
+@use "../foundation/var" as *;
+/* ——————————————————————————————————————————————————————————————
+ニューモーフィズム
+—————————————————————————————————————————————————————————————— */
+.c-bulge{
+  background-color: color(back);
+  box-shadow: 7px 7px 20px rgba(174,174,192,.4), -7px -7px 1rem rgba(255,255,255, 1);
+  padding:1rem;
+  border-radius: 1rem;
+  flex: auto;
+  @include responsive (spWide){
+    padding:2rem;
+  }
+}
+.c-concave{
+  background-color: color(back);
+  box-shadow: -5px -5px 5px rgba(255,255,255,.7) inset, 5px 5px 5px rgba(107, 112, 125, .1) inset;
+  padding: 1rem;
+  flex: auto;
+  border-radius: 1rem;
+  @include responsive (spWide){
+    padding:2rem;
+  }
+}

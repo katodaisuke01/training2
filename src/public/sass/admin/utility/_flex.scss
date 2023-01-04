@@ -1,0 +1,18 @@
+/* ——————————————————————————————————————————————————————————————
+flex
+—————————————————————————————————————————————————————————————— */
+.u-align {
+  display:flex;
+  flex-wrap:wrap;
+  align-items: center;
+  // 縦並び
+  &--horizontal {
+    @extend .u-align;
+    flex-direction: column;
+  }
+  // 中央よせ
+  &--center {
+    @extend .u-align;
+    justify-content: center;
+  }
+}

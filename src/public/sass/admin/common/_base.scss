@@ -1,0 +1,74 @@
+@use "../foundation/var" as *;
+/* ! ==================================================
+- html/body
+白銀比/ 1:1.414
+黄金比/ 1:1.618
+白金比/ 1:1.732
+================================================== */
+*{box-sizing:border-box;letter-spacing:.06em;}
+html {
+  height: -weblit-fill-available;
+  display: block;
+  font-family: "Roboto", "Noto Sans JP", "Helvetica Neue", "Helvetica",
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo",
+    sans-serif;
+  font-feature-settings: "palt";
+}
+body {
+  min-height: 100vh;
+  min-width:320px;
+  min-height: -weblit-fill-available;
+  color:color(base);
+  font-size: 14px;
+  background-color: color(back);
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  position:relative;
+}
+.win {
+  /* Windows (全バージョン)のみ */
+  body {
+    font-feature-settings: normal;
+  }
+}
+@supports (-ms-ime-align: auto){
+  /* edgeのみ */
+  body {
+    font-feature-settings: normal;
+  }
+}
+/* ! --------------------------------------------------
+- text
+-------------------------------------------------- */
+p {
+  color:color(base);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.34em;
+  text-align: left;
+  word-break: break-word;
+}
+a {  
+  color:color(base);
+  word-break: break-word;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.34em;
+  text-decoration: none;
+  cursor: pointer;
+  &[target="_blanc"]:after{
+    content: '';
+    display: inline-block;
+    background:url(../image/icon/icon_blanc.svg) no-repeat center;
+    background-size:cover;
+    height:10px;
+    width:10px;
+    margin-inline-start: .25rem;
+  }
+}
+strong{font-size:1.3em;}
+small{font-size:0.8em;}
+::selection {color: color(accent);}
+form {width: auto;}

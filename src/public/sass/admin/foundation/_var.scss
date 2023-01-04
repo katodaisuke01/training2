@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/* ! --------------------------------------------------
+- カラー
+-------------------------------------------------- */
+$colors: (
+  'main':#D60021,
+  'border':#555,
+  'accent':#00cec6,
+  'light':#EBFF00,
+  'alert':#d52f9b,
+  'ok':#1AA800,
+  // テキスト
+  'base': #000,
+  'gray_light': #bbb,
+  'gray_middle': #888,
+  'deep': #555,
+  'back': #F5F5F5,
+) !default;
+@function color($colorName) {
+  @return #{map-get($colors, $colorName)}
+}

@@ -3,3 +3,4 @@
 /docker/web/nginx/volumes
 .env
 SetupSoftware.zip
+node_modules

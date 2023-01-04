@@ -1,4 +1,5 @@
-@charset "UTF-8";
+@use "../../foundation/responsive" as *;
+@use "../../foundation/_var" as *;
 /* ! --------------------------------------------------
 - インプット
 -------------------------------------------------- */
@@ -13,56 +14,99 @@ textarea {
     min-height: 200px;
   }
 }
-select{color:color(base);}
+//共通要素
+%input {
+  font-size: 14px; 
+  height: 35px;
+  padding: 8px;
+  border: 1px solid color(border);
+  border-radius: 4px;
+  color: color(base);
+  background-color: #fff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+// プレイスホルダー
+::-webkit-input-placeholder { color: color(third);}
+:-ms-input-placeholder { color: color(third);}
+::-moz-placeholder { color: color(third);}
+// -- インプット search number file checkbox radio submit 
+input {
+  @extend %input;
+  &[type="number"] {
+    -moz-appearance:textfield;
+  }
+  &[type="number"]::-webkit-outer-spin-button,&[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  &[type="checkbox"],&[type="radio"] {
+    @extend %inputInput;
+    + label {
+      color: color(base);
+      font-size: 14px;
+      position:relative;
+      cursor: pointer;
+      display:flex; flex-wrap:wrap;
+      align-items:center;
+      &:before {
+        content: '';
+        height:20px; width:20px;
+        background-color: #fff;
+        border: 1px solid color(border);
+        border-radius:3px;
+        display: block;
+        margin-right: 4px;
+      }
+      &:after{
+        content: '';
+        display: none;
+        border-radius:2px;
+        height:14px; width:9px;
+        border-bottom: 3px solid color(border);
+        border-right: 3px solid color(border);
+        position: absolute;
+        top: 0;
+        left: 6px;
+        transform: rotate(45deg);
+      }
+      +input{
+        +label{
+          margin-inline-start: 1rem;
+        }
+      }
+    }
+    &:checked + label {
+      &:after{
+        display:block;
+      }
+    }
+  }
+}
+select{
+  @extend %input;
+  color:color(base);
+  padding-right:1.5rem;
+  background: url(../image/icon/icon_dropdown.svg);
+  background-size: 16px;
+  background-position: right 4px center;
+  background-repeat: no-repeat;
+}
+textarea {
+  @extend %input;
+  padding: 5px 8px;
+  resize: none;
+  min-height: 100px;
+  @include responsive(spWide){
+    padding: 8px;
+    min-height: 200px;
+  }
+}
 .c-input {
   display:inline-flex;
   position: relative;
   $c-input: #{&};
-  //共通要素
-  %common {
-    font-size: 14px; 
-    height: 40px;
-    padding: 8px;
-    width: 100%;
-    border: 1px solid color(border);
-    border-radius: 4px;
-    color: color(base);
-    background-color: #fff;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    @include responsive(spWide){
-      height: 50px;
-    }
-  }
-  // プレイスホルダー
-  ::-webkit-input-placeholder { color: color(third);}
-  :-ms-input-placeholder { color: color(third);}
-  ::-moz-placeholder { color: color(third);}
-  // -- インプット search number file checkbox radio submit 
-  input,select {
-    @extend %common;
-    &.datepicker{height: 35px;}
-  }
-  textarea {
-    @extend %common;
-    padding: 5px 8px;
-    resize: none;
-    min-height: 100px;
-    @include responsive(spWide){
-      padding: 8px;
-      min-height: 200px;
-    }
-  }
-  //numberのスピンボタン非表示
-  input[type="number"]::-webkit-outer-spin-button,
-  input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  input[type="number"] {
-    -moz-appearance:textfield;
-  }
   &--full {
     @extend #{$c-input};
     width: 100%;
@@ -95,10 +139,10 @@ select{color:color(base);}
   }
   &--column{@extend #{$c-input};flex-direction:column;width:100%;}
   &__600{@extend #{$c-input};width: 100%;
-    @include responsive (spWide){width:600px;}
+    @include responsive (tablet){width:600px;}
   }
   &__500{@extend #{$c-input};width: 100%;
-    @include responsive (spWide){width:500px;}
+    @include responsive (tablet){width:500px;}
   }
   &__400{@extend #{$c-input};width: 100%;
   @include responsive (spWide){width:400px;}
@@ -116,14 +160,14 @@ select{color:color(base);}
   &__70{@extend #{$c-input};width: 70px;}
   &__50{@extend #{$c-input};width: 50px;}
   // -- チェックボックス・ラジオ共通項目
-  %commonInput {    
+  %inputInput {    
     opacity: 0;
     pointer-events: none;
     position: absolute;
     top: 0;
     left: 0;
   }
-  %commonBox {
+  %inputBox {
     content: "";
     display: block;
     width: 20px;
@@ -137,7 +181,7 @@ select{color:color(base);}
     left: -4px;
     transform: translateY(-50%);
   }
-  %commonLabel {
+  %inputLabel {
     color: color(border);
     font-size: 14px;
     line-height: 1em;
@@ -191,24 +235,6 @@ select{color:color(base);}
     @extend #{$c-input};
     display: inline-flex;
     position: relative;
-    &:before {
-      content: "";
-      width: 16px;
-      height: 16px;
-      background: url(../image/icon/icon_dropdown.svg);
-      background-size: contain !important;
-      background-position: center center !important;
-      background-repeat: no-repeat !important;
-      position: absolute;
-      top: 50%;
-      right: 4px;
-      transform: translateY(-50%);
-      pointer-events: none;
-    }
-    select {
-      @extend %common;
-      padding-right:20px !important;width: 100%;
-    }
   }
 }
 // -- チェックボックス&ラジオボタン
@@ -218,43 +244,6 @@ select{color:color(base);}
   width: auto;
   &--column {
     flex-direction: column;
-  }
-  input[type="checkbox"],input[type="radio"] {
-    @extend %commonInput;
-    + label {
-      color: color(base);
-      font-size: 14px;
-      position:relative;
-      cursor: pointer;
-      display:flex; flex-wrap:wrap;
-      align-items:center;
-      &:before {
-        content: '';
-        height:20px; width:20px;
-        background-color: #fff;
-        border: 1px solid color(border);
-        border-radius:3px;
-        display: block;
-        margin-right: 4px;
-      }
-      &:after{
-        content: '';
-        display: none;
-        border-radius:2px;
-        height:14px; width:9px;
-        border-bottom: 3px solid color(border);
-        border-right: 3px solid color(border);
-        position: absolute;
-        top: 0;
-        left: 6px;
-        transform: rotate(45deg);
-      }
-    }
-    &:checked + label {
-      &:after{
-        display:block;
-      }
-    }
   }
   &__button{
     background:linear-gradient(135deg, #EFD800, #EF6500);
@@ -315,7 +304,7 @@ select{color:color(base);}
       +label{
         width:50px;
         height: 24px;
-        background-color: #ddd;
+        background-color: color(gray_light);
         border-radius: 12px;
         position:relative;
         transition: all 0.2s ease;
@@ -400,7 +389,7 @@ select{color:color(base);}
     }
   }
   label {
-    @extend %commonLabel;
+    @extend %inputLabel;
     &:before {
       content: '';
       display: block;
@@ -408,7 +397,7 @@ select{color:color(base);}
       border-radius: 50%;
       background-color: #ddd;
     }
-    @extend %commonBox;
+    @extend %inputBox;
     &:after {
       content: none;
     }
@@ -448,7 +437,6 @@ input[readonly],textarea[readonly]{
   padding: 0;
 }
 /* デフォルトリセットなど */
-input,select,button,textarea{ -webkit-appearance: none; -moz-appearance: none; appearance: none;}
 button { outline: none;}
 select::-ms-expand { display: none;}
 input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px #fafafa inset;}
@@ -518,10 +506,6 @@ input[type="checkbox"],input[type="radio"],input[type="file"]{display:none;width
   }
 }
 
-/* ラベルがない場合 */
-.c-checkbox .label-none {
-  padding: 0 0 0 16px; /* boxの幅分 */margin:0 auto;
-}
 /* プレイスホルダー */
 input::-webkit-input-placeholder { color:rgba(0,0,0,.25);line-height: normal;}
 input:-ms-input-placeholder { color:rgba(0,0,0,.25);line-height: normal;}

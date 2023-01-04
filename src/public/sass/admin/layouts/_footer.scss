@@ -1,0 +1,39 @@
+@use "../foundation/responsive" as *;
+/* ! --------------------------------------------------
+- フッターレイアウト
+-------------------------------------------------- */
+.l-footer {
+  width:100%;
+  @include responsive (spWide){
+    padding: 0;
+  }
+  .p-footer{
+    padding: 1rem 1rem .25rem;
+    &__body{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      @include responsive (spWide){
+        justify-content:flex-start;
+      }
+      img{
+        &:hover{
+          opacity: .7;
+        }
+        +img{
+          @include responsive (spWide){
+            margin-top:1rem;
+          }
+        }
+      }
+    }
+    &__foot{
+      margin-top: 4px;
+    }
+    .copyright{
+      font-size: 11px;
+      text-align: right;
+      color: #888;
+    }
+  }
+}
